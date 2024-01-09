@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2 mx-3"> Unidad II. Límites de funciones y continuidad</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="u2t1-cal.html" >
+              Tema 1
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 2
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t2-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.1">2.1 Límites de formas indeterminadas</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.2">2.2 Límites unilaterales</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.3">2.3 Límite de funciones trigonométricas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t3-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t3-cal.html#3.1">3.1 Asíntotas horizontales, verticales y oblicuas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 4
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t4-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.1">4.1 En un punto</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.2">4.2 En un intervalo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="http://148.204.56.92/moodle/course/view.php?id=10&section=3" >
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>4. Continuidad</h1>
+        <p class="mt-4">Una propiedad de las funciones es la continuidad, ésta es muy importante ya que hay varios conceptos que sólo
+          pueden aplicarse si la función es continua en su dominio o en un intervalo dado.</p>
+        <p>La continuidad nos hace pensar en frases como llovía continuamente, debemos continuar sobre el camino, la
+          película se presentará de forma continua. En estas situaciones quiere decir que no hay interrupciones o cortes
+          en lo que está sucediendo.</p>
+        <p>Al referirnos a una función que es continua, pensamos que puede dibujarse sin que se despegue el lápiz del
+          papel, si su gráfica no se interrumpe, no tiene huecos o no hay ruptura.</p>
+        <p>Así que la gráfica de una función continua se ve de la siguiente forma:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm4/u2_tm4_01_continuidad.svg"  width="50%">
+      </div> 
+        <p class="mt-4">Y, a su vez, una discontinua se graficaría de la siguiente manera:</p>
+        <div class="row text-center">
+          <div class="col-6">
+            <img class="img-fluid" src="img/tm4/u2_tm4_02_continuidad.svg" >
+          </div>
+          <div class="col-6">
+            <img class="img-fluid" src="img/tm4/u2_tm4_03_continuidad.svg" >
+          </div>
+        </div>
+        <div class="img-flex text-center">
+      </div> 
+        <p class="mt-4">Entonces, podemos decir que una función es continua si su gráfica se aprecia como un solo trazo sobre el
+          papel y discontinua si su gráfica se &ldquo;rompe&rdquo; en al menos un punto.</p>
+        <p>Nos interesa comprender la propiedad de continuidad de una función, para ello nos resulta conveniente
+          analizar &ldquo;las formas en que una función &lsquo;pierde&rsquo; su continuidad, es decir empecemos por
+          considerar las funciones discontinuas&rdquo; (Viveros et al., 2006). Esto debido a que la continuidad se
+          manifiesta como una propiedad global, mientras que la discontinuidad lo hace como una propiedad puntual.</p>
+        <p>Pero, aunque la gráfica nos da un aspecto visual de la continuidad o discontinuidad de una función, no es
+          suficiente; así nos resulta necesario hacer un análisis algebraico partiendo de la geometría.</p>
+        <p>Analicemos las formas en que una función pierde la continuidad en un punto, consideremos cuatro casos, para
+          ello usemos gráficas de funciones que representan las posibles formas de discontinuidad, para posteriormente
+          referirnos al estudio analítico de cada situación.</p>
+          <ul>
+             <li> Removible</li>
+          </ul>
+        <p>1)  Consideremos la función: </p>
+        <div id="ccontenedor">
+          <section class="text-slider">
+            <div class="flex">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p class="text-center">Función</p>
+              $$ f(x) = \left\{\begin{array}{rl}  \frac{x^3 -2x^2}{x-2} & \text{si } x \neq 2\\   1 & \text{si } x = 2 \end{array} \right. $$
+            </div>
+            <div>
+              <p class="text-center">Gráfica</p>
+
+              <div class="img-flex text-center">
+                <img class="img-fluid" src="img/tm4/u2_tm4_04_continuidad.svg"  width="50%">
+            </div> 
+            </div>
+            <div>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+            <p class="flex">La gráfica de la función muestra que la curva tiene un hueco en \(x=2\), con lo cual no representa un trazo
+              continuo de la función y decimos es discontinua.</p>
+            </div>
+          </section>
+          </div>
+        <p>Aunque tiene un hueco, la función sí está definida para \(x=2\), la cual indica que \(f(2)=1\) y en la gráfica se
+          tiene este punto, que, aunque está aparte, pertenece a la representación gráfica de la función.</p>
+        <p>¿Existe \( \displaystyle \lim_{x \rightarrow 2} ⁡f(x)? \) </p>
+        <p>Para determinar el valor del límite debemos de acercarnos al punto \(2\) y ver cuáles son los valores de la
+          función, si \(x = 2.5,2.1,2.01,2.001\), todos estos valores mayores que \(2\), notamos en la gráfica que los valores
+          de la función se aproximan al punto \(y=4\), y cuando \(x = 1.5,1.8,1.9,1.99,1.99\), esto es, con valores menores que
+          \(2\), notamos que los valores de la función también se aproximan a \(y=4\), con lo cual \( \displaystyle
+          \lim_{x \rightarrow 2} ⁡f(x)=4\). Si calculamos el límite algebraicamente, tenemos:</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} ⁡f(x)= \displaystyle \lim_{x \rightarrow 2} ⁡\frac{x^3-2x^2}{x-2}= \displaystyle
+          \lim_{x \rightarrow 2} ⁡\frac{x^2 (x-2)}{x-2}= \displaystyle \lim_{x \rightarrow 2} ⁡x^2=4 $$
+        <p>a)  \(f(2)=1\)</p>
+        <p>b)  \( \displaystyle \lim_{x \rightarrow 2} \frac{x^3-2x^2}{x-2}=4 \)</p>
+        <p>c) \( \displaystyle \lim_{x \rightarrow 2} \frac{x^3-2x^2}{x-2}=4\) y  \(f(2)=1\), así \( \displaystyle \lim_{x \rightarrow 2} 
+          \frac{x^3-2x^2}{x-2} \neq f(2) \)</p>
+        <p>El valor del límite en el punto es diferente al valor de la función en el punto, así representaremos
+          algebraicamente la característica principal de este tipo de discontinuidad:</p>
+        $$ \displaystyle \lim_{x \rightarrow a} f(x) \neq f(a) $$
+        <p>&ldquo;Si se quiere eliminar la discontinuidad, en este caso, basta redefinir la función f en el punto, por
+          lo que este tipo de discontinuidad recibe el nombre de <b>discontinuidad removible</b>&rdquo; (Viveros et al., 2006)
+          <b>o evitable.</b></p>
+          <ul>
+            <li><b>Salto</b></li>
+          </ul>
+        <p>2) Consideremos ahora la función: </p>
+        <div id="ccontenedor">
+          <section class="text-slider">
+            <div class="flex">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p class="text-center">Función</p>
+              $$ f(x) = \left\{\begin{array}{rl}  3x-2 & \text{si } x \leq 2\\   -x+6 & \text{si } x > 2 \end{array} \right. $$
+            </div>
+            <div>
+              <p class="text-center">Gráfica</p>
+
+              <div class="img-flex text-center">
+                <img class="img-fluid" src="img/tm4/u2_tm4_05_continuidad.svg"  width="50%">
+              </div> 
+            </div>
+            <div>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>La función está definida en todos los puntos y donde cambia de expresión algebraica es en \(x=2\), examinemos lo
+                que sucede en torno a este punto.</p>
+            </div>
+          </section>
+          </div>
+        <p class="mt-4">Gráficamente la función en \(x=2\) tiene un salto; pero sí está definida en el punto \(f(2)=3(2)+2=8\).</p>
+        <p>¿Existe \( \displaystyle \lim_{x \rightarrow 2} ⁡f(x)?\) </p>
+        <p>No hay una sola expresión algebraica asociada a la función alrededor de \(x=2\), así no podemos determinar el
+          valor del límite evaluando en la función. Determinemos el límite calculando los límites unilaterales</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- }f(x)= \displaystyle \lim_{x \rightarrow 2^- } 3x+2=8  $$
+        <p class="text-center">y</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^+ }⁡f(x)= \displaystyle \lim_{x \rightarrow 2^+ }-x+6=4 $$
+        <p>Como los límites unilaterales son diferentes, el \( \displaystyle \lim_{x \rightarrow 2} ⁡f(x)\) no existe. Entonces
+          tenemos:</p>
+          <blockquote>
+            <p>a) \(f(2)=8\)</p>
+            <p>b) \( \displaystyle \lim_{x \rightarrow 2^- } f(x)=8\)</p>
+            <p>c) \( \displaystyle \lim_{x \rightarrow 2^+ } f(x)=4\)</p>
+            <p>d) \( \displaystyle \lim_{x \rightarrow 2}  f(x)\) no existe</p>
+          </blockquote>
+            <p>La característica de este tipo de discontinuidad es que \( \displaystyle \lim_{x \rightarrow a} f(x)\) no existe.</p>
+        <p>Esta discontinuidad se denomina <b>discontinuidad de salto.</b></p>
+        <p> Infinita</p>
+        <p> 3) Sea \(f(x)\) la función definida de la siguiente manera:</p>
+        <div id="ccontenedor">
+          <section class="text-slider">
+            <div class="flex">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p class="text-center">Función</p>
+              $$ f(x) = \left\{\begin{array}{rl}  \frac{1}{x} & \text{si } x \neq 0\\   0 & \text{si } x \neq 2 \end{array} \right. $$
+            </div>
+            <div>
+              <p class="text-center">Gráfica</p>
+              <div class="img-flex text-center">
+                <img class="img-fluid" src="img/tm4/u2_tm4_06_continuidad.svg"  width="50%">
+              </div> 
+            </div>
+            <div>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>La función cambia de expresión en \(x=0\), veamos qué características presenta en torno a este punto.</p>
+
+            </div>
+          </section>
+          </div>
+    
+        <p>La función está definida en \(x=0\), \(f(0)=0\).</p>
+        <p>¿Existe \( \displaystyle \lim_{x \rightarrow 0}⁡f(x) \)?</p>
+        <p><b>Calculemos el límite</b></p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡f(x)= \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1}{x}=\frac{1}{0}= \infty $$
+        <p>El límite es infinito, no existe.</p>
+        <p>¿Qué sucede con los límites unilaterales?</p>
+        $$ \displaystyle \lim_{x \rightarrow 0^- }⁡ f(x)= \displaystyle \lim_{x \rightarrow 0^- } \frac{1}{x}=\frac{1}{0^-} =- \infty $$
+        $$ \displaystyle \lim_{x \rightarrow 0^+ } f(x)= \displaystyle \lim_{x \rightarrow 0^+ }⁡ \frac{1}{x}=\frac{1}{0^+} =+ \infty$$
+        <p>Los límites unilaterales son infinitos, no existen.</p>
+        <p>Algebraicamente, tenemos:</p>
+        <p> a) \(f(0)=0\)</p>
+        <p> b) \( \displaystyle \lim_{x \rightarrow 0^- } f(x)=- \infty \)</p>
+        <p> c) \( \displaystyle \lim_{x \rightarrow 0^+ } f(x)= \infty \)</p>
+        <p> d) \( \displaystyle \lim_{x \rightarrow 0}⁡f(x) \) no existe</p>
+        <p>La característica de esta discontinuidad es que los límites unilaterales son infinitos.</p>
+        <p>&ldquo;A este tipo de discontinuidad se le llama <b>discontinuidad infinita</b>&rdquo; (Viveros et al., 2006).</p>
+        <ul>
+          <li><b>Oscilatoria</b></li>
+        </ul>
+        <p>4) Finalmente consideremos la función \(f(x)\) definida como:</p>
+        <div id="ccontenedor">
+          <section class="text-slider">
+            <div class="flex">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p class="text-center">Función</p>
+              $$ f(x) = \left\{\begin{array}{rl} sen \left( \frac{1}{x} \right) & \text{si } x \neq 0\\   0 & \text{si } x \neq 0 \end{array} \right. $$
+            </div>
+            <div>
+              <p class="text-center">Gráfica</p>
+
+              <div class="img-flex text-center">
+                <img class="img-fluid" src="img/tm4/u2_tm4_07_continuidad.svg"  width="50%">
+              </div> 
+            </div>
+            <div>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>El punto donde cambia la definición de la función es en x=0, en este punto la función está definida \(f(0)=0\).</p>
+
+            </div>
+          </section>
+          </div>
+    
+        <p><b>Calculemos el límite</b> en \(x=0\).</p>
+        <p><b>Calculemos el límite</b></p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡f(x)= \displaystyle \lim_{x \rightarrow 0}⁡sen \left( \frac{1}{x} \right)=sen \left( \frac{1}{0} \right)=sen( \infty) $$
+        <p>Seno de infinito no existe, ya que los valores de la función no se aproximan a un mismo punto, la función
+          oscila, luego el límite no existe.</p>
+        <p>¿Qué sucede con los límites unilaterales?</p>
+        $$ \displaystyle \lim_{x \rightarrow 0^- } f(x)= \displaystyle \lim_{x \rightarrow 0^- }sen \left( \frac{1}{x} \right)=sen \left(\frac{1}{0^-} \right)=sen(- \infty ) $$
+        
+        $$ \displaystyle \lim_{x \rightarrow 0^+ }f(x)= \displaystyle \lim_{x \rightarrow 0^+ }sen \left( \frac{1}{x} \right)=sen \left(\frac{1}{0^+} \right)=sen(+ \infty)$$
+        <p>La función seno en menos infinito y en infinito no está definida, ya que la función oscila, luego los límites
+          unilaterales no existen.</p>
+        <p>Algebraicamente, tenemos:</p>
+        <p>a) \(f(0)=0\)</p>
+        <p>b)  \( \displaystyle \lim_{x \rightarrow 0^-} f(x)\) no existe</p>
+        <p>c)  \( \displaystyle \lim_{x \rightarrow 0^+} f(x)\) no existe</p>
+        <p>d) \( \displaystyle \lim_{x \rightarrow 0}⁡f(x) \) no existe</p>
+        <p>La característica de este tipo de discontinuidad es que los límites unilaterales no existen.</p>
+        <p>Este tipo de discontinuidad es el más complejo, en las funciones que veremos no es común y se denomina
+          <b>discontinuidad oscilatoria.</b> </p>
+        <p id="4.1">Hemos definido los tipos de discontinuidad y las razones por las que lo son. Definamos ahora la función
+          continua usando las razones por las que se pierde la continuidad.</p>
+        <h2>4.1 En un punto</h2>
+        <p class="mt-4">La continuidad en un punto, como su nombre lo indica, se refiere a si la función es constante o continua en
+          un punto de la recta, siempre y cuando cumpla con las siguientes características:</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>Una función \( y=f(x) \) es continua en un punto \(a\) si:</p>
+                <ul>
+                <li> La función \(f(x)\) está definida en \(x=a\)</li>
+                <li> Los límites unilaterales \( \displaystyle \lim_{x \rightarrow a^- } f(x)\) y \(\displaystyle \lim_{x \rightarrow a^+ } f(x) \) existen y son finitos</li>
+                <li> El \( \displaystyle \lim_{x \rightarrow a} f(x)\) existe</li>
+                <li> El límite de la función cuando \(x \rightarrow a \) es igual al valor de la función en \(a\), \( \displaystyle \lim_{x \rightarrow a} f(x)=f(a) \)</p>
+                </ul>
+                </div>
+            </div>
+          </div>
+          <p></p>
+        
+        <p>Veamos los siguientes ejemplos.</p>
+        <p>a) Determinar si la función  \( f(x) = \left\{\begin{array}{rl}  \frac{x^2+x-6}{x}  & \text{si } x \neq 2\\   1 & \text{si } x = 2 \end{array} \right. \)
+            es continua en \(x=2\), si
+          no es continua determinar el tipo de discontinuidad.</p>
+        <p>Para que la función sea continua debe de cumplir las condiciones de la definición: </p>
+        <ul>
+          <li> \(f(x)\) está definida en \(x=2\)</li>
+          <li>\(f(2)=1\), por definición</li>
+        </ul>
+        <p>Calculemos el límite de la función</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} ⁡f(x)=  \displaystyle \lim_{x \rightarrow 2} 
+          \frac{x^2+x-6}{x-2}= \frac{(2)^2+(2)-6}{(2)-2}= \frac{4+2-6}{0}=\frac{0}{0} $$
+        <p>Factoricemos el numerador</p>
+        $$ \displaystyle \lim_{x \rightarrow 2}  \frac{x^2+x-6}{x-2} = \displaystyle \lim_{x \rightarrow 2}  \frac{(x-2)(x+3)}{x-2}= \displaystyle
+          \lim_{x \rightarrow 2}  x+3=2+3=5 $$
+        <p>El límite existe y vale \(5\).</p>
+        <ul>
+          <li> \( \displaystyle \lim_{x \rightarrow 2} ⁡f(x)=  \displaystyle \lim_{x \rightarrow 2}  \frac{x^2+x-6}{x-2}=5 \) y \(f(2)=1\)</li><br>
+          <p>El valor del límite es diferente al valor de la función.</p>
+          <p>No se cumple la última condición para tener la función continua, luego la función \(f(x)\) no es continua en \(x=2\).</p>
+        </ul>
+        <p>La condición que no se cumple nos indica que la función tiene una discontinuidad removible en \(x=2\).</p>
+        <p>La gráfica de la función sería la siguiente:</p>
+        <div>
+          <p class="text-center">Gráfica</p>
+
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm4/u2_tm4_08_continuidad.svg"  width="50%">
+          </div> 
+        </div>
+        <p class="mt-4">b. Determinar si la función \(f(x)=[x]\) es continua en x=1, si no es continua determinar el tipo de
+          discontinuidad.</p>
+        <p>Para que la función mayor entero sea continua en \(x=1\), se deben de cumplir las condiciones de la definición:
+        </p>
+        <ul>
+          <li>\(f(1)=[1]=1\)</li><br>
+          <li> \( \displaystyle \lim_{x \rightarrow 1} [x]\), el límite de la función es el valor al cual se aproximan los valores de la
+            función conforme los valores de \(x\) se acercan a \(1\), y por la definición de la función, si tomamos valores más
+            pequeños o grandes que \(1\), cambia el resultado.</li>
+        </ul>
+        <p>Tenemos</p>
+        $$ f(x) = [x] = \left\{\begin{array}{rl}  0 & \text{si } x \leq x <  \\   1 & \text{si } 1 \leq x < 2 \end{array} \right. $$
+        <p>Así para determinar el límite calculemos los límites unilaterales</p>
+        $$ \displaystyle \lim_{x \rightarrow 1^- } ⁡[x]=[1^-] =0 $$
+        $$ \displaystyle \lim_{x \rightarrow 1^+ } [x]=[1^+] =1 $$
+        <p>Como los límites unilaterales son diferentes, entonces \( \displaystyle \lim_{x \rightarrow 1} [x]\) no existe.</p>
+        <p>Como el límite no existe, la función no es continua en \(x=1\).</p>
+        <p>Por las características anteriores, de los límites unilaterales de la función que existen, únicamente en uno
+          tenemos una discontinuidad de salto.</p>
+        <p>La gráfica de la función es:</p>
+        <div>
+          <p class="text-center">Gráfica</p>
+
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm4/u2_tm4_09_continuidad.svg"  width="50%">
+          </div> 
+        </div>
+
+        <p class="mt-4">Y tiene discontinuidad de salto en todos los enteros.</p>
+        <p>Ya que conoces cómo determinar si una función es continua, realiza el siguiente ejercicio.</p>
+
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">
+                <p class="text-center">20. Continuidad</p>
+              </p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <!-- <p>Ejercicio 20. Continuidad</p>
+        <p>Instrucciones:</p>
+        <p> Determina si la función \( f(x)=\frac{x^2-x-6}{x+2} \) es continua en \(x=-2\) y en \(x=2\).</p>
+        <p> Realiza los procedimientos necesarios, ya sea a mano o en un documento.</p>
+        <p> Adjunta el archivo con el procedimiento y la respuesta en formato PDF.</p>
+        <p> Espera la realimentación.</p> -->
+        <p class="mt-4">Es posible que determinemos la continuidad de la función en un punto; pero ¿cómo determinamos la continuidad
+          de una función que no está definida por una sola expresión? Para determinarla nos basamos en la manera en que
+          determinamos la continuidad de funciones simples y mediante las operaciones de las funciones, éstas son suma,
+          resta, producto, cociente, potencia y composición, las cuales se definen en los siguientes teoremas.</p>
+        <p><b>Teorema:</b> si las funciones \(f(x)\) y \(g(x)\) son continuas en un punto \(a\) y \(c\) es una constante, entonces las
+          funciones</p>
+
+        $$ \left.\begin{array}{lcr} 1) ~  f(x)+g(x) \\ 2) ~  f(x)⋅g(x) \\ 3) ~  f(x)-g(x) \\ 4) ~  cf(x) \\ 5) ~  f(x) g(x) \text{ si }  g(a) \neq 0 \\6) ~  (f(x))^n \text{, para } n \text{ entero positivo} \\7) ~   \sqrt [n] {f(x)} \text{, para } n \text{ entero positivo y } \\f  \text{ definida en un intervalo que contiene a } c \\ \end{array}\right\rbrace \text{Son continuas en } x=a $$
+       
+        <p class="mt-4">Otra de las operaciones es la composición de funciones, el siguiente teorema define esta operación.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">
+                <b>Teorema.</b> Si la función \(f(x)\) es continua en el punto \(c\) y si la función \(g(x)\) es continua en \(f(c)\), entonces la
+                  función compuesta \((g∘f)(x)=g(f(x))\) es continua en el punto \(c\).</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <p>Cuando determinamos la continuidad de una función compuesta, uno de los pasos es calcular el límite de la
+          función, ¿sabemos cómo calcular éste? El siguiente teorema nos dice cómo se calcula el límite y así podremos
+          concluir si es continua o no.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">
+                  <p>Teorema. Si la función \(f(x)\) es continua en el punto \(b\) y si \( \displaystyle \lim_{x \rightarrow a}⁡g(x)=b \), entonces \(
+                    \displaystyle \lim_{x \rightarrow a} f(⁡g(x))=f(b)\), esto es, \( \displaystyle \lim_{x \rightarrow a} f(⁡g(x))=f( \displaystyle
+                    \lim_{x \rightarrow a}⁡g(x)) \).</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        
+        <p>Revisemos el siguiente ejemplo.</p>
+
+        <p>Determina si la función \(f(x)=cos⁡x+sen x\) es continua en \(x=0\).</p>
+        <p>Para que la función \(f(x)=cos⁡x+sen x\) sea continua en \(x=0\), determinemos si las funciones \(f_1 (x)=cos⁡x\) y \(f_2
+          (x)=sen⁡x\) son continuas en \(x=0\).</p>
+        <p>Determinemos si las funciones son continuas:</p>
+        <p>\(f_1 (x)=cos⁡x\) </p>
+        <ul>
+          <li> \(f(0)=cos⁡0=1\), la función está definida en \(x=0\)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0} f(x)= \displaystyle \lim_{x \rightarrow 0} cos⁡x=cos⁡0=1 \)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0} f(x)=1=f(0) \)</li>
+        </ul>
+    
+        <p>Por lo que la función f(x)=cos⁡x es continua en \(x=1\).</p>
+        <p>\(f_2 (x)=sen⁡x\) </p>
+        <ul>
+          <li> \(f(0)=sen⁡0=0 \), la función está definida en \(x=0\)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0} f(x)= \displaystyle \lim_{x \rightarrow 0} sen⁡x=sen⁡0=0 \)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0} f(x)=0=f(0) \)</li>
+          <p>Por lo que la función \(f(x)=sen⁡x\) es continua en \(x=1\).</p>
+          <p>Luego la función \(f(x)=cos⁡x+sen x\) es continua en \(x=0\).</p>
+        </ul>
+        <p>Podemos decir, entonces, que la composición de funciones se da cuando una de las funciones da entrada a otra
+          y de esta manera generan una tercera. Es momento de que repases lo aprendido respecto a la composición de
+          funciones.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">
+                  21. Composición de funciones 
+                </p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+          <p class="mt-4">Una de las condiciones para que una función sea continua en un punto es que el límite exista y, de acuerdo con un teorema, el límite existe si los límites unilaterales existen y son iguales. Definamos la continuidad unilateral.</p>
+        <!-- <p>Ejercicio 21. Composición de funciones</p>
+        <p>Instrucciones:</p>
+        <p> Determinar si la función \(f(x)=sen(cos⁡x)’) es continua en \(x=0\).</p>
+        <p> Realiza los procedimientos necesarios, ya sea a mano o en un documento.</p>
+        <p> Adjunta el archivo con el procedimiento y la respuesta en formato PDF.</p>
+        <p> Espera la realimentación.</p>
+        -->
+        <p>Una de las condiciones para que una función sea continua en un punto es que el límite exista y, de acuerdo
+          con un teorema, el límite existe si los límites unilaterales existen y son iguales. Definamos la continuidad
+          unilateral.</p>
+          <ul>
+            <li><b> Continuidad unilateral</b></li>
+          </ul>
+        <p>Recordemos que los límites unilaterales pueden ser diferentes cuando te acercas a un punto desde el lado
+          izquierdo o derecho. Teniendo en cuenta esto, podemos definir la continuidad unilateral de la siguiente
+          manera:</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>Una función \( y=f(x) \) es continua por la derecha en un número \(a\) si \( \displaystyle \lim_{x \rightarrow a^+ } f(x)=f(a)\) y
+                    continua por la izquierda en un número \(a\) si \(\displaystyle \lim_{x \rightarrow a^- } f(x)=f(a)\) (Stewart, 2013).</p>
+                
+              </div>
+            </div>
+          </div>
+          <p></p>
+      
+          <p>Así, para la continuidad unilateral se tienen las condiciones siguientes:</p>
+              <!-- Button trigger modal -->
+        <div class="text-center mb-4">
+          <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic sobre la imagen para ver la animación</div>
+          <a data-bs-toggle="modal" data-bs-target="#Continuidad">
+            <img class="img-fluid" src="img/btn_lanzador.svg">
+          </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="Continuidad" tabindex="-1" aria-labelledby="ContinuidadLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ContinuidadLabel">Continuidad unilateral</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <embed src="animacion/u2_tm4_10_anim_continuidad/u2_tm4_10_anim_continuidad.html"  width="100%" height="550">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <p>Continuidad por la derecha</p>
+        <p>\( y=f(x) \) es continua por la derecha en un número a si:</p>
+        <p> \(f(x)\) está definida en a,esto es, \(f(a)\) está definida</p>
+        <p> El límite por la derecha existe, entonces \( \displaystyle \lim_{x \rightarrow a^+ } f(x)\) existe</p>
+        <p> El límite por la derecha de \(f(x)\) cuando \( x \rightarrow a \) es igual a \(f(a)\), \( \displaystyle \lim_{x \rightarrow a^+ } f(x)=f(a)\)</p>
+        <p> Continuidad por la izquierda</p>
+        <p>\( y=f(x) \) es continua por la izquierda en un número a si:</p>
+        <p> \(f(x)\) está definida en \a, esto es, \(f(a)\) está definida</p>
+        <p> El límite por la izquierda existe, entonces\( \displaystyle \lim_{x \rightarrow a^- } f(x)\) existe </p>
+        <p> El límite por la izquierda de \(f(x)\) cuando \( x \rightarrow a\)  es igual \(a f(a)\), \( \displaystyle \lim_{x \rightarrow a^- } f(x)=f(a) \)</p>
+ -->
+        <p>Como pudiste ver en la tabla anterior, se tienen condiciones análogas para la continuidad por la izquierda.</p>
+        <p>Esta definición de continuidad unilateral es útil para funciones definidas en intervalos abiertos, ejemplo:
+        </p>
+        <p>a. Demostrar que la función \(f(x)= \sqrt{x}\) es continua por la derecha en \(x=0\).</p>
+        <p>Vemos que se cumplen las condiciones</p>
+        <ul>
+          <li> \(f(0)= \sqrt{0}=0\), la función está definida en \(x=0\)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0^+ } f(x)= \displaystyle \lim_{x \rightarrow 0^+ }  \sqrt{x}= \sqrt{0^+ }=0 \)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 0^+ } f(x)=0=f(0) \)</li>
+        </ul>
+        <p>Por lo que la función \(f(x)= \sqrt{x}\) es continua por la derecha en \(x=0\).</p>
+        <p>La función \(f(x)= \sqrt{x}\) tiene por dominio \([0,  \infty)\), así está definida en un intervalo abierto.</p>
+        <p>b.  Demostrar que la función mayor entero \(f(x)=[x]\) es continua por la derecha de \(x=1\), pero no lo es por la
+          izquierda de \(x=1\).</p>
+        <p>Continuidad por la derecha</p>
+        <ul>
+          <li> \(f(1)=[1]=1\), la función está definida en \(x=1\)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 1^+ } f(x)= \displaystyle \lim_{x \rightarrow 1^+ } [x]=[1^+] =1\)</li>
+          <li> \( \displaystyle \lim_{x \rightarrow 1^+ } f(x)=1=f(1)\)</li>
+        </ul>
+        <p>Así la función \([x]\) es continua por la derecha de \(x=1\).</p>
+        <p id="4.2" >Ya determinamos la continuidad y la continuidad unilateral de la función en un punto, definamos ahora la
+          continuidad de una función en un intervalo.</p>
+        <h2>4.2 En un intervalo</h2>
+        <p class="mt-4">Cuando hablamos de la continuidad en un intervalo, nos referimos a una porción o segmento de la función, por
+          lo tanto, podemos decir que:</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>
+                  Una función \( y=f(x) \) es continua sobre un intervalo si es continua en todos los puntos del intervalo. En un
+          punto extremo del intervalo entendemos a la continuidad como continuidad unilateral.</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        <p>Esto quiere decir que una función es continua en un intervalo \([a,b]\) si es continua en todos sus puntos, si se
+          llega a interrumpir o segmentar, sería discontinua, ejemplo:</p>
+          <ul>
+            <li>Determinar si la función \(f(x)=|x|\) es continua.</li>
+          </ul>
+        <p>No nos indican un punto o intervalo donde se debe verificar si la función es continua, así que hay que
+          verificar si es continua en los números reales.</p>
+        <p>Usando la definición del valor absoluto, la función se define como </p>
+        $$ f(x) = [x] = \left\{\begin{array}{rl}  -x & \text{si } x < 0 \\   x & \text{si } x \geq 0 \end{array} \right. $$
+        <p>El conjunto de los números reales se divide en dos intervalos y en \(x=0\) cambia la expresión algebraica de la
+          función, así determinaremos si la función es continua en:</p>
+        <blockquote>
+          <p>a)  \(x<0 \) o de manera equivalente en el intervalo \( (- \infty ,0) \) </p>
+          <p>b)  \(x=0\)</p>
+          <p>c)  \(x>0\) o de manera equivalente en el intervalo \((0, \infty)\9</p>
+        </blockquote>
+        <p>Atendamos cada uno de los incisos anteriores.</p>
+        <div class="accordion centrado" id="accordionInv" style="width:65%">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingUno">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno">
+                a) ¿La función es continua en el intervalo \(- \infty ,0 \)?
+              </button>
+            </h2>
+            <div id="collapseUno" class="accordion-collapse collapse show" aria-labelledby="headingUno"
+              data-bs-parent="#accordionInv">
+              <div class="accordion-body">
+                <p>De acuerdo a la definición para que sea continua en el intervalo debe de ser continua en todos los puntos del
+                  intervalo.</p>
+                <p>Sea a un punto cualquiera del intervalo \(- \infty ,0 \) y determinemos si la función es continua en el
+                  intervalo.</p>
+                <p>\(f(x)=|x|\) es continua en \(x=a\), si se cumple</p>
+                <ul>
+                  <li> \(f(x)\) está definida en \(x=a\), \(f(a)=|a|=-a\) porque \(a\)</li>
+                  <li> \( \displaystyle \lim_{x \rightarrow a}⁡f(x)=  \displaystyle \lim_{x \rightarrow a}⁡|x|=|a|=-a \), porque \(a\) es un número negativo</li>
+                  <li> \( \displaystyle \lim_{x \rightarrow a}⁡f(x)=-a\) y \(f(a)=-a\), con lo cual \( \displaystyle \lim_{x \rightarrow a}⁡f(x)=-a=f(a)\)</p>
+                  </ul>
+                  <p>Y la función es continua para cualquier número real negativo.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingDos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                b)  ¿La función es continua en \(x=0\)?
+              </button>
+            </h2>
+            <div id="collapseDos" class="accordion-collapse collapse" aria-labelledby="headingDos"
+            data-bs-parent="#accordionInv">
+            <div class="accordion-body">
+              <p>\(f(x)=|x|\) es continua en \(x=0\), si se cumple</p>
+              <ul>
+                <li> \(f(x)\) está definida en \(x=0\), \(f(0)=|0|=0\) </li>
+                <li> \( \displaystyle \lim_{x \rightarrow 0}⁡f(x)\), para determinar si el límite existe debemos de calcular los límites
+                  unilaterales</li>
+                </ul>
+                $$ \displaystyle \lim_{x \rightarrow 0^- }⁡|x|= |0^- |=0 $$ 
+                <p class="text-center">y</p>
+                $$ \displaystyle \lim_{x \rightarrow 0^+ } |x|= |0^+ |=0 $$
+                <p>Como los límites unilaterales son iguales, el \( \displaystyle \lim_{x \rightarrow 0}⁡f(x)\) existe y vale \(0\).</p>
+                <ul>
+                  <li> \( \displaystyle \lim_{x \rightarrow 0}⁡f(x)= 0\) y \(f(0)=0\), con lo cual \( \displaystyle \lim_{x \rightarrow 0}⁡f(x)= 0=f(0)\)</li>
+                </ul>
+                <p>Y la función es continua para \(x=0\).</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTres">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+              c) ¿La función es continua en el intervalo  \( 0, \infty \)?
+              </button>
+            </h2>
+            <div id="collapseTres" class="accordion-collapse collapse" aria-labelledby="headingTres"
+              data-bs-parent="#accordionInv">
+              <div class="accordion-body">
+                <p>De acuerdo a la definición para que sea continua en el intervalo debe de ser continua en todos los puntos del
+                  intervalo.</p>
+                <p>Sea \(b\) un punto cualquiera del intervalo \(0, \infty \) y determinemos si la función es continua en el intervalo.
+                </p>
+                <p>\(f(x)=|x|\) es continua en \(x=b\), si se cumple</p>
+                <ul>
+                  <li> \(f(x)\) está definida en \(x=b\), \(f(b)=|b|=b\) porque \(b>0\)</li>
+                  <li> \( \displaystyle \lim_{x \rightarrow b}⁡f(x)=  \displaystyle \lim_{x \rightarrow b} ⁡|x|=|b|=b \), porque b es un número positivo
+                  <li> \( \displaystyle \lim_{x \rightarrow b} ⁡f(x)= b\) y \(f(b)=b\), con lo cual \( \displaystyle \lim_{x \rightarrow b}f(x)= b=f(b) \)</li>
+                </ul>
+                </p>
+                <p>Y la función es continua para cualquier número real positivo.</p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p> </p>
+      <p>Como la función es continua en \( (- \infty ,0)  \), en \(x=0\) y en \( (0, \infty) \), es continua para todo número \(x\) real.
+        <p>En general, para funciones que están definidas en un intervalo, se tiene que la función es continua y podemos
+          decir también que es continua en su dominio. Por lo tanto, aseguramos que:</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">Toda función es continua en su dominio, por consecuencia todas las funciones polinomiales, racionales,
+                  radicales, trigonométricas, exponenciales, logarítmicas son continuas en su dominio. Así para determinar dónde
+                  es continua una función, podemos determinar su dominio.</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+
+
+        <p>Veamos el ejemplo correspondiente:</p>
+        <ul>
+          <li> Determina dónde es continua la función \(f(x)=\frac{ \sqrt{x^2-4}  \sqrt{x^2-25}}{x-9} \).</li>
+        </ul>
+        <p>La función es racional y su numerador está formado por dos raíces.</p>
+        <p>Empecemos calculando dónde son válidas las raíces.</p>
+        <p>Dominio de  \(\sqrt{x^2-4}\) </p>
+        $$  x^2-4 \geq 0  \Rightarrow (x-2)(x+2) \geq 0 $$
+        <p>Dividimos en casos</p>
+        <p>a)  \(x-2 \geq 0\) y \(x+2 \geq 0 \)</p>
+        <p>\(x \geq 2 \) y \(x \geq -2\)</p>
+        <p>Se cumplen ambas condiciones si \(x \geq 2 \).</p>
+        <p>b)  \(x-2 \leq 0\) y \(x+2 \leq 0\)</p>
+        <p>\(x \leq 2\) y \(x \leq -2\)</p>
+        <p>Se cumplen ambas condiciones si \(x \leq -2\).</p>
+        <p>Dominio es \( (- \infty ,-2] \) ∪ \( [2,\infty) \).</p>
+        <p>Dominio de \( \sqrt{x^2-25} \)</p>
+        <p>\(x^2-25 \geq 0 \Rightarrow (x-5)(x+5) \geq 0\) </p>
+        <p>Dividimos en casos</p>
+        <p>a) \(x-5 \geq 0\) y \(x+5 \geq 0\)</p>
+        <p>\(x \geq 5\) y \(x \geq -5\)</p>
+        <p>Se cumplen ambas condiciones si \(x \geq 5 \).</p>
+        <p>b) \(x-5 \leq 0\) y \(x+5 \leq 0\)</p>
+        <p>\(x \leq 5\) y  \(x \leq -5\)</p>
+        <p>Se cumplen ambas condiciones si \(x \leq -5\).</p>
+        <p>Dominio es \((- \infty ,-5] \) ∪ \([5,\infty) \).</p>
+        <p>La función racional no está definida si el denominador es cero, esto es, \(x-9=0 \Rightarrow x=9 \).</p>
+        <p>El dominio es \((- \infty ,9)\) ∪ \((9, \infty) \).</p>
+        <p>El dominio de la función son todos los valores que cumplan las condiciones anteriores, así el dominio es la
+          intersección</p>
+        $$ \{(- \infty ,-2]  ∪  [2,\infty)\}  ∩  \{(- \infty ,-5]  ∪ [5,\infty)\}  ∩ \{(- \infty ,9)  ∪ (9, \infty)\} $$
+        $$=(- \infty ,-5] ∪ [5,9)∪(9, \infty) $$
+        $$ D_{f} = (- \infty ,-5] ∪ [5,9) ∪ (9, \infty) $$ 
+        <p>Como la función es continua en su dominio, decimos que la función \(f(x)= \frac{\sqrt{x^2-4}  \sqrt{x^2-25}}{(x-9)} \) es continua
+          en \((- \infty ,-5] \) ∪ \( [5,9) \) ∪ \((9, \infty)\).</p>
+        <p>Realiza el siguiente ejercicio de continuidad en punto e intervalo.</p>
+
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">
+                22. Continuidad en punto e intervalo
+              </p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <!-- <p>Ejercicio </p>
+        <p>Instrucciones:</p>
+        <p> Determinar la continuidad de las siguientes funciones: </p>
+        <p> \(f(x)=\frac{3x-5}{2x^2-x-3}\)</p>
+        <p> \(f(x)=\frac{4x-5}{x^2-9}(x^2+2x-8) \)</p>
+        <p> Realiza los procedimientos necesarios, ya sea a mano o en un documento.</p>
+        <p> Adjunta el archivo con el procedimiento y la respuesta en formato PDF.</p>
+        <p> Espera la realimentación.</p> -->
+        <h2>Conclusión</h2>
+        <p>Con lo desarrollado en este tema podemos determinar la continuidad de una función, ya sea en un punto o en un
+          intervalo, y nos permite referirnos a la propiedad de una función de ser continua, la cual es una condición
+          requerida en varios de los conceptos que se abarcan como lo son la derivada y la integral de una función.</p>
+        <p>En la siguiente unidad temática revisaremos lo correspondiente a la derivada y sus aplicaciones, abordaremos
+          diferentes problemas de cambio, relacionadas, diferenciales y optimización a partir de las reglas y criterios
+          de derivación.</p>
+        </p>
+
+      </div>
+    </div>
+    <div>
+      <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+
+</html>

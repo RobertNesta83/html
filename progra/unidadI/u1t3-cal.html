@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2">Unidad I. Funciones algebraicas y trascendentes</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://148.204.56.92/moodle/course/view.php?id=10"><img class="img-fluid" src="img/inicio.png" width="30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="introduccion.html"  role="button" aria-expanded="false">
+              Introducción
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u1t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 1
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t1-cal.html">Tema 1</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.1">1.1 Representaciones</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.2">1.2 Propiedades</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="u1t2-cal.html" role="button"
+               aria-expanded="false">
+              Tema 2
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="u1t3-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t3-cal.html">Tema 3</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.1">3.1 Exponenciales naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.2">3.2 Logarítmicas naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.3">3.3 Trigonométricas y trigonométricas inversas</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.4">3.4 Hiperbólicas e hiperbólicas inversas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="u1t4-cal.html"  role="button" aria-expanded="false">
+              Tema 4
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://148.204.56.92/moodle/course/view.php?id=10&section=2"  role="button" aria-expanded="false">
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>3. Funciones trascendentes</h1>
+        <p class="mt-4">Las funciones trascendentes son funciones matemáticas que no pueden ser expresadas de manera algebraica
+          utilizando una combinación finita de operaciones algebraicas básicas, como sumas, restas, multiplicaciones,
+          divisiones y exponentes. Estas funciones trascendentes suelen involucrar operaciones más complejas, como
+          funciones exponenciales, logarítmicas, trigonométricas o hiperbólicas.</p>
+        <p>Las funciones trascendentes se llaman así porque "trascienden" las limitaciones algebraicas y no pueden ser
+          resueltas algebraicamente. Su comportamiento y propiedades a menudo se estudian utilizando métodos analíticos,
+          aproximaciones numéricas o técnicas avanzadas de cálculo. </p>
+          <p id="3.1">Las funciones trascendentes que definiremos son las funciones exponenciales naturales y generales,
+            logarítmicas naturales y generales, trigonométricas y trigonométricas inversas, e hiperbólicas e hiperbólicas
+            inversas. En cada caso se define la función, su dominio, imagen, gráfica y, en caso de ser posible,
+            propiedades algebraicas necesarias.</p>
+            <p>&nbsp;</p>
+        <h2>3.1 Exponenciales naturales y generales</h2>
+        <p class="mt-4">La <b>función exponencial natural</b>, denotada por \(e^x\), es la función potencia con base en el número
+          irracional \(e\) y con un exponente de cualquier número real \(x\). El dominio de la función son los reales y
+          la
+          imagen el intervalo \((0, \infty)\).</p>
+
+        <p>El número irracional denotado por la letra \(e\) y llamado número de <a href="#" title="Nota"
+            data-bs-toggle="popover" data-bs-trigger="focus"
+            data-bs-content="También conocido como constante de Napier.">Euler<sup><img src="img/icono.svg"
+                width="15"></sup></a> se define como \(e= \lim\limits_{n \rightarrow
+
+          \infty} ⁡\left( 1+ \frac{1}{n} \ \right)^n \) con valor de \(e \approx 2.71828\)...</p>
+
+        <p>La gráfica de la función exponencial natural es la siguiente:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/u1_tm3/u1_tm3_01_funcionexp.svg" width="50%">
+        </div>
+
+
+        <p class="mt-4">Al ser la función exponencial natural \(f(x)=e^x\) una función exponencial, cumple las leyes de los
+          exponentes.
+        </p>
+
+        <p>Por lo tanto, si \(x\) y \(y\) son números reales y \(r\) es un número racional, entonces:</p>
+
+        <p> &nbsp;&nbsp;i) \(e^x e^y=e^{x+y}\)</p>
+        <p> &nbsp;&nbsp;ii) \( \frac{e^x}{e^y} =e^{x-y}\)</p>
+        <p> &nbsp;&nbsp;iii) \((e^x )^y=e^{xy}\)</p>
+        <div class="citas" style="text-align: right;">(Stewart, 2012)</div>
+        <p></p>
+        <p>Por su parte, la <b>función exponencial general</b> o función exponencial de base \(a\), denotada por
+          \(f(x)=a^x\), con \(a\)
+          número real, se define como \(a^x=e^{x \;ln⁡\;a} \), para todo \(a > 0\) y para todo número real \(x\).</p>
+
+        <p>Como los valores de \(e^x\) son positivos para todo \(x\), también lo son para \(a^x\). Así el dominio de la
+          función
+          \(f(x)=a^x\) son los números reales y su imagen los reales positivos o el intervalo \((0, \infty)\).</p>
+
+        <p>La gráfica de la función exponencial general depende del valor de la base \(a\). A continuación, se muestran
+          algunas de ellas.</p>
+        <div class="text-center">
+          <img class="img-fluid" src="img/u1_tm3/u1_tm3_02_funcionexpgral.svg" width="50%">
+        </div>
+        <p class="mt-4">Notamos que si \(a>0\), entonces la gráfica de la función \(f(x)=a^x\) es creciente y se comporta como se
+          observa
+          a continuación:</p>
+
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/u1_tm3/u1_tm3_03_funcioncrec.svg" width="50%">
+        </div>
+        <p class="mt-4"> Si \(a < 0 \), entonces la gráfica de la función \(f(x)=a^x\) es decreciente y se comporta como se ilustra
+            enseguida:</p>
+
+            <div class="img-flex text-center">
+              <img class="img-fluid" src="img/u1_tm3/u1_tm3_04_funciondecrec.svg" width="50%">
+            </div>
+            <p class="mt-4">Finalmente, si \(a=1\), la función es \(f(x)=a^x=1^x=1\), ya que \(x\) es cualquier número real. Así,
+              éste es un caso
+              especial donde la función es igual a la recta constante \(y=1\).</p>
+            <div class="img-flex text-center">
+              <img class="img-fluid" src="img/u1_tm3/u1_tm3_05_funcionrecta.svg" width="50%">
+            </div>
+            <p class="mt-4">La función exponencial general \(f(x)=a^x\) también cumple las leyes de los exponentes.</p>
+            <p>Si deseas refrescar tu conocimiento acerca de las leyes de los exponentes, revisa el siguiente video:</p>
+            <div class="centrado col-5 mb-3">
+              <div class="card">
+                <img class="img-fluid" src="cajas/cajas_saber_mas.png" width="50%">
+                <div class="card-body text-center">
+                  <a class="pe-auto" data-bs-toggle="modal" data-bs-target="#video">Leyes de los exponentes</a>
+                  <div class="citas"  style="text-align: right;">(Andalón, 2017)</div>
+                </div>
+              </div>
+            </div>
+            <p></p>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="video" tabindex="-1" aria-labelledby="videoLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="videoLabel">Leyes de los exponentes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/CfbspxOf0lA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>En este teorema, sean \(a\) y \(b\) números reales positivos, y si \(x_1\) y \(x_2\) son números reales
+              cualesquiera,
+              entonces:</p>
+            <p>&nbsp;&nbsp; 1) \(a^{x_1 } a^{x_2 }=a^{x_1+x_2 }\)</p>
+            <p>&nbsp;&nbsp; 2) \(\frac{a^{x_1 }}{a^{x_2 }} =a^{x_1-x_2 }\)</p>
+            <p>&nbsp;&nbsp; 3) \((a^{x_1 } )^{x_2 }=a^{x_1 x_2}\)</p>
+            <p>&nbsp;&nbsp; 4) \((ab)^{x_1 }=a^{x_1 } b^{x_1 }\)</p>
+            <p>&nbsp;&nbsp; 5) \(\left(\frac{a}{b} \right)^{x_1 }= \frac{a^{x_1 }}{b^{x_1}} \)</p>
+            <div class="citas"  style="text-align: right;">(Figueroa, 2006)</div>
+            <p></p>
+            <p>Tomemos como ejemplo el inciso \(2\) y el \(4\) para realizar la demostración de estas propiedades.</p>
+
+            <p>2) \(\frac{a^{x_1}}{a^{x_2}} =a^{x_1-x_2 }\)</p>
+
+            <blockquote>
+            <p>Tenemos</p>
+            <p>\( \frac{a^{x_1}}{a^{x_2}}=\frac{e^{x_1 \; ln\;a}}{e^{x_{2 \; ln \; a}}} \) por definición de la función exponencial
+              \(a^x=e^{x \;ln\;⁡a} \)</p>
+            <p>\( \frac{e^{x_1 \; ln\;a}}{e^{x_{2\;ln\;a}}}=e^{x_1 \; ln\;a-x_2 \;ln\;a}\) ya que se cumplen las leyes de los exponentes
+              para la función
+              exponencial natural \(f(x)=e^x\)</p>
+            <p>\(e^{x_1 \; ln\;a-x_2 \;ln\;a}=e^{(x_1-x_2)\;ln\;a}\) factorizando el logaritmo natural</p>
+            <p>\(e^{(x_1-x_2)\;ln\;a}=a^{x_1-x_2}\) por la propiedad para la función exponencial natural.</p>
+            <p>Con lo cual</p>
+            
+            <p>\( \frac{a^{x_1}}{a^{x_2}} =\frac{e^{x_1 \; ln\;a}}{e^{x_{2\;ln\;a}}} =e^{x_1 \; ln\;a-x_2
+              \;ln\;a}=e^{(x_1-x_2)\;ln\;a}=a^{x_1-x_2}\)</p>
+              
+              <p>Así demostramos que esta propiedad es válida.</p>
+              <p>Si deseas refrescar tu conocimiento acerca de las leyes de los logaritmos, revisa el siguiente video:</p>
+            </blockquote> 
+            <div class="centrado col-5 mb-3">
+              <div class="card">
+                <img class="img-fluid" src="cajas/cajas_saber_mas.png" width="50%">
+                <div class="card-body text-center">
+                  <a class="pe-auto" data-bs-toggle="modal" data-bs-target="#video1">Logaritmos</a>
+                </div>
+              </div>
+            </div>
+            <p></p>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="video1" tabindex="-1" aria-labelledby="video1Label" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="video1Label">Logaritmos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-0" id="yt-player">
+                    <div class="ratio ratio-16x9">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/4G0sKzlYwnQ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                    <div class="citas text-center">Scienzia Educación (2020)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <p>4) \((ab)^{x_1} =a^{x_1} b^{x_1}\)</p>
+            <blockquote>
+            <p>\((ab)^{x_1}=e^{x_{1 \; ln\;ab}}\) por definición de la función exponencial \(a^x=e^{x \;ln\;⁡a} \) para la
+              constante \(ab\)</p>
+            <p>\(e^{x_1 \; ln\;ab}=e^{x_1 (\;ln\;a+\;ln\;b)}\) por las propiedades de los logaritmos, \(\;ln\;ab=\;ln\;a+\;ln\;b\)</p>
+            <p>\(e^{x_1 (\;ln\;a+\;ln\;b) }=e^{x_1 \; ln\;a+x_1 \;ln\;b}\) multiplicando</p>
+            <p>\(e^{x_1 \; ln\;a+x_1 \;ln\;b}=e^{x_1 \; ln\;a} e^{x_1 \;ln\;b}\) por las leyes de los exponentes</p>
+            <p>\(e^{x_1 \; ln\;a} e^{x_1 \;ln\;b}=a^{x_1} b^{x_1} \) por la definición de la función exponencial.</p>
+
+            <p>Así</p>
+            <p>\((ab)^{x_1}=e^{x_1 \; ln\;ab}=e^{x_1(\;ln\;a+\;ln\;b)}=e^{x_1 \; ln\;a+x_1 \;ln\;b}=e^{x_1 \; ln\;a} e^{x_1 \;ln\;b}=a^{x_1} b^{x_1}\)
+            </p>
+
+            <p>Con lo que demostramos que la propiedad es válida.</p>
+            </blockquote>
+            <p id="3.2">Existen otras funciones que, son inversas a la función exponencial, llamadas logarítmicas, esto
+              es, cuando
+              la
+              base del logaritmo es el número \(e\) se le llama logaritmo natural.</p>
+              <p>&nbsp;</p>
+            <h2>3.2 Logarítmicas naturales y generales</h2>
+
+            <p class="mt-4">La <b>función logaritmo natural</b>, denotada por \(f(x)=ln\;x\), se define como </p>
+
+            <p class="text-center"> \( ln\;x= \int_1^x \frac{1}{t}dt \hspace{3cm} \forall \;x>0 \)</p>
+
+            <div class="citas" style="text-align: right;"> (Purcell et al., 2007)</div>
+            <p></p>
+            <p>La función logaritmo natural tiene por dominio el intervalo \((0,\infty)\) y por imagen los números
+              reales. </p>
+            <p>La gráfica de la función \(f(x)=ln\;x\) es la siguiente:</p>
+
+            <div class="img-flex text-center">
+              <img class="img-fluid" src="img/u1_tm3/u1_tm3_06_funcionlognat.svg" width="50%">
+            </div>
+            <p class="mt-4">Otra forma de definir la función logaritmo natural, denotada por \(f(x)=ln\;x\), es \(y=ln\;x\) si y sólo si
+              \(e^y=x\).</p>
+
+            <p>Con esto es posible definir la función logaritmo natural como la inversa de la función exponencial
+              natural o
+              viceversa y, a su vez, la función exponencial natural como la inversa de la función logaritmo natural.</p>
+
+            <p>Estas funciones al ser inversas cumplen propiedades de funciones inversas como lo es el teorema
+              siguiente.
+            </p>
+
+            <p><b>Teorema:</b> \(ln⁡\;e^x =x\) para todo número real \(x\).</p>
+            <p>\( \hspace{2.4cm} e^{ln⁡\;x} =x\) para todo número real positivo.</p>
+
+            <p>Y se cumplen en sus gráficas, porque una es el reflejo de la otra con respecto a la recta \(y=x\).</p>
+
+            <div class="img-flex text-center">
+              <img class="img-fluid" src="img/u1_tm3/u1_tm3_07_teoremarecta.svg" width="50%">
+            </div>
+            <p class="mt-4">La función \(f(x)=ln\;x\) cumple también con las propiedades de los logaritmos.</p>
+
+            <p>En el teorema, si \(x\) y \(y\) son números reales positivos, esto es, \(x>0\) y \(x<0 \), y \(r\) un
+                número racional, entonces:</p>
+                <p> &nbsp;&nbsp; i)&nbsp; \( ln⁡\;xy=ln\;x+ln\;y\)</p>
+                <p> &nbsp;&nbsp; ii)&nbsp; \( ln \left( \frac{x}{y} \right) =ln\;x-ln\;y\)</p>
+                <p> &nbsp;&nbsp; iii)&nbsp; \( ln⁡\;x^r =r\;ln\;x\)</p>
+                <div class="citas" style="text-align: right;">(Stewart, 2012)</div>
+                <p></p>
+                <p>El teorema nos define el logaritmo natural de un producto, de un cociente y de una potencia, no se
+                  define el
+                  logaritmo natural de una suma o una diferencia.</p>
+
+                <p>Un ejemplo donde se hace uso de las leyes de los logaritmos es el siguiente.</p>
+
+                <p>Determinar el valor del logaritmo \(ln⁡\; \frac{\sqrt[3]{ 7}}{\sqrt{6}}\) empleando \(ln⁡\;2=0.6931\),
+                  \(ln⁡\;3=1.0986\) y \(ln⁡\;7=1.9459\).
+                </p>
+
+                <p>Usando las leyes de los logaritmos se tiene</p>
+                $$ln⁡\; \frac{\sqrt[3]{7}}{\sqrt{6}}=ln⁡\; \sqrt[3]{7}-ln⁡\;\sqrt{6}=ln⁡\;7^{\frac{1}{3}} -ln⁡\;6^{ \frac{1}{2}}
+                =\frac{1}{3} ln⁡\;7- \frac{1}{2}
+                ln⁡\;6 = \frac{1}{3} ln⁡\;7- \frac{1}{2} ln⁡\;( 2)(3) $$
+                $$=\frac{1}{3} ln⁡\;7- \left( \frac{1}{2} ln⁡\;2+ \frac{1}{2} ln⁡\;3 \right) = \frac{1}{3} ln⁡\;7- \frac{1}{2}
+                ln⁡\;2- \frac{1}{2} ln⁡\;3 $$
+                <p>Con lo cual </p>
+                $$ ln⁡\; \frac{\sqrt[3]{7}}{ \sqrt{6}}=\frac{1}{3} ln⁡\;7- \frac{1}{2} ln⁡\;2- \frac{1}{2} ln⁡\;3 $$
+
+                <p>Usando los valores </p>
+                $$ln⁡ \; \frac{\sqrt[3]{7}}{\sqrt{6}}= \frac{1}{3}(1.9459)- \frac{1}{2}(0.6931)- \frac{1}{2}(1.0986)
+                =-0.247216 $$
+
+                <p>Por otra parte, la función logarítmica en base \(a\) es la función inversa de la función exponencial
+                  de
+                  base \(a\).
+                  Para que exista la función inversa de la función exponencial de base \(a\), ésta debe de ser biunívoca
+                  y esto se
+                  cumple si \(a \neq 1\).</p>
+
+                <p>La <b>función logaritmo general</b> o logaritmo en base \(a\), denotada por \(f(x)=log_a \; x\), se
+                  define como</p>
+                <p class="text-center"> \(y=log_a \; x\) si y sólo si \(x=a^y\) con \(a\) número real positivo y \(a \neq
+                  1\)
+                </p>
+
+                <p>El dominio de la función \(f(x)=log_a \; x\) es el intervalo \((0, \infty)\) y su imagen los números
+                  reales.</p>
+
+                <p>La gráfica de la función logaritmo general en base \(a\) depende del valor de la base. Algunos
+                  ejemplos de ellas
+                  se muestran a continuación.</p>
+
+                <div class="img-flex text-center">
+                  <img class="img-fluid" src="img/u1_tm3/u1_tm3_08_funloggral.svg" width="50%">
+                </div>
+                <p class="mt-4">La función logaritmo en base \(a\) cumple las leyes de los logaritmos.</p>
+
+                <p><b>Teorema:</b> si \(x\) y \(y\) son números reales positivos, esto es \(x>0\) y \(x < 0\), \(a\) es
+                    un número real positivo y \(a \neq 1\), y \(r\) un número racional, entonces:</p>
+
+                    <p> &nbsp;&nbsp;&nbsp;i) \( log_a \;⁡xy=log_a \; x+log_a \; y\)</p>
+                    <p> &nbsp;&nbsp;&nbsp;ii) \( log_a \;⁡( \frac{x}{y} )=log_a \; x-log_a \; y\)</p>
+                    <p> &nbsp;&nbsp;&nbsp;iii) \( log_a \;⁡x^r =r\;log_a \; x\)</p>
+                    <div class="citas" style="text-align: right;">(Stewart, 2012)</div>
+                    <p></p>
+                    <p>Como las funciones \(f(x)=a^x\) y \(f(x)=log_a \; x\) son inversas, se cumplen las igualdades
+                      siguientes, llamadas
+                      ecuaciones inversas.</p>
+
+                    <p>\(log_a \; (a^x )=x\) para todo número real \(x\).</p>
+                    <p>\(a^{log_a \; x}=x\) para todo \(x>0\).</p>
+
+                    <p><b>Propiedad:</b> cambio de base del logaritmo \( log_a \;⁡x=\frac{ln⁡\;x}{ln\;⁡a}\).</p>
+
+                    <p>Demostración:</p>
+                    <p> </p>
+                    <p>Sea \(y=log_a \;⁡x.\)</p>
+
+                    <p>Al escribir esta expresión de manera exponencial tenemos \(a^y=x\).</p>
+
+                    <p>Aplicando el logaritmo natural a la igualdad, tenemos \(ln\;⁡a^y =ln⁡\;x\).</p>
+
+                    <p>Por las leyes de los logaritmos y \(ln\;⁡a=ln⁡\;x\).</p>
+
+                    <p>De donde \(y=\frac{ln⁡\;x}{ln\;⁡a}\).</p>
+
+                    <p>Luego, como \(y=log_a \;⁡x\) y \(y=\frac{ln⁡\;x}{ln\;⁡a}\), entonces \(log_a \;⁡x=\frac{ln⁡\;x}{ln\;⁡a}.\)</p>
+
+                    <p>Descarga el siguiente archivo en PDF, donde podrás consultar más ejemplos con simplificación de
+                      expresiones y
+                      resolver ecuaciones con funciones logarítmicas y exponenciales.</p>
+                    <!-- Button trigger modal -->
+                    <a class="pe-auto" data-bs-toggle="modal" data-bs-target="#Funcioneslog"> <img width="40"
+                        src="img/icono_descarga_pdf.svg">
+                      Funciones logarítmicas y exponenciales.pdf
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Funcioneslog" tabindex="-1" aria-labelledby="FuncioneslogLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="FuncioneslogLabel">Funciones logarítmicas y exponenciales</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-0">
+                            <div class="ratio ratio-16x9">
+                              <iframe src="docs/u1_tm3_simplificacion_de_expresiones.pdf" allowfullscreen></iframe>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <p><b>Ejemplo 1.</b> Simplifica la expresión \(log_3⁡(log_2⁡512 )\).</p>
+
+                    <p>Sea \(y=log_2⁡512\), de donde \(2^y=512\). </p>
+
+                    <p>¿Qué exponente del \(2\) me da como resultado \(512\)? Obtenemos \(y=9\).</p>
+
+                    <p>Así, \(log_2⁡512=log_2⁡2^9 =9\), porque \(log_a \;⁡(a^x )=x\).</p>
+
+                    <p>Luego, \(log_3⁡(log_2⁡512 )=log_3⁡(9)\).</p>
+
+                    <p>\(log_3⁡(log_2⁡512 )=log_3⁡(9)=log_3⁡(3^2 )\), representando al \(9\) como potencia de \(3\).</p>
+
+                    <p>\(log_3⁡(log_2⁡512 )=log_3⁡(9)=log_3⁡(3^2 )=2 log_3⁡(3)\), aplicando leyes de los logaritmos</p>
+                    <p>y porque \(log_a \;⁡(a^x )=x\), </p>
+
+                    <p>como \(log_3⁡(3)=log_3⁡(3^1 )=1\).</p>
+
+                    <p>Por lo que \(log_3⁡(log_2⁡2 56)=2 log_3⁡(3)=2(1)=2\).</p>
+                    
+                    <p>Ejemplo 2.pdf</p>
+
+                    <p><b>Ejemplo 2.</b> Resolver la ecuación \(log_{\frac{1}{7}}⁡x= \frac{3}{2}\) para \(x\).</p>
+
+                    <p>Aplicando la función exponencial de base \(\frac{1}{7}\) , tenemos</p>
+                    <p>\(( \frac{1}{7})^{log_\frac{1}{7}⁡x} = \left( \frac{1}{7} \right)^{\frac{3}{2}} \), de donde</p>
+
+                    <p>\(x= \left( \frac{1}{7} \right)^{\frac{3}{2}}=0.0539949 \)</p>
+
+                    <p><b>Ejemplo 3.</b> Encontrar la solución de la ecuación \(5^x-5^{-x}=2\).</p>
+
+                    <p>No es posible aplicar directamente el logaritmo a la función, ya que por las propiedades de los
+                      logaritmos no
+                      es posible simplificar el logaritmo de una suma; así que primero resolveremos la ecuación para la
+                      función
+                      exponencial \(5^x\).</p>
+
+                    <p>Sea \(u=5^x\), así \(5^x-5^(-x)=2\), se representa como sigue:</p>
+
+                    <p>\(u-u^{-1}\;=2 \)</p>
+                    <p>\(u-\frac{1}{u}=2 \)</p>
+                    <p>\(\frac{u^2-1}{u}=2 \)</p>
+                    <p>\(u^2-1=2u \)</p>
+                    <p>\(u^2-2u-1=0 \)</p>
+                    <p>\(u= \frac{2 \pm \sqrt{4-4(1)(-1)}}{2} = \frac{2 \pm \sqrt{4+4}}{2} = \frac{2 \pm \sqrt{8}}{2} =
+                      \frac{2 \pm 2 \sqrt{2}}{2}\)</p>
+                    <p>\(u= \frac{2+2 \sqrt{2}}{2}=1+ \sqrt{2}\) y \(u=\frac{2-2 \sqrt{2}}{2}=1- \sqrt{2}\)</p>
+                    <p>Así \(5^x=1+ \sqrt{2}\) y \(5^x=1- \sqrt{2}\).</p>
+
+                    <p>La segunda opción no puede ser debido a que una función exponencial no puede tomar un número
+                      negativo, de tal
+                      modo que la única opción es \(5^x=1+ \sqrt{2}\), de donde</p>
+
+                    $$ log_5⁡(5^x )=log_5⁡(1+ \sqrt{2} ) \approx 1.826056 $$
+
+                    <p>Ejemplo 4. Encontrar la solución de la ecuación.</p>
+
+                    <p> \(log_3⁡( 2x-1)-log_3⁡( 5x+2)=log_3⁡( x-2)-2\)</p>
+
+                    <p>Mantenemos a la izquierda las expresiones con logaritmo natural</p>
+
+                    <p>\(log_3⁡( 2x-1)-log_3⁡( 5x+2)-log_3⁡( x-2)=-2 \)</p>
+
+                    <p>Factorizando el signo</p>
+
+                    <p>\(log_3⁡( 2x-1)-(log_3⁡( 5x+2)+log_3⁡( x-2))=-2 \)</p>
+
+                    <p>Aplicando las propiedades del logaritmo</p>
+
+                    <p>\(log_3⁡ ( 2x-1)-log_3⁡( 5x+2)(x-2)=-2 \)</p>
+
+                    <p>Aplicando las propiedades del logaritmo</p>
+
+                    <p>\(log_3⁡ \frac{2x-1}{(5x+2)(x-2)}=-2 \)</p>
+
+                    <p>Aplicado las ecuaciones inversas se tiene </p>
+
+                    <p>\(3^{log_3⁡ \frac{(2x-1)}{(5x+2)(x-2)}} =3^{-2} \)</p>
+
+                    <p>Se elimina la función exponencial con la logarítmica</p>
+
+                    <p>\(\frac{(2x-1)}{(5x+2)(x-2)}=\frac{1}{3^2} \)</p>
+
+                    <p>Resolviendo la ecuación algebraica</p>
+                    <p>\(\frac{(2x-1)}{(5x+2)(x-2)}=\frac{1}{9} \)</p>
+                    <p>\(9(2x-1)=(5x+2)(x-2) \)</p>
+                    <p>\(18x-9=5x^2-10x+2x-4 \)</p>
+                    <p>\(5x^2-26x+5=0 \)</p>
+                    <p>Resolviendo con la fórmula general</p>
+
+                    $$ x= \frac{26 \pm \sqrt{26^2-4(5)(5)}}{2(5)} $$
+                    $$ x= \frac{26 \pm \sqrt{676-100}}{10} $$
+                    $$ x= \frac {26 \pm \sqrt{576}}{10} $$
+                    $$ x= \frac{26 \pm 24}{10} $$
+                    <p class="text-center">\( x= \frac{26+24}{10}= \frac{50}{10}=5\) y \(x= \frac{26 -
+                      24}{10}=\frac{2}{10}=\frac{1}{5} \)</p> -->
+
+                    <p class="mt-4">Ahora que conoces cómo simplificar expresiones y resolver ecuaciones logarítmicas y
+                      exponenciales, realiza el
+                      ejercicio correspondiente.</p>
+                    <div class="centrado col-5 mb-3">
+                      <div class="card">
+                        <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+                        <div class="card-body">
+                          <p class="text-center">7. Simplificación de expresiones y ecuaciones logarítmicas y
+                            exponenciales </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <p id="3.3">Existe otra función llamada trigonométrica, que se relaciona con dos de los lados de un
+                      triángulo
+                      rectángulo,
+                      la cual veremos a continuación.</p>
+                      <p>&nbsp;</p>
+
+                    <h2>3.3 Trigonométricas y trigonométricas inversas</h2>
+
+                    <p class="mt-4">Las funciones trigonométricas son: seno, coseno, tangente, cotangente, secante y cosecante, y están
+                      denotadas por sen,
+                      cos, tan, cot, \text{sec}\; y csc, respectivamente. Y se pueden definir a partir del triángulo rectángulo
+                      y de la
+                      circunferencia unitaria. Observemos ambas definiciones.</p>
+
+                    <p></p>
+                    <table class="table table-bordered centrado" style="width: 80%;">
+                      <thead class="table-primary text-center">
+                        <tr>
+                          <th scope="col">Definición usando el triángulo rectángulo</th>
+                          <th scope="col">Definición usando la circunferencia unitaria</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><p>Para un ángulo agudo \(t\), las funciones trigonométricas se definen como cocientes de las
+                            longitudes de los
+                            lados de un triángulo rectángulo.         <div class="citas" style="text-align: right;">(Stewart, 2012)</div>
+                          </p></td>
+                          <td><p>Para cualquier ángulo \(t\), sea \(P(x,y)\) cualquier punto sobre la circunferencia de
+                            modo que
+                            el eje \(x\) y la recta
+                            del origen a \(P\) forman el ángulo \(t\).</p></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"><img class="text-center img-fluid"
+                              src="img/u1_tm3/u1_tm3_09_trigonom.svg"></td>
+                          <td class="text-center"><img class="text-center img-fluid"
+                              src="img/u1_tm3/u1_tm3_10_trigonom.svg"></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>Siendo:</p>
+                            <p>\(hip =\) hipotenusa</p>
+                            <p>\(op =\) cateto opuesto </p>
+                            <p>\(ady =\) cateto adyacente</p>
+                          </td>
+                          <td>
+                            <p> Donde: </p>
+                            <p>\(x\) es la distancia del eje \(y\) al punto</p>
+                            <p>\(y\) es la distancia del eje \(x\) al punto </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>\(\text{sen} \; t=\frac{ op}{hip} \hspace{2em} \text{csc} \; t=\frac{hip}{op}\)</p>
+                            <p>\(\text{cos} \;t=\frac{ady}{hip} \hspace{2em} \text{sec} \; t=\frac{hip}{ady}\)</p>
+                            <p>\(\text{tan} \; t=\frac{op}{ady} \hspace{2em} \text{cot} \; t=\frac{ady}{op}\)</p>
+                          </td>
+                          <td>
+                            <p> \(\text{sen} \; t=y \)</p>
+                            <p>\(\text{cos} \;t=x \)</p>
+                            <p>\(\text{tan} \; t= \frac{y}{x} \hspace{2em} x \neq 0\)</p>
+                            <p>\(\text{sec} \; t=\frac{1}{x} \hspace{2em} x \neq 0\)</p>
+                            <p>\(\text{csc} \; t=\frac{1}{y} \hspace{2em} y \neq 0\)</p>
+                            <p>\(\text{cot} \; t=\frac{x}{y} \hspace{2em} y \neq 0\)</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>La limitante de definir a las funciones trigonométricas por medio del triángulo rectángulo
+                            es que
+                            sólo
+                            podemos considerar un ángulo agudo.</p>
+                          </td>
+                          <td>
+                            <p>El argumento de las funciones trigonométricas es: un ángulo que se puede
+                            medir en radianes o en grados; sin embargo, en la definición de estas funciones se considera
+                            que
+                            el ángulo
+                            está definido en radianes.</p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="mt-4">Usando la circunferencia unitaria, la medida en radianes de un ángulo \(t\) es la longitud del
+                      arco que
+                      comprende.</p>
+
+                    <p>De valores conocidos de arcos y radianes tenemos que \(2 \pi \hspace{.3em} rad=360°\) y \(\pi
+                      \hspace{.3em} rad=180°\).</p>
+
+                    <p>Estos valores nos permiten determinar que </p>
+
+                    <p class="text-center">\(1 rad= \frac{180°}{\pi} \hspace{.5cm} \) y \( \hspace{.5cm} 1°=
+                      \frac{\pi}{180} rad\)</p>
+
+                    <p>La siguiente figura es una representación gráfica de la proporcionalidad entre grados y radianes.
+                    </p>
+                    <div class="img-flex text-center">
+                      <img class="img-fluid" src="img/u1_tm3/u1_tm3_11_trigonom.svg" width="50%">
+                    </div>
+                    <p class="mt-4">Para determinar el dominio y la imagen de las funciones trigonométricas empleamos la definición
+                      de éstas
+                      obtenida al usar la circunferencia unitaria, en este caso el dominio de la función lo determina el
+                      ángulo que
+                      se puede tomar.</p>
+
+                    <p>Para las funciones seno y coseno no hay alguna restricción para el ángulo que se toma,
+                      con lo cual el dominio
+                      son los números reales.</p>
+
+                    <p>Para las funciones tangente y secante, el ángulo es cualquier valor de \(t\) excepto aquél en el
+                      que \(x=0\), esto es
+                      aquél para el cual \(\text{cos} \;t=0\), por lo que hay que excluir del dominio aquellos puntos en los que
+                      el coseno es
+                      cero y esto se cumple si \(t= \frac{\pi}{2}\), \(\frac{3 \pi}{2}\), \(\frac{5 \pi}{2}\), \(\frac{7
+                      \pi}{2}\), etc. En general, \(t= \frac{\pi}{2}+n \pi\), \(n \in Z\). </p>
+
+                    <p>Para las funciones cotangente y cosecante hay que excluir del dominio aquellos puntos para los
+                      cuales \(y=0\),
+                      esto es, \(\text{sen} \; t=0\) y así \(t=0\), \(\pi\), \(2 \pi\), \(3 \pi\), etc., es decir, aquellos
+                      múltiplos de \( \pi \). Así los dominios para
+                      las funciones trigonométricas son:</p>
+                    <ul class="vinetas">
+                      <li> Dominio de la función seno \(=R\)</li>
+                      <li> Dominio de la función coseno \(=R\)</li>
+                      <li> Dominio de la función tangente \(=R- \left\{ \frac{\pi}{2}+n \pi, n \in Z \right\}\)</li>
+                      <li> Dominio de la función secante \(=R- \left\{ \frac{\pi}{2}+n \pi,n \in Z \right\}\)</li>
+                      <li> Dominio de la función cosecante \(=R- \left\{n \pi,n \in Z \right\}\)</li>
+                      <li> Dominio de la función cotangente \(=R- \left\{n \pi,n \in Z \right\}\)</li>
+                    </ul>
+                    <p>Determinemos ahora la imagen de las funciones trigonométricas.</p>
+                    <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic
+                      sobre cada pestaña para ver la información.</div>
+
+                    <div class="accordion centrado" id="accordionExample" style="width:65%">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Función seno
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p>Función seno, por definición \(y=\text{sen} \; t\), los valores que tome \(y\) son los mismos que toma
+                              la
+                              función y, como \(y\)
+                              está dentro de la circunferencia unitaria, varía de \(-1\) a \(1\), así la imagen de
+                              seno es
+                              \([-1,1]\).</p>
+                            <p>Dominio de la función seno \(=[–1,1]\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_01.svg" width="80%">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Función coseno
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p><b>Función coseno</b>, por definición \(x=\text{cos} \;t\), los valores que tome \(x\) son los mismos que
+                              toma la función \(y\), como \(x\)
+                              está dentro de la circunferencia unitaria, varía de \(-1\) a \(1\), así la imagen de
+                              coseno es
+                              \([-1,1]\).</p>
+
+                            <p>Dominio de la función coseno \( =[–1,1]\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_02.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Función tangente
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p><b>Función tangente</b>, por definición \(\text{tan} \; t= \frac{y}{x} \), el único valor donde no
+                              está
+                              definido es \(x=0\) por lo que hay que
+                              quitar este valor del denominador y el cociente genera los números reales, así la imagen
+                              es \(R\).
+                            </p>
+                            <p>Dominio de la función tangente \( =R \).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_03.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Función cotangente
+                          </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p><b>Función cotangente</b>, por definición \(\text{cot} \; t= \frac{x}{y} \), el único valor donde
+                              no está
+                              definido es \(y=0\) por lo que hay que
+                              quitar este valor del denominador y el cociente genera los números reales, así la imagen
+                              es \(R\).
+                            </p>
+
+                            <p>Dominio de la función cotangente \(=R\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_04.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Función secante
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p><b>Función secante</b>, se define como \(\text{sec}⁡\;t=\frac{1}{x}\) (Sullivan, 2006), donde \(x\) toma los
+                              valores desde
+                              \(-1\) a \(1\), y no es cero. El cociente
+                              para estos valores es un número en el intervalo \((- \infty, -1]∪ [1, \infty)\).</p>
+
+                            <p>Dominio de la función secante \(= (- \infty, -1]∪ [1, \infty)\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_05.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Función cosecante
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p><b>Función cosecante</b> se define como \(\text{csc} \;t=\frac{1}{y}\) (Sullivan, 2006), donde y toma los valores
+                              desde
+                              \(-1\) a \(1\), y no es cero. El cociente
+                              para estos valores es un número en el intervalo \((- \infty, -1]∪ [1, \infty)\).</p>
+
+                            <p>Dominio de la función cosecante \(= (- \infty, -1]∪ [1, \infty)\). </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_12_imgnsfunc_06.svg" width="80%" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p></p>
+                    <p>Las funciones trigonométricas son funciones periódicas, cada cierto valor se repiten. Las
+                      funciones seno, coseno, secante y cosecante tienen periodo \(2, \pi\) y las funciones tangente y
+                      cotangente tienen periodo \(\pi\).</p>
+                    <ul class="vinetas">
+                      <li><b>Identidades trigonométricas</b></li>
+                    </ul>
+
+                    <p>Las identidades trigonométricas constituyen el álgebra de las funciones trigonométricas, ya que
+                      ellas
+                      permiten simplificar una función o expresarla de una manera equivalente.</p>
+
+                    <p>La simetría de la función trigonométrica permite obtener las igualdades:</p>
+
+                    <p class="text-center">\(\text{sen}\;(-t)=-\text{sen} \; t\) &nbsp;&nbsp; porque la función seno es impar</p>
+
+                    <p class="text-center">\(\text{cos} \;(-t)=\text{cos}⁡\;t\) &nbsp;&nbsp; porque la función coseno es par</p>
+
+                    <p>Las identidades fundamentales se obtienen a partir de la definición de las funciones
+                      trigonométricas</p>
+                    $$ \text{csc⁡}\;t=\frac{1}{sen \; t} $$
+                    $$ \text{sec⁡}\;t=\frac{1}{cos⁡ \;t}\ $$
+                    $$ \text{cot⁡}\;t= \frac{1}{\text{tan} \;t⁡} $$
+                    $$ \text{tan⁡}\;t=\frac{\text{sen} \; \;t}{\text{cos}⁡ \;t} $$
+                    $$ \text{cot⁡}\;t=\frac{\text{cos}⁡ t}{\text{sen} \; t} $$
+                    $$ \text{sen}^2 \; t+\text{cos}^2⁡\;t=1 $$
+                    $$ 1+\text{tan}^2⁡t=\text{sec}^2⁡t $$
+                    $$ 1+\text{cot}^2⁡\;t=\text{csc}^2\;⁡t\; $$
+
+                    <p>Las identidades de suma y resta de los ángulos pueden ser usadas para reescribir los valores de
+                      los ángulos.
+                      Con ellas es posible hallar los valores de funciones trigonométricas de cualquier ángulo. 
+                      Tales identidades
+                      son:</p>
+                    $$ \text{sen}\;(u \pm v)=\text{sen}\; u \; \text{cos}⁡\;v \pm \text{cos}\;⁡u \; \text{sen}\; v $$
+
+                    $$ \text{cos}⁡\;( u \pm v)=\text{cos}\;⁡u \; \text{cos}⁡\;v \pm \text{sen}\; u \; \text{sen}\; v $$
+
+                    <p>Por otro lado, "las identidades de" los "ángulos dobles son identidades trigonométricas usadas para
+                      reescribir
+                      las funciones trigonométricas, como seno, coseno y tangente, que tienen un doble ángulo, como \(2θ\).
+                      Estas
+                      identidades son derivadas usando las identidades de sumas de ángulos" (Huera,2023). Las identidades de ángulos
+                      dobles para
+                      seno y para coseno son las siguientes; pero hay que considerar que éstas pueden tener diferentes
+                      variaciones.
+                    </p>
+
+                    $$ \text{sen} \;2t=2\text{sen} \; t \hspace{.3cm} \text{cos}⁡\;t $$
+
+                    $$ \text{cos}⁡\;2t=\text{cos}^2⁡\;t-\text{sen}^2 \;t $$
+
+                    <p>Para la identidad de la mitad de un ángulo, se utiliza:</p>
+
+                    $$ \text{sen}^2 \;t=\frac{1-\text{cos}\;⁡2t}{2} $$
+
+                    $$ \text{cos}^2⁡\;t=\frac{1+2t}{2} $$
+
+                    <p>Hay más identidades que se obtienen de la aplicación de las identidades básicas. Para demostrar
+                      que una
+                      identidad es válida se puede empezar del lado izquierdo de la igualdad y aplicando identidades
+                      llegar al lado
+                      derecho, o iniciar del lado derecho y concluir en la expresión del lado izquierdo, o se pueden
+                      reducir ambos
+                      lados de la igualdad a una expresión en común. Y de una expresión a otra es posible aplicar una
+                      identidad
+                      trigonométrica o se puede llevar a cabo un procedimiento algebraico.</p>
+
+                    <p>Observemos el siguiente ejemplo:</p>
+
+                    <p>Verificar que la identidad \( \frac{\text{cot}\;⁡y-\text{tan}\;⁡y}{\text{sen}\; y \; \text{cos}\;⁡y }=\text{csc}^2\;⁡y-\text{sec}\;^2⁡y\) es válida.</p>
+
+                    <p>Iniciemos del lado izquierdo y usando la identidad para cotangente y tangente</p>
+
+                    $$ \frac{\text{cot}\;⁡y-\text{tan}\;⁡y}{\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y }= \frac{ \frac{\text{cos}\;⁡y}{\text{sen}\; y}- \frac{\text{sen}\;⁡y}{\text{cos}\;
+                    y}}{\text{sen}\; y
+                    \hspace{.2cm} \text{cos}\;⁡y} $$
+
+                    <p>sumando las funciones del numerador</p>
+
+                    $$ \frac{ \frac{\text{cos}\;⁡y}{\text{sen}\; y}- \frac{\text{sen}\;⁡y}{\text{cos}\; y}}{\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y }= \frac{\frac{\text{cos}^2\;
+                    y-\text{sen}^2\;
+                    y}{\text{sen}\; y \hspace{.2cm} \text{cos}\; y}}{\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y} $$
+
+                    <p>reduciendo a una sola fracción</p>
+
+                    $$ \frac{ \frac{\text{cos}^2 \;y-\text{sen}^2\; y}{\text{sen}\; y \hspace{.2cm} \text{cos}\; y}}{\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y}= \frac{\text{cos}^2 \;
+                    y-\text{sen}^2 \;y}{(\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y )^2} $$
+
+                    <p>elevando al cuadrado al denominador</p>
+
+                    $$ \frac{\text{cos}^2 \;y-\text{sen}^2 \,y}{(\text{sen}\; y \hspace{.2cm} \text{cos}\;⁡y) ^2} = \frac{\text{cos}^2 \;y-\text{sen}^2 \;y}{\text{sen}^2 \; y
+                    \hspace{.2cm} \text{cos}^2 \;y} $$
+
+                    <p>descomponiendo en una diferencia</p>
+
+                    $$ \frac{ \text{cos}^2\; y-\text{sen}^2\; y}{\text{sen}^2\;y \hspace{.4cm} \text{cos}^2\; y}= \frac{\text{cos}^2\; y}{\text{sen}^2\; y \hspace{.4cm} \text{cos}^2\;
+                    y}-\frac{\text{sen}^2\;
+                    y}{\text{sen}^2\; y \hspace{.4cm} \text{cos}^2\; y} $$
+
+                    <p>Reduciendo</p>
+
+                    $$ \frac{\text{cos}^2\; y}{\text{sen}^2\; y \hspace{.4cm} \text{cos}^2\; y}- \frac{\text{sen}^2\; y}{\text{sen}^2\; y \hspace{.4cm} \text{cos}^2\; y} =
+                    \frac{1}{\text{sen}^2\; y}-
+                    \frac{1}{\text{cos}^2\; y} $$
+
+                    <p>usando identidades para cosecante y secante</p>
+
+                    $$ \frac{1}{\text{sen}^2\; y}- \frac{1}{\text{cos}^2\; y}=\text{csc}^2 \;y-\text{sec}^2 \;y $$
+
+                    <p>Por lo que la identidad es válida.</p>
+
+                    <p>De acuerdo con el procedimiento anterior, realiza el ejercicio correspondiente a la verificación
+                      de la
+                      identidad.</p>
+                    <div class="centrado col-5 mb-3">
+                      <div class="card">
+                        <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+                        <div class="card-body">
+                          <p class="text-center">8. Verificación de identidad válida </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p></p>
+                  
+
+                    <p>Con el fin de poder resolver una ecuación trigonométrica, tenemos que realizar las transformaciones obligatorias que permitan trabajar con sólo una función trigonométrica, por ello debemos conocer el valor de cada función. </p>
+
+                    <ul class="vinetas">
+                      <li><b>Solución de ecuaciones trigonométricas</b></li>
+                    </ul>
+
+                    <p>Usando la circunferencia unitaria, determinamos los valores principales de los ángulos y es
+                      posible
+                      determinar el valor de las funciones trigonométricas seno y coseno, y a partir de ellas usando las
+                      identidades
+                      podemos tener el valor de todas las funciones trigonométricas en estos ángulos.</p>
+
+                    <p>Los valores principales de las funciones trigonométricas son:</p>
+
+                    <!-- Button trigger modal -->
+                    <a class="pe-auto" data-bs-toggle="modal" data-bs-target="#Fun_Tri">
+                      <img src="img/icono_descarga_pdf.svg" width="40">Funciones trigonométricas.pdf
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Fun_Tri" tabindex="-1" aria-labelledby="Fun_TriLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="Fun_TriLabel">Funciones trigonométricas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body p-0">
+                            <div class="ratio ratio-16x9">
+                              <iframe src="docs/u1_tm3_valores_func_trigonom.pdf" allowfullscreen></iframe>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <p class="mt-4">En el siguiente ejemplo, podrás ver el proceso para dar solución a una ecuación trigonométrica.
+                    </p>
+
+                    <p>Hay que encontrar las soluciones de la ecuación \(2\text{csc}\;⁡x \hspace{.2cm} \text{cos}\;⁡x+2=4
+                      \text{cos}\;⁡x+\text{csc}\;⁡x\) en
+                      el intervalo \([0,2 \pi]\).</p>
+
+                    <p>Para determinar las soluciones de la ecuación, primero despejemos una función trigonométrica.
+                      Igualemos a
+                      cero</p>
+
+                    $$ 2 \; \text{csc}\;⁡x \hspace{.2cm} \text{cos}\;⁡x+2-4 \text{cos}\;⁡x-\text{csc}\;⁡x=0 $$
+
+                    <p>Agrupamos términos en común</p>
+
+                    $$ 2 \; \text{csc}\;⁡x \hspace{.2cm} \text{cos}\;⁡x-4 \text{cos}\;⁡x+2-\text{csc}\;⁡x=0 $$
+
+                    $$ 2 \; \text{cos}\;⁡x \hspace{.2cm} (\text{csc}\;⁡x-2 )+2-\text{csc}\;⁡x=0 $$
+
+                    $$ 2 \; \text{cos}\;⁡x \hspace{.2cm} (\text{csc}\;⁡x-2 )-(\text{csc}\;⁡x-2 )=0 $$
+
+                    <p>Factorizamos el término común</p>
+
+                    $$ (\text{csc}\;⁡x-2 )(2 \; \text{cos}\;⁡x-1)=0 $$
+
+                    <p>Cada factor es igual a cero</p>
+
+                    $$ \text{csc}\;⁡x-2=0 \Rightarrow \text{csc}\;⁡x=2 $$
+
+                    <p>usando identidades y</p>
+
+                    $$ \frac {1}{\text{sen}\;⁡x} =2 \Rightarrow \text{sen}\;⁡x= \frac{1}{2}, $$
+
+                    <p>el seno vale un medio si el ángulo es \(x= \frac{\pi}{6}\) y \(x= \frac{5 \pi}{6}\)</p>
+
+                    $$ 2 \; \text{cos}\;⁡x-1=0 \Rightarrow 2 \; \text{cos}\;⁡x=1 $$
+
+                    <p>de donde</p>
+                    $$ \text{cos}\;⁡x= \frac{1}{2} $$
+                    <p>el coseno es un medio si el ángulo es \(x= \frac{\pi}{3}\) y \(x= \frac{5\pi}{3}.\) </p>
+
+                    <p>Las soluciones de la ecuación son \(x= \frac{\pi}{6}\), \(x= \frac{\pi}{3}\), \(x= \frac{5
+                      \pi}{6}\) y \(x= \frac{5 \pi}{3}\) en \([0,2 \pi]\).</p>
+
+                    <p>Resuelve el siguiente ejercicio, correspondiente a ecuaciones trigonométricas.</p>
+                    <div class="centrado col-5 mb-3">
+                      <div class="card">
+                        <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+                        <div class="card-body">
+                          <p class="text-center">9. Solución de ecuaciones trigonométricas </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p></p>
+                    <p>Recordemos que las operaciones inversas hacen la operación opuesta a ésta, lo mismo pasa en
+                      trigonometría. Si
+                      se conoce la razón trigonométrica pero no el ángulo, se pueden utilizar estas funciones
+                      trigonométricas
+                      inversas. Veamos a continuación.</p>
+                    <ul class="vinetas">
+                      <li><b>Funciones trigonométricas inversas</b></li>
+                    </ul>
+
+                    <p>La inversa de una función existe si la función es biunívoca. Como las funciones trigonometrías
+                      son
+                      periódicas, ninguna de ellas es biunívoca. Así, para poder definir las funciones trigonométricas
+                      inversas,
+                      necesitamos restringir el dominio de las funciones trigonométricas en intervalos donde sean
+                      biunívocas y tomar
+                      el intervalo que contenga a cero o un valor cercano a cero.</p>
+
+                    <p>La restricción de los dominios de las funciones trigonométricas son los siguientes:</p>
+                    <div class="centrado" style="width: 80%;">
+                      <table class="table table-bordered table-striped  table-hover text-center">
+                        <thead class="table-primary">
+                          <tr>
+                            <th>Función</th>
+                            <th>Dominio</th>
+                            <th>Imagen</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>\(f(x)=\text{sen} \;x\)</th>
+                            <th>\( [- \frac{\pi}{2}, \frac{\pi}{2}] \)</th>
+                            <th>\( [-1,1] \)</th>
+                          </tr>
+                          <tr>
+                            <th>\(f(x)=\text{cos}\; x\)</th>
+                            <th>\( [0, \pi] \)</th>
+                            <th>\( [-1,1] \)</th>
+                          </tr>
+                          <tr>
+                            <th>\(f(x)=\text{tan}\; x\)</th>
+                            <th>\( (- \frac{\pi}{2}, \frac{\pi}{2}) \)</th>
+                            <th>\( R \)</th>
+                          </tr>
+                          <tr>
+                            <th>\(f(x)=\text{cot}\; x\)</th>
+                            <th>\( (0, \pi) \)</th>
+                            <th>\( R \)</th>
+                          </tr>
+                          <tr>
+                            <th>\(f(x)=\text{sec}\; x\)</th>
+                            <th>\( [0, \frac{\pi}{2})∪( \frac{\pi}{2}, \pi] \)</th>
+                            <th>\( (- \infty,-1]∪[1, \infty) \)</th>
+                          </tr>
+                          <tr>
+                            <th>\(f(x)=\text{csc}\; x\)</th>
+                            <th>\( [- \frac{\pi}{2},0)∪(0, \frac{\pi}{2}] \)</th>
+                            <th>\( (- \infty,-1]∪[1, \infty) \)</th>
+                          </tr>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <p>Definimos las funciones trigonométricas inversas de la siguiente manera:</p>
+
+                    <p> &nbsp;&nbsp; a) La función seno inverso, que se denota por \(f(x)=\text{sen}^{-1}\; x\) o por
+                      \(f(x)=\text{arcsen}\; x\), se define con la condición
+                      \(y=\text{sen}^{-1}\; x\) si y sólo si \(\text{sen}\; y=x\), para toda \(x\) en \([-1,1]\) y para toda \(y\) en \([-
+                      \frac{\pi}{2}, \frac{\pi}{2}]\).</p>
+                    <p> &nbsp;&nbsp; b) La función coseno inverso, que se denota por \(f(x)=\text{cos}^{-1}\; x\) o por
+                      \(f(x)=\text{arccos}\; x\), se define con la condición
+                      \(y=\text{cos}^{-1}\; x\) si y sólo si \(\text{cos}\; y=x\), para toda \(x\) en \([-1,1]\) y para toda \(y\) en
+                      [\(0,
+                      \pi]\).</p>
+                    <p> &nbsp;&nbsp; c) La función tangente inversa, que se denota por \(f(x)=\text{tan}^{-1}\; x\) o por
+                      \(f(x)=\text{arctan}\; x\), se define con la
+                      condición \(y=\text{tan}^{-1}\; x\) si y sólo si \(\text{tan}\;y=x\), para toda \(x\) real y para toda \(y\) en \((-
+                      \frac{\pi}{2}, \frac{\pi}{2})\).</p>
+                    <p> &nbsp;&nbsp; d) La función cotangente inversa, que se denota por \(f(x)=\text{cot}^{-1}\; x\) o por
+                      \(f(x)=\text{arccot}\; x\), se define con la
+                      condición \(y=\text{cot}^{-1}\; x\) si y sólo si \(\text{cot}\; y=x\), para toda \(x\) real y para toda \(y\) en
+                      \((0, \pi)\).</p>
+                    <p> &nbsp;&nbsp; e) La función secante inversa, que se denota por \(f(x)=\text{sec}^{-1}\; x\) o por
+                      \(f(x)=\text{arcsec}\; x\), se define con la
+                      condición \(y=\text{sec}^{-1}\; x\) si y sólo si \(\text{sec}\; y=x\), para toda \(x\) en \((- \infty,-1]∪[1,
+                      \infty)\) y para toda \(y\) en \([0,
+                      \frac{\pi}{2})∪( \frac{\pi}{2}, \pi]\).</p>
+                    <p> &nbsp;&nbsp; f) La función cosecante inversa, que se denota por \(f(x)=\text{csc}^{-1}\; x\) o por
+                      \(f(x)=\text{arccsc} \;x\), se define con la
+                      condición \(y=\text{csc}^{-1}\; x\) si y sólo si \(\text{csc}\; y=x\), para toda \(x\) en \((- \infty,-1]∪[1,
+                      \infty)\) y para toda \(y\) en \([-
+                      \frac{\pi}{2},0)∪(0, \frac{\pi}{2}]\).</p>
+                    <p>Los dominios e imágenes de las funciones trigonométricas inversas son los siguientes:</p>
+                    <table class="table table-hover text centrado table-striped text-center table-bordered"
+                      style="width: 80%;">
+                      <thead class="table-primary">
+                        <tr>
+                          <th scope="col">Función</th>
+                          <th scope="col">Dominio</th>
+                          <th scope="col">Imagen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>\(f(x)=\text{arcsen}\; x \)</td>
+                          <td> \([-1,1]\)</td>
+                          <td>\( [- \frac{\pi}{2}, \frac{\pi}{2}]\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{arccos}\; x \)</td>
+                          <td> \([-1,1]\)</td>
+                          <td>\( [0, \pi]\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{arctan}\; x \)</td>
+                          <td>\(R\) </td>
+                          <td>\((- \frac{\pi}{2}, \frac{\pi}{2})\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{arccot}\; x \)</td>
+                          <td> \(R\)</td>
+                          <td>\( (0, \pi)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{arcsec}\; x \)</td>
+                          <td> \((- \infty,-1]∪[1, \infty)\)</td>
+                          <td>\( [0, \frac{\pi}{2})∪( \frac{\pi}{2}, \pi]\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{arccsc} \;x \)</td>
+                          <td> \((- \infty,-1]∪[1, \infty)\)</td>
+                          <td>\([- \frac{\pi}{2},0)∪(0, \frac{\pi}{2}]\)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="mt-4">En el siguiente recurso, podrás relacionar las funciones trigonométricas y
+                      trigonométricas inversas, así como
+                      su representación gráfica.</p>
+                    <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Pasa el
+                      cursor sobre las imágenes para ver las gráficas.</div>
+                    <div class="card mb-3 centrado">
+                      <div class="row g-0">
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f1.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_01.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f2.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_02.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-3 centrado">
+                      <div class="row g-0">
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f3.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_03.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f4.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_04.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-3 centrado">
+                      <div class="row g-0">
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f5.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_05.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="col">
+                            <div class="flip-card" style="width: auto;">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/f6.png" style="width:50%;">
+                                </div>
+                                <div class="flip-card-back">
+                                  <img class="img-fluid centrado" src="img/u1_tm3/u1_tm3_13_funtrigonom_06.svg"
+                                    style="width:100%;height:100%;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <p>\(arccos(cos x)=x\) para \(x\) en \([0, \pi]\)</p>
+                    <p> </p>
+                    <p>\(cos(\text{arccos}\; x)=x\) para \(x\) en \([-1,1]\)</p>
+                    <p> </p>
+                    <p>\(arctan(tan x)=x\) para \(x\) en \((- \frac{\pi}{2}, \frac{\pi}{2})\)</p>
+                    <p> </p>
+                    <p>\(tan(\text{arctan}\; x)=x\) para \(x\) real</p>
+                    <p> </p>
+                    <p>\(arccot(cot x)=x\) para \(x\) en para \((0, \pi)\)</p>
+                    <p> </p>
+                    <p>\(cot(\text{arccot}\; x)=x\) para \(x\) real</p>
+                    <p> </p>
+                    <p>\(arcsec(sec x)=x\) para \(x\) en \([0, \frac{\pi}{2})∪( \frac{\pi}{2}, \pi]\)</p>
+                    <p> </p>
+                    <p>\(sec(\text{arcsec}\; x)=x\) para \(x\) en \((- \infty,-1]∪[1, \infty)\)</p>
+                    <p> </p>
+                    <p>\(arccsc\;(csc x)=x\) para \(x\) en \([- \frac{\pi}{2},0)∪(0, \frac{\pi}{2}]\)</p>
+                    <p> </p>
+                    <p>\(csc(\text{arccsc} \;x)=x\) para \(x\) en \((- \infty,-1]∪[1, \infty) \)</p> -->
+
+                    <p class="mt-4">En el siguiente ejemplo, veremos la composición de funciones trigonométricas y funciones
+                      trigonométricas
+                      inversas.</p>
+
+                    <p>&nbsp;&nbsp;1) Determinar el valor de \(\text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5}+\text{arctan}\;⁡ \frac{4}{3}
+                      \right)\)</p>
+
+                    <p>Usando la fórmula de suma de ángulos \(\text{sen}\;(u \pm v)=\text{sen}\; u \hspace{.2cm} \text{cos}\;⁡v \pm \text{cos}\;⁡u
+                      \hspace{.2cm} \text{sen} \;v\)
+                    </p>
+                    $$ \text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5}+\text{arctan}\;⁡ \frac{4}{3} \right)=\text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right)
+                    \text{cos}⁡ \left(\text{arctan}\;⁡ \frac{4}{3}\right)$$
+                    $$ +\;\text{cos}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right) \text{sen}⁡ \left(\text{arctan}\;⁡ \frac{4}{3} \right) $$
+
+                    <p>Calculemos </p>
+                    $$\text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right)$$
+
+                    <p>como seno y arcoseno son funciones inversas</p>
+
+                    $$ \text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right) =\frac{4}{5}$$
+
+                    $$ \text{cos} \left( \text{arcsen}\; ⁡\frac{4}{5} \right) $$
+
+                    <p>Sea \(u=\text{arcsen}\; ⁡\frac{4}{5}\), por definición \(\text{sen}\;⁡u=\frac{4}{5}\). Hay que determinar el valor
+                      de \(\text{cos} ⁡\; u\)</p>
+                    <p>usando la identidad \(\text{sen}^2 \; t+\text{cos}^2\;⁡t=1\).</p>
+
+                    $$ \text{sen}^2\; u+\text{cos}^2\;⁡u=1 \Rightarrow \text{cos}^2\;⁡u=1-\text{sen}^2\; u $$
+
+                    <p>Así</p>
+                    $$ \text{cos}^2\;⁡u=1- \left(\frac{4}{5}\right)^2=1-\frac{16}{25}= \frac{9}{25} $$
+
+                    <p>Con lo cual</p>
+
+                    $$ \text{cos}^2\;⁡u= \frac{9}{25} \Rightarrow \text{cos⁡}\;u= \frac{3}{5} $$
+
+                    <p>Así</p>
+                    $$ \text{cos}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right)= \frac{3}{5} $$
+                    $$ \text{cos}⁡ \left(\text{arctan}\;⁡ \frac{4}{3} \right) $$
+
+                    <p>Sea \(v=\text{arctan}\; ⁡ \frac{4}{3}\), por definición \(\text{tan}\;⁡v= \frac{4}{3}\). Hay que determinar el
+                      valor de \(\text{cos}\;⁡v \)</p>
+                    <p>usando la identidad \(1+\text{tan}^2 \;t=\text{sec}^2 \;t\).</p>
+
+                    $$ 1+\text{tan}^2 \; v=\text{sec}^2 \;v \Rightarrow 1+ \left( \frac{4}{3} \right)^2=\text{sec}^2 \;v $$
+
+                    <p>Así</p>
+                    $$ \text{sec}^2 \;v=1+\frac{16}{9} $$
+
+                    <p>Con lo cual</p>
+                    $$ \text{sec}^2⁡\;v=\frac{25}{9} \Rightarrow \text{sec}\;⁡v= \frac{5}{3} $$
+
+                    <p>Luego </p>
+                    $$ \text{cos}\;⁡v=\frac{1}{\text{sec}\;⁡v} =\frac{1}{ \frac{5}{3}}= \frac{3}{5}$$
+
+                    <p>Así</p>
+                    $$ \text{cos} \left(\text{arctan}\;⁡ \frac{4}{3} \right)= \frac{3}{5} $$
+
+                    $$ \text{sen}⁡ \left(\text{arctan}\;⁡ \frac{4}{3} \right)$$
+
+                    <p>Sea \(v=\text{arctan} \;⁡ \frac{4}{3}\), por definición \(\text{tan}\;⁡v= \frac{4}{3}\). Hay que determinar el
+                      valor de \(\text{sen}\;⁡v\).</p>
+
+                    <p>Anteriormente calculamos \(\text{cos}\;⁡v= \frac{3}{5}\)</p>
+
+                    <p>usando la identidad \(\text{sen}^2 \; t+\text{cos}^2\;⁡t=1\)</p>
+
+                    $$ \text{sen}^2\; v+\text{cos}^2\;⁡v=1 \Rightarrow \text{sen}^2\;⁡v=1-\text{cos}^2\; v $$
+
+                    <p>Así</p>
+                    $$ \text{sen}^2\;⁡v=1- \left( \frac{3}{5} \right)^2=1- \frac{9}{25}=\frac{16}{25} $$
+
+                    <p>Con lo cual</p>
+
+                    $$ \text{sen}^2\;⁡v=\frac{16}{25} \Rightarrow \text{sen}\;⁡v=\frac{4}{5}$$
+
+                    <p>Así</p>
+                    $$ \text{sen}⁡ \left( \text{arctan} \;⁡ \frac{4}{3} \right)=\frac{4}{5} $$
+
+                    <p>Con lo cual</p>
+
+                    $$\text{sen⁡} \left(\text{arcsen}\; ⁡\frac{4}{5}+\text{arctan}\;⁡ \frac{4}{3} \right)$$
+                    $$=\text{sen⁡} \left(\text{arcsen}\; ⁡\frac{4}{5} \right) \;\text{cos}⁡ \left(\text{arctan}\;⁡ \frac{4}{3}
+                    \right)+ \text{cos}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5} \right)\; \text{sen}⁡ \left(\text{arctan}\;⁡ \frac{4}{3} \right) $$
+                    $$= \left(\frac{4}{5} \right) \left( \frac{3}{5} \right)+ \left(
+                    \frac{3}{5} \right) \left(\frac{4}{5} \right)=\frac{12}{25}+\frac{12}{25}=\frac{24}{25}$$
+
+                    $$ \text{sen}⁡ \left(\text{arcsen}\; ⁡\frac{4}{5}+\text{arctan}\;⁡ \frac{4}{3} \right)=\frac{24}{25} $$
+
+                    <p>2) Probar que la identidad \(2 \; \text{arcsen}\;⁡x=\text{arcsen}\;⁡(2x \; \sqrt{1-x^2 })\) es válida.</p>
+
+                    <p>La igualdad se cumple si \( \text{sen} \;(2 \; \text{arcsen}\;⁡x )=\text{sen}\;(\text{arcsen}\;⁡2x \sqrt{1-x^2} )\).</p>
+
+                    <p>Es válida si </p>
+                    $$ \text{sen}\;(2 \; \text{arcsen}\;⁡x )=2x \sqrt{1-x^2}$$
+
+                    <p>Calculemos </p>
+                    $$ \text{sen}\;(2 \; \text{arcsen}\;⁡x) $$
+
+                    <p>Sea \(u=\text{arcsen}\;⁡x\), así \(\text{sen}\; u=⁡x\) y hay que calcular \(\text{sen}\; (2u)\).</p>
+
+                    <p>Usando la identidad del doble del ángulo</p>
+
+                    $$ \text{sen}\; (2u)=2\;\text{sen}\; u \hspace{.2cm} \text{cos⁡}\;u $$
+
+                    <p>Tenemos que</p>
+
+                    $$ \text{sen}\; u=⁡x $$
+                    <p>Calculamos</p>
+
+                    $$ \text{cos} \;u=⁡x $$
+
+                    <p>Usamos la identidad</p>
+
+                    $$ \text{sen}^2\; u+\text{cos}^2\;⁡u=1 \Rightarrow \text{cos}^2\;⁡u=1-\text{sen}^2\; u $$
+
+                    <p>De donde</p>
+
+                    $$ \text{cos}^2\;⁡u=1-\text{sen}^2\; u=1-x^2 $$
+
+                    <p>Así</p>
+
+                    $$ \text{cos}\;⁡u= \sqrt{1-x^2} $$
+
+                    <p>Luego</p>
+
+                    $$ \text{sen}\; (2u)=2\text{sen}\; u \; \text{cos⁡}\;u=2x \sqrt{1-x^2} $$
+
+                    <p>Así</p>
+                    $$ \text{sen}\;(2 \; \text{arcsen}\;⁡x )=2x \sqrt{1-x^2} $$
+
+                    <p>y la igualdad se cumple.</p>
+
+                    <p>Es momento de realizar el siguiente ejercicio, para determinar el valor de las ecuaciones
+                      trigonométricas.
+                    </p>
+                    <div class="centrado col-5 mb-3">
+                      <div class="card">
+                        <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+
+                        <div class="card-body">
+                          <p class="text-center">10. Valor de ecuaciones trigonométricas</p>
+                        </div>
+                      </div>
+                    </div>
+                    <p></p>
+                    <p>Como te pudiste dar cuenta, la trigonometría, al estar basada en los triángulos y en las relaciones que hay entre sus
+                      lados y sus ángulos, así como también en sus funciones trigonométricas: seno, coseno, tangente, cotangente, secante y
+                      cosecante, se encuentra presente en situaciones tan sencillas en la vida diaria como el despegue o aterrizaje de un
+                      avión, la proyección de una sombra, etc., y haciendo uso de las operaciones necesarias podemos definir los cálculos de
+                      éstas.</p>
+
+                    <p id="3.4">Ahora es momento de revisar las hiperbólicas.</p>
+                      <p>&nbsp;</p>
+                    <H2>3.4 Hiperbólicas e hiperbólicas inversas</H2>
+
+                    <p class="mt-4">Las funciones hiperbólicas usan como función principal la función exponencial natural y se
+                      definen de la
+                      siguiente manera:</p>
+                    <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic
+                      sobre cada pestaña para ver la información.</div>
+                    <div class="accordion centrado" id="accordionFuncion" style="width:65%">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSH">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSH" aria-expanded="true" aria-controls="collapseSH">
+                            Función seno hiperbólico
+                          </button>
+                        </h2>
+                        <div id="collapseSH" class="accordion-collapse collapse show" aria-labelledby="headingSH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función seno hiperbólico, se define como \(\text{senh}\; x=\frac{e^x-e^{-x}}{2}\) (Demana, 2007) para toda \(x\),
+                              tiene
+                              por dominio los números
+                              reales y por imagen los números reales.</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_01.svg" width="80%">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCH">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCH" aria-expanded="false" aria-controls="collapseCH">
+                            Función coseno hiperbólico
+                          </button>
+                        </h2>
+                        <div id="collapseCH" class="accordion-collapse collapse" aria-labelledby="headingCH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función coseno hiperbólico, se define como \(\text{cosh}\; ⁡x=\frac{e^x+e^{-x}}{2}\) (Demana, 2007) para toda \(x\),
+                              tiene
+                              por dominio los números
+                              reales y por imagen \([1, \infty) \). </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_02.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTH">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTH" aria-expanded="false" aria-controls="collapseTH">
+                            Función tangente hiperbólica
+                          </button>
+                        </h2>
+                        <div id="collapseTH" class="accordion-collapse collapse" aria-labelledby="headingTH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función tangente hiperbólica, se define como \(\text{tanh}\;⁡x=\frac{\text{senh}\;x}{\text{cosh}\;⁡x} =
+                              \frac{e^x-e^{-x}}{e^x+e^{-x}}\) (Demana, 2007) para toda \(x\),
+                              tiene por dominio los números reales y por imagen \((-1,1)\). </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_03.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCTH">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCTH" aria-expanded="false" aria-controls="collapseCTH">
+                            Función cotangente hiperbólica
+                          </button>
+                        </h2>
+                        <div id="collapseCTH" class="accordion-collapse collapse" aria-labelledby="headingCTH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función cotangente hiperbólica, se define como
+                              \(\text{coth}\;⁡x=\frac{\text{cosh}\;⁡x}{\text{senh}\;x}=\frac{e^x+e^{-x}}{e^x-e^{-x}}\) para toda \(x \neq 0\),
+                              tiene por dominio \(R- \{0\}\) y por imagen \((- \infty,-1)∪(1, \infty)\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_04.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSEH">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSEH" aria-expanded="false" aria-controls="collapseSEH">
+                            Función secante hiperbólica
+                          </button>
+                        </h2>
+                        <div id="collapseSEH" class="accordion-collapse collapse" aria-labelledby="headingSEH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función secante hiperbólica, se define como \(\text{sec⁡h}\; x=\frac{1}{\text{cosh}\;⁡x} =
+                              \frac{2}{e^x+e^{-x}} \)
+                              para toda \(x\), tiene por dominio
+                              los números reales y por imagen \((0, 1]\). </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_05.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCOH">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCOH" aria-expanded="false" aria-controls="collapseCOH">
+                            Función cosecante hiperbólica
+                          </button>
+                        </h2>
+                        <div id="collapseCOH" class="accordion-collapse collapse" aria-labelledby="headingCOH"
+                          data-bs-parent="#accordionFuncion">
+                          <div class="accordion-body">
+                            <p>Función cosecante hiperbólica, se define como \(\text{csc⁡h}\; x=\frac{1}{\text{senh}\;x}=\text{ }\;                           \frac{2}{e^x-e^{-x}} \)
+                              para toda \(x \neq 0\), tiene por
+                              dominio \(R- \left\lbrace0 \right\rbrace \) y por imagen \(R- \left\lbrace0 \right\rbrace
+                              \).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_14_hiperbolicas_06.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="mt-4">Las funciones trigonométricas tienen como base la circunferencia \(x^2+y^2=1\) y, en las
+                      funciones hiperbólicas,
+                      la hipérbola es \(x^2-y^2=1\). Éstas varían en un signo, por esa razón las identidades
+                      hiperbólicas, en algunos
+                      casos, varían de las trigonométricas en un signo. Observemos estas identidades.</p>
+                    <table class="table table-hover text-center centrado table-striped table-bordered"
+                      style="width: 80%;">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <p>Identidades básicas</p>
+                            <p>\(\text{cosh}^2\;⁡x-\text{senh}^2\; x=1\)</p>
+                            <p>\(\text{tanh}^2\;⁡x=1-\text{sec⁡h^2}\; x\)</p>
+                            <p>\(\text{coth}^2 x=1-\text{csch}^2\, x\)</p>
+                          </td>
+                          <td>
+                            <p>Identidades del doble de la variable</p>
+                            <p>\(\text{senh} \;2x=2\;\text{senh}\; x\; \text{cosh}\;⁡x\)</p>
+                            <p>\(\text{cosh}\;⁡2x=\text{cosh}^2\;⁡x+\text{senh}^2\; x\)</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>Identidades de la mitad de la variable</p>
+                            <p>\(\text{cosh}^2\; x=\frac{\text{cosh}\;⁡2x+1}{2}\)</p>
+                            <p>\(\text{senh}^2\; x=\frac{\text{cosh⁡}\;2x-1}{2}\)</p>
+                          </td>
+                          <td>
+                            <p> Identidades de la suma de dos variables</p>
+                            <p>\(\text{senh} \;(x+y)=\text{senh}\; x\; \text{cosh⁡}\;y+\text{cosh}\;⁡x \;\text{senh}\; y\)</p>
+                            <p>\(\text{cosh}\; (x+y)=\text{cosh}\; x\; \text{cosh⁡}\;y+\text{senh}\;⁡x \;\text{senh}\; y\)</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="mt-4">Veamos el siguiente ejemplo referente a las identidades.</p>
+                    <p>Demostrar que se cumple la identidad \(\text{cosh}\;⁡2x=\text{cosh}^2\;⁡x+\text{senh}^2\; x\).</p>
+                    <p>Para demostrarlo podemos partir del lado derecho o del izquierdo y usamos la definición de las
+                      funciones
+                      hiperbólicas.</p>
+                    <p>Iniciemos con la suma y la definición de las funciones seno y coseno hiperbólicos.</p>
+                    $$ \text{cosh}^2\;⁡x+\text{senh}^2\; x=\left( \frac{e^x+e^{-x}}{2} \right)^2+ \left( \frac{e^x-e^{-x}}{2} \right)^2 $$
+                    <p>Elevamos al cuadrado</p>
+                    $$ \left( \frac{e^x+e^{-x}}{2} \right)^2 + \left(\frac{e^x-e^{-x}}{2} \right)^2 =
+                    \frac{(e^x+e^{-x})^2}{4}+ \frac{(e^x-e^{-x} )^2}{4} $$
+                    <p>Factorizando la constante</p>
+                    $$ \frac{(e^x+e^{-x})^{2}}{4}+ \frac{(e^x-e^{-x})^2}{4} =\frac{1}{4} \left[(e^x+e^{-x}
+                    )^2+(e^x-e^{-x} )^2 \right] $$
+                    <p>Desarrollando el cuadrado</p>
+                    $$ \frac{1}{4} \left[(e^x+e^{-x} )^2+(e^x-e^{-x} )^2 \right]=\frac{1}{4}
+                    (e^{2x}+2+e^{-2x}+e^{2x}-2+e^{-2x} ) $$
+                    <p>Simplificando</p>
+                    $$ \frac{1}{4} (e^{2x}+2+e^{-2x}+e^{2x}-2+e^{-2x} )=\frac{1}{4} (2e^{2x}+2e^{-2x} ) $$
+                    <p>Reduciendo</p>
+                    $$ \frac{1}{4} (2e^{2x}+2e^{-2x} )= \frac{2}{4} (e^2x+e^{-2x} ) $$
+                    <p>Reduciendo</p>
+                    $$ \frac{2}{4} (e^{2x}+e^{-2x} )=\frac{e^{2x}+e^{-2x}}{2} $$
+                    <p>Por definición</p>
+                    $$ \frac{e^{2x}+e^{-2x}}{2}=\text{cosh}\;⁡2x $$
+                    <p>Con lo cual la identidad es válida.</p>
+                    <p>Siguiendo el ejemplo anterior, realiza el ejercicio correspondiente a hiperbólicas para encontrar
+                      la
+                      identidad.</p>
+                    <div class="centrado col-5 mb-3">
+                      <div class="card">
+                        <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+
+                        <div class="card-body">
+                          <p class="text-center">11. Hiperbólicas</p>
+                        </div>
+                      </div>
+                    </div>
+                    <p></p>
+                    <p>Como en las demás funciones, las hiperbólicas también tienen sus funciones inversas, las cuales
+                      son opuestas
+                      a las originales. Veámoslas a continuación. </p>
+                    <ul class="vinetas">
+                      <li><b>Funciones hiperbólicas inversas</b></li>
+                    </ul>
+
+                    <p>Para poder definir las funciones hiperbólicas inversas se debe de cumplir que las funciones
+                      hiperbólicas sean
+                      biunívocas, las funciones hiperbólicas \(f(x)=\text{senh}\; x\), \(f(x)=\text{tanh}\;⁡x\), \(f(x)=\text{cosh}\;⁡x\),
+                      \(f(x)=csch⁡x\) son biunívocas, para
+                      tener las 6 funciones hiperbólicas inversas restringimos el dominio de las funciones
+                      \(f(x)=\text{cosh}\;⁡x\) y \(f(x)=sech⁡x\)
+                      de la siguiente manera.</p>
+                    <table class="table table-hover text centrado table-striped table-bordered" style="width: 80%;">
+                      <thead class="table-primary">
+                        <tr>
+                          <th scope="col" colspan="3" class="text-center">Dominio de las funciones hiperbólicas que permiten que existan las
+                            funciones hiperbólicas
+                            inversas</th>
+                        </tr>
+                        <tr class="text-center">
+                          <th>Función</th>
+                          <th>Dominio</th>
+                          <th>Imagen</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr>
+                          <td>\( f(x)=\text{senh}\; x \)</td>
+                          <td>\( R \)</td>
+                          <td>\( R \)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{cosh}\; x\)</td>
+                          <td>\( [0, \infty)\)</td>
+                          <td>\( [1, \infty)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{tanh}\; x \)</td>
+                          <td>\( R \)</td>
+                          <td>\((-1,1)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{coth}\; x \)</td>
+                          <td>\( R- \left\lbrace0 \right\rbrace \)</td>
+                          <td>\( (- \infty,-1)∪(1, \infty)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{sech} \;x \)</td>
+                          <td>\([0, \infty)\)</td>
+                          <td>\((0, 1]\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(f(x)=\text{csch}\; x \)</td>
+                          <td>\( R- \left\lbrace0 \right\rbrace \)</td>
+                          <td>\( R- \left\lbrace0 \right\rbrace \)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="mt-4">Las funciones hiperbólicas inversas pueden definirse, al igual que las funciones trigonométricas
+                      inversas, de
+                      manera implícita. Observa las siguientes tarjetas.</p>
+                    <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic
+                      sobre cada pestaña para ver la información.</div>
+
+                    <div class="accordion centrado" id="accordionInv" style="width:65%">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingUno">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno">
+                            Función seno hiperbólico inverso
+                          </button>
+                        </h2>
+                        <div id="collapseUno" class="accordion-collapse collapse show" aria-labelledby="headingUno"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+
+                            <p>Función seno hiperbólico inverso \(f(x)=\text{senh}^{-1}\; x\), se define </p>
+                            <p>\(y=\text{senh}^{-1}\; x\) si y sólo si \(\text{senh} y=x\) para toda \(x\) y \(y\) real.</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_01.svg" width="80%">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingDos">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                            Función coseno hiperbólico inverso
+                          </button>
+                        </h2>
+                        <div id="collapseDos" class="accordion-collapse collapse" aria-labelledby="headingDos"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+                            <p>Función coseno hiperbólico inverso \(f(x)=\text{cosh}^{-1}\; x\), se define \(y=\text{cosh}^{-1}\; x\) si y
+                              sólo si
+                              \(\text{cosh}\; y=x\) para toda
+                              \(x\) en \([1, \infty)\) y para toda \(y\) en \([0, \infty)\).</p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_02.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTres">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                            Función tangente hiperbólica inversa
+                          </button>
+                        </h2>
+                        <div id="collapseTres" class="accordion-collapse collapse" aria-labelledby="headingTres"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+                            <p>Función tangente hiperbólica inversa \(f(x)=\text{tanh}^{-1}\; x\), se define 
+                            \(y=\text{tanh}^{-1}\; x\) si y sólo si \(\text{tanh}\; y=x\), para toda \(x\) en \((-1,1)\) y para toda \(y\)
+                              real.
+                            </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_03.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCuatro">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCuatro" aria-expanded="false" aria-controls="collapseCuatro">
+                            Función cotangente hiperbólica inversa
+                          </button>
+                        </h2>
+                        <div id="collapseCuatro" class="accordion-collapse collapse" aria-labelledby="headingCuatro"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+                            <p>Función cotangente hiperbólica inversa \(f(x)=\text{coth}^{-1}\; x\), se define \(y=\text{coth}^{-1}\; x\) si y sólo si \(\text{coth}\; y=x\), para toda \(x\) en \((- \infty,-1)∪(1,
+                              \infty)\) y
+                              para toda \(y\) en \(R- \left\lbrace 0 \right\rbrace \). </p>
+
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_04.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCinco">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
+                            Función secante hiperbólica inversa
+                          </button>
+                        </h2>
+                        <div id="collapseCinco" class="accordion-collapse collapse" aria-labelledby="headingCinco"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+                            <p>Función secante hiperbólica inversa \(f(x)=\text{sech}^{-1}\; x\), se define \(y=\text{sech}^{-1}\; x\) si y sólo si \(\text{sech}\; y=x\), para toda \(x\) en \((0,1]\) y para toda
+                              \(y\) en
+                              \([0, \infty)\). </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_05.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeis">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeis" aria-expanded="false" aria-controls="collapseSeis">
+                            Función cosecante hiperbólica inversa
+                          </button>
+                        </h2>
+                        <div id="collapseSeis" class="accordion-collapse collapse" aria-labelledby="headingSeis"
+                          data-bs-parent="#accordionInv">
+                          <div class="accordion-body">
+                            <p>Función cosecante hiperbólica inversa \(f(x)=\text{csch}^{-1}\; x\), se define \(y=\text{csch}^{-1}\; x\) si y sólo si \(\text{csch}\; y=x\) para toda \(x\) en \(R- \left\lbrace 0
+                              \right\rbrace \) y
+                              para toda \(y\) en \(R- \left\lbrace 0 \right\rbrace \).</p>
+                            <p> </p>
+                            <div class="text-center">
+                              <img class="img-fluid" src="img/u1_tm3/u1_tm3_15_funhiperbo_06.svg" width="80%">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p> </p>
+                    <p>Al ser funciones inversas se cumple la condición de que la imagen de la función hiperbólica es el
+                      dominio de
+                      la función hiperbólica inversa y viceversa.</p>
+                    <table class="table table-hover text-center centrado table-striped table-bordered"
+                      style="width: 80%;">
+                      <thead class="table-primary">
+                        <tr>
+                          <th scope="col">Función</th>
+                          <th scope="col">Dominio</th>
+                          <th scope="col">Imagen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>\( f(x)=\text{senh}^{-1}\; x \)</td>
+                          <td>\( R\)</td>
+                          <td>\( R\)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{cosh}^{-1}\; x \)</td>
+                          <td>\( [1, \infty) \)</td>
+                          <td>\( [0, \infty) \)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{tanh}^{-1}\; x \)</td>
+                          <td>\( (-1,1) \)</td>
+                          <td>\( R \)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{coth}^{-1}\; x \)</td>
+                          <td>\( (- \infty,-1)∪(1, \infty) \)</td>
+                          <td>\( R- \left\lbrace 0 \right\rbrace \)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{sech}^{-1}\; x \)</td>
+                          <td>\( (0, 1] \)</td>
+                          <td>\( [0, \infty) \)</td>
+                        </tr>
+                        <tr>
+                          <td>\( f(x)=\text{csch}^{-1}\; x \)</td>
+                          <td>\( R- \left\lbrace 0 \right\rbrace \)</td>
+                          <td>\( R- \left\lbrace 0 \right\rbrace \)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="mt-4">Otra de las consecuencias de ser funciones inversas (las funciones hiperbólicas y
+                      las hiperbólicas inversas)
+                      es que se cumplen las ecuaciones inversas siguientes.</p>
+                    <table class="table table-hover centrado table-striped table-bordered" style="width: 80%;">
+                      <thead class="table-primary text-center">
+                        <tr>
+                          <th colspan="2" scope="col">Ecuaciones inversas</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> \( \text{senh}^{-1}\; (\text{senh}\; x)=x\) para \(x\) real</td>
+                          <td> \(\text{senh}\;(\text{senh}^{-1}\; x)=x\) para \(x\) real</td>
+                        </tr>
+                        <tr>
+                          <td>\(\text{cosh}^{-1}\; (cosh x)=x\) para \(x\) en \( [0, \infty ) \) </td>
+                          <td>\(cosh\;(\text{cosh}^{-1}\; x)=x\) para \(x\) en \([1, \infty) \) </td>
+                        </tr>
+                        <tr>
+                          <td>\(\text{tanh}^{-1}\; (\text{tanh}\; x)=x\) para \(x\) real</td>
+                          <td>\(tanh\;(\text{tanh}^{-1}\; x)=x\) para \(x\) en \((-1,1)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(\text{coth}^{-1}\; (\text{coth}\; x)=x\) para \(R- \left\lbrace0 \right\rbrace \)</td>
+                          <td>\(coth\;(\text{coth}^{-1}\; x)=x\) para \(x\) en \((- \infty,-1)∪(1, \infty)\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(\text{sech}^{-1}\; (sec x)=x\) para \(x\) en \([0, \infty)\)</td>
+                          <td>\( sec\;(\text{sech}^{-1}\; x)=x\) para \(x\) en \((0,1]\)</td>
+                        </tr>
+                        <tr>
+                          <td>\(\text{csch}^{-1}\; (csc x)=x\) para \(x\) \(R- \left\lbrace0 \right\rbrace \)</td>
+                          <td>\( csc\;(\text{csch}^{-1}\; x)=x\) para \(x R- \left\lbrace0 \right\rbrace \)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <p>Como las funciones hiperbólicas se definen con base en la función exponencial natural y como la
+                      función
+                      inversa de ésta es el logaritmo natural, debe de ser posible expresar la inversa, esto es, las
+                      funciones
+                      hiperbólicas inversas en términos de la función logaritmo natural. El siguiente teorema define de
+                      manera
+                      explícita las funciones hiperbólicas inversas. </p>
+
+                    <ul class="vinetas">
+                      <li><b>
+                          Teorema:
+                        </b></li>
+                    </ul>
+                    <p> </p>
+
+                    $$ \text{senh}^{-1}\; x=ln⁡(x+ \sqrt{x^2+1} ) $$
+                    $$ \text{cosh}^{-1}\; x=ln⁡(x+ \sqrt{x^2-1} ) \hspace{1cm} x \geq 1 $$
+                    $$ \text{tanh}^{-1}\; x= \frac{1}{2} ln⁡ \left( \frac {1+x}{1-x} \right) \hspace{1cm} |x| < 1 $$ $$ \text{coth}^{-1}\;
+                      x=\frac{1}{2} ln \left( \frac{1+x}{x-1} \right) \hspace{1cm} |x|> 1 $$
+                      $$ \text{sech}^{-1}\; x=ln \left( \frac{1+ \sqrt{1-x^2 }}{x} \right) \hspace{1cm} 0 < x < 1 $$ $$ \text{csch}^{-1}\;
+                        x=ln \left( \frac{1+ \sqrt{1+x^2}}{x} \right) \hspace{1cm} x \neq 0 $$ <p> Revisemos el
+                        siguiente ejemplo para determinar la inversa de una función tangente hiperbólica.</p>
+
+                <p>Demostrar que la función \(\text{tanh}^{-1}\; x\) es igual a \( \frac{1}{2} ln⁡ \left( \frac{1+x}{1-x} \right)
+                  \).</p>
+
+                <p>Determinemos la inversa de la función tangente hiperbólica.</p>
+
+                <p>Por definición \(y= \text{tanh}\;⁡x= \frac{\text{senh}\;x}{\text{cosh}\;⁡x}. \)</p>
+
+                <p>La función es biunívoca, lo vemos en la gráfica de la función que se definió con anterioridad.</p>
+
+                <p>Despejemos \(x\) de la función, tomemos a \(y\) como función hiperbólica </p>
+
+                $$ y= \frac{e^x-e^{-x}}{e^x+e^{-x} } $$
+
+                <p>Expresemos todos los exponentes como positivos</p>
+                $$ y= \frac{e^x- \frac {1}{e^x}} {e^x+ \frac{1}{e^x}} $$
+
+                <p>Sumando</p>
+                $$ y= \frac{ \frac{e^{2x}-1}{e^x}}{ \frac{e^{2x}+1}{e^x}} $$
+
+                <p>Simplificando</p>
+                $$ y=\frac{e^{2x}-1}{e^{2x}+1} $$
+                $$ y(e^{2x}+1)=e^{2x}-1 $$
+                $$ ye^{2x}+y=e^{2x}-1 $$
+                $$ ye^{2x}-e^{2x}=-y-1 $$
+                $$ e^{2x} (y-1)=-y-1 $$
+                $$ e^{2x}= \frac{-y-1}{y-1} $$
+                $$ e^{2x}=\frac{y+1}{1-y} $$
+                $$ ln⁡e^{2x} =ln⁡ \left (\frac{y+1}{1-y} \right) $$
+                $$ 2x=ln⁡ \left( \frac{y+1}{1-y} \right) $$
+                $$ x= \frac{1}{2} ln⁡ \left( \frac{y+1}{1-y} \right) $$
+
+                <p>Luego la inversa es la función \(y= \frac{1}{2} ln⁡ \left( \frac{x+1}{1-x} \right) \).</p>
+
+                <p>Con lo cual \(\text{tanh}^{-1}\; x= \frac{1}{2} ln⁡ \left( \frac{1+x}{1-x} \right) \).</p>
+
+                <p>Las funciones hiperbólicas nos permiten modelar cables colgantes, un collar u órbitas no delimitadas,
+                  y se
+                  emplean en la solución de ecuaciones diferenciales.</p>
+
+                <p>Con esto concluimos los tipos de funciones que emplearemos a lo largo del curso, y las usaremos en
+                  los
+                  conceptos que se desarrollarán posteriormente, como son límites de funciones, cálculo de derivadas e
+                  integrales.</p>
+                <div> </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <div>
+    <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+
+</html>

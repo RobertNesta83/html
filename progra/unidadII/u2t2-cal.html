@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2 mx-3"> Unidad II. Límites de funciones y continuidad</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="u2t1-cal.html" >
+              Tema 1
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 2
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t2-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.1">2.1 Límites de formas indeterminadas</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.2">2.2 Límites unilaterales</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.3">2.3 Límite de funciones trigonométricas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t3-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t3-cal.html#3.1">3.1 Asíntotas horizontales, verticales y oblicuas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 4
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t4-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.1">4.1 En un punto</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.2">4.2 En un intervalo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="http://148.204.56.92/moodle/course/view.php?id=10&section=3" >
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>2. Cálculo analítico de límites</h1>
+        <p class="mt-4">Para calcular el valor del límite de una función de manera algebraica necesitamos definir las <b>propiedades de
+          los
+          límites.</b></p>
+        <p>Supóngase que los límites \( \displaystyle \lim_{x \rightarrow a}  f(x)\) y \( \displaystyle \lim_{x \rightarrow a}⁡ g(x) \) existen y
+          que \(c\) es una constante. Entonces, las
+          propiedades serían las siguientes:</p>
+          <div class="accordion centrado" id="accordionInv" style="width:65%">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingUno">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno">
+                  Propiedad de la suma
+                </button>
+              </h2>
+              <div id="collapseUno" class="accordion-collapse collapse show" aria-labelledby="headingUno"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+
+                  $$ \displaystyle \lim_{x \rightarrow a} [f(x)+g(x)]= \displaystyle \lim_{x \rightarrow a} f(x)+ \displaystyle \lim_{x \rightarrow a} g(x) $$
+                    <p>&ldquo;Esta propiedad menciona que el límite de la suma
+                    de dos funciones de \(x\), siendo una \( f(x)\) y la otra \(g(x)\), será igual a la suma del límite de \(
+                    f(x)\) más el límite de
+                    \( g(x) \) &rdquo; (Robles y García, 2021).</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingDos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                  Propiedad de la resta
+                </button>
+              </h2>
+              <div id="collapseDos" class="accordion-collapse collapse" aria-labelledby="headingDos"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  $$ \displaystyle \lim_{x \rightarrow a} [f(x)-g(x)]= \displaystyle \lim_{x \rightarrow a} f(x)- \displaystyle \lim_{x \rightarrow a} g(x) $$
+                   <p> &ldquo;Esta propiedad […] describe que el límite de la
+                    resta de dos funciones es igual al límite de la primera función menos el límite de la segunda función&rdquo;
+                    (Robles
+                    y García, 2021).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTres">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                  Propiedad del producto de una función y una constante
+                </button>
+              </h2>
+              <div id="collapseTres" class="accordion-collapse collapse" aria-labelledby="headingTres"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  $$ \displaystyle \lim_{x \rightarrow a} cf(x)=c \displaystyle \lim_{x \rightarrow a} f(x) $$
+                  <p>&ldquo;Esta propiedad afirma que el límite de
+                    una constante multiplicada por una
+                    función de \(x\), será igual al producto de tal constante multiplicada por el límite de la función de
+                    \(x\)&rdquo; (Robles y
+                    García, 2021).</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingCuatro">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseCuatro" aria-expanded="false" aria-controls="collapseCuatro">
+                  Propiedad de un producto
+                </button>
+              </h2>
+              <div id="collapseCuatro" class="accordion-collapse collapse" aria-labelledby="headingCuatro"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  $$ \displaystyle \lim_{x \rightarrow a} f(x)g(x)= \left( \displaystyle \lim_{x \rightarrow a} f(x) \right) \left( \displaystyle \lim_{x \rightarrow a} g(x) \right) $$
+                  <p> &ldquo;Esta propiedad muestra que el límite del producto
+                    (multiplicación) de dos funciones es igual al límite de una función multiplicado por el límite de la segunda
+                    función&rdquo; (Robles y García, 2021).</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingCinco">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
+                  Propiedad de un cociente
+                </button>
+              </h2>
+              <div id="collapseCinco" class="accordion-collapse collapse" aria-labelledby="headingCinco"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  <p class="text-center">\( \displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}= \frac{ \displaystyle \lim_{x \rightarrow a} f(x)}{ \displaystyle \lim_{x \rightarrow a} g(x)} \) &nbsp;&nbsp;  si &nbsp;&nbsp;
+                    \( \displaystyle \lim_{x \rightarrow a} g(x) \neq 0 \) </p>
+                    <p>&ldquo;Esta propiedad
+                    explica que el límite del cociente entre dos funciones es igual al límite de la primera función sobre el
+                    límite de
+                    la segunda función siempre y cuando este último no sea igual a \(0 \)&rdquo; (Robles y García, 2021).</p>
+        
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeis">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeis" aria-expanded="false" aria-controls="collapseSeis">
+                  Propiedad de una potencia
+                </button>
+              </h2>
+              <div id="collapseSeis" class="accordion-collapse collapse" aria-labelledby="headingSeis"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  <p class="text-center">\( \displaystyle \lim_{x \rightarrow a} (f(x))^n=( \displaystyle \lim_{x \rightarrow a} f(x))^n \) para todo \( n \in Z \) </p>
+                    <p>&ldquo;Esta
+                    propiedad indica que el límite de una función a
+                    la n potencia será igual al límite de dicha función posteriormente elevado a la misma potencia&rdquo; (Robles
+                    y
+                    García, 2021).</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSiete">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSiete" aria-expanded="false" aria-controls="collapseSiete">
+                  Propiedad de la raíz
+                </button>
+              </h2>
+              <div id="collapseSiete" class="accordion-collapse collapse" aria-labelledby="headingSiete"
+                data-bs-parent="#accordionInv">
+                <div class="accordion-body">
+                  $$ \displaystyle \lim_{x \rightarrow a}⁡\sqrt[n]{f(x) }=\sqrt[n]{ \displaystyle \lim_{x \rightarrow a} f(x)} $$ 
+                  <p>&ldquo;Esta
+                    propiedad dice que el límite de la raíz de una
+                    función se obtendrá al sacar el límite de la función y luego sacar la raíz de tal cifra obtenida&rdquo;
+                    (Robles y
+                    García, 2021).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p> </p>
+        <p>En el siguiente ejemplo podrás observar cómo se calcula el límite de una función, aplicando las propiedades
+          anteriores.</p>
+        <p>Calcular el límite de la función \( f(x)=\frac{2x^3-3x+2}{x^2+x+1} \) de manera algebraica.</p>
+        <p>Usando las propiedades de los límites</p>
+        $$ \displaystyle \lim_{x \rightarrow 1}⁡ \frac{2x^3-3x+2}{x^2+x+1}=\frac{ \displaystyle\lim_{x \rightarrow 1} (2x^3-3x+2)}{ \displaystyle \lim_{x \rightarrow 1}
+          (x^2+x+1) }$$
+          $$ = \frac{ \displaystyle \lim_{x \rightarrow 1}
+          2x^3+ \displaystyle \lim_{x \rightarrow 1}-3x+ \displaystyle \lim_{x \rightarrow 1} 2}{\displaystyle \lim_{x \rightarrow 1} x^2+ \displaystyle \lim_{x \rightarrow 1}
+          x+ \displaystyle \lim_{x \rightarrow 1} 1} $$
+          
+        $$ = \frac{ 2 \displaystyle \lim_{x \rightarrow 1} x^3-3 \displaystyle \lim_{x \rightarrow 1} x+ \displaystyle \lim_{x \rightarrow 1} 2 }{ \displaystyle \lim_{x \rightarrow 1}
+          x^2+ \displaystyle \lim_{x \rightarrow 1} x+ \displaystyle \lim_{x \rightarrow 1} 
+          1} $$ 
+          $$= \frac{2(1)^3-3(1)+2}{(1)^2+1+1}=\frac{2-3+2}{3}=\frac{1}{3} $$
+        <p>Si cada vez que calculamos el límite de una función y aplicamos las propiedades de los límites, se tiene un
+          procedimiento extenso, la propiedad siguiente permite reducir el procedimiento.</p>
+        <p><b>Propiedad</b>. Si la función \(f\) es un polinomio o una función racional y \(a\) está en el dominio de la función,
+          entonces
+          \( \displaystyle \lim_{x \rightarrow a}⁡ f(x)= f(a) \).</p>
+        <p>Aplicando la propiedad, el límite anterior se calcula de la siguiente manera:</p>
+        $$ \displaystyle \lim_{x \rightarrow 1}⁡ \frac{2x^3-3x+2}{(x^2+x+1}= \frac{2(1)^3-3(1)+2)}{(1)^2+1+1}= \frac{2-3+2}{3}=\frac{1}{3} $$
+        <p>Cuando al calcular el valor de un límite llegamos a la solución al evaluar la función en el valor al que
+          tiende \(x\),
+          decimos que el límite es evaluable.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">14. Aplicación de las propiedades de los límites</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+       
+        <p id="2.1">Ya aplicamos algunas propiedades en el cálculo de límites; pero ¿qué pasa cuando no se pueden obtener los
+          límites?
+          Para estos casos, recurrimos a los límites de formas indeterminadas.</p>
+        <h2> 2. 1 Límites de formas indeterminadas</h2>
+        <p class="mt-4">Podemos decir que una indeterminada es una operación en la que el resultado no se encuentra definido; pero
+          esto no
+          significa que no exista el límite, sino que se necesitará buscar el resultado de otra manera. Así que ¿cómo
+          podemos
+          saber qué opción tomar para resolver el límite de una forma indeterminada?</p>
+        <p>Recordemos lo siguiente, &ldquo;cuando determinamos el límite de una función \(\displaystyle  \lim_{x \rightarrow a}⁡f(x)
+          \), tenemos las siguientes
+          opciones:</p>
+          <ol>
+        <li> \(\displaystyle  \lim_{x \rightarrow a} f(x) \) es igual a un número real.</li>
+        <li> \(\displaystyle  \lim_{x \rightarrow a}⁡f(x) \) no existe.</li>
+        <li> \(\displaystyle  \lim_{x \rightarrow a}⁡f(x) \) es una forma indeterminada&rdquo;.</li>
+        </ol>
+        <p style="text-align: right;">(Ruiz y Gutiérrez, 2022)</p>
+        <p>Las dos primeras opciones son solución del límite de la función y en el último caso para llegar a una
+          solución del
+          límite se debe de eliminar la forma indeterminada, esto puede ser empleando algún procedimiento algebraico.
+        </p>
+
+        <p>Las formas indeterminadas son:</p>
+        <div class="text-center mb-4">
+          <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic sobre la imagen para ver la animación</div>
+          <a data-bs-toggle="modal" data-bs-target="#Continuidad">
+            <img class="img-fluid" src="img/btn_lanzador.svg">
+          </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="Continuidad" tabindex="-1" aria-labelledby="ContinuidadLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ContinuidadLabel">Formas indeterminadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <embed src="animacion/u2_tm2_01_anim_indeterminadas/u2_tm2_01_anim_indeterminadas.html"  width="100%" height="550">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>En esta sección nos abocaremos a los límites que tienen solución o que toman la forma indeterminada de
+          cociente.</p>
+        <p>Al evaluar encontramos expresiones que no son formas indeterminadas, como las siguientes:</p>
+        <p>\( \frac{k}{\infty} \) , \(\frac{k}{0}\), \( \frac{\infty}{0}\) y \(\frac{0}{\infty} \), estas expresiones son iguales
+          a los valores que se indican \( \frac{k}{ \infty} =0 \), \(\frac{k}{0} = \left\{\begin{array}{rl}  \infty & \text{si } k > 0\\   - \infty & \text{si } k < 0 \end{array} \right. \), \( \frac{\infty}{0}= \infty \left(\frac{1}{0} \right) = ( \infty )(
+          \infty )= \infty \) y \( \frac{0}{ \infty} =0 \left( \frac{1}{ \infty} \right) =(0)(0)=0 \)</p>
+          <p>Uno de los procedimientos que se usa en el cálculo de límites de funciones algebraicas para llegar a una
+          solución es
+          la <b>factorización</b>, este procedimiento se aplica cuando al evaluar el límite se obtiene una forma indeterminada
+          de
+          cociente, generalmente la forma \( \frac{0}{0} \), y es posible factorizar para eliminar la forma
+          indeterminada. Veamos los
+          siguientes ejemplos:</p>
+          <ul>
+            <li> Determinar que el valor del límite \(\displaystyle  \lim_{x \rightarrow 1} \frac{x^3-1}{x-1} \) , si existe. </li>
+          </ul>
+        <p>Primero evaluamos</p>
+        $$ \displaystyle \displaystyle \lim_{x \rightarrow 1} \frac{x^3-1}{x-1}= \frac{(1)^3-1}{1-1}= \frac{0}{0} $$
+        <p>Luego, se obtiene una forma indeterminada de cociente.</p>
+        <p>Para eliminar la forma indeterminada y llegar a una solución, apliquemos un procedimiento de factorización.
+        </p>
+        <p>Factorizando la diferencia de cubos de numerador, tenemos</p>
+        $$ \displaystyle \lim_{x \rightarrow 1} \frac{x^3-1}{x-1}\displaystyle =\lim_{x \rightarrow 1} \frac{(x-1)(x^2+x+1)}{x-1} $$
+        <p>Es posible eliminar el factor \(x-1\)</p>
+        $$ \displaystyle \lim_{x \rightarrow 1} \frac{x^3-1}{x-1} \displaystyle =\lim_{x \rightarrow 1} \frac{(x-1)(x^2+x+1)}{x-1}=  \displaystyle \lim_{x \rightarrow 1} x^2+x+1 $$
+        <p>Evaluando</p>
+        $$ \displaystyle \displaystyle \lim_{x \rightarrow 1} \frac{x^3-1}{x-1} \displaystyle =\lim_{x \rightarrow 1} \frac{ (x-1)(x^2+x+1)}{x-1} \displaystyle =\lim_{x \rightarrow 1} 
+          x^2+x+1=(1)^2+1+1=3$$
+        <p>Así, el límite vale 3.</p>
+        <ul>
+          <li> Determinar que el valor del límite \(\displaystyle  \lim_{x \rightarrow 2} \frac{x^2-x+12}{x+3} \) , si existe.</li>
+        </ul>
+        <p>Si empezamos factorizando el numerador, simplificamos y evaluamos</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} \frac {x^2-x+12}{x+3} = \displaystyle \lim_{x \rightarrow 2} \frac{(x-4)(x+3)}{x+3}= \displaystyle \lim_{x \rightarrow 2} x-4=2-4=-2 $$
+        <p>Así, el límite existe y vale \(-2\).</p>
+        <p>Pero si usamos otro procedimiento y empezamos evaluando</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} \frac{x^2-x+12}{x+3}= \frac{2^2-2+12}{2+3}= \frac{4-2+12}{5}=\frac{14}{5} $$
+        <p>El límite existe y vale \( \frac{14}{5} \).</p>
+        <p>Encontramos resultados diferentes, ¿esto es posible?, ¿por qué sucede?</p>
+        <p>Cuando aplicamos una factorización al calcular un límite lo hacemos para eliminar el término que hace que se
+          tenga la
+          forma indeterminada \( \frac{0}{0} \). Al factorizar y eliminar un factor, eliminamos el cero y con lo que
+          vemos en el segundo
+          procedimiento no hay una forma indeterminada, por lo que no es necesario el factorizar.</p>
+        <p>El procedimiento correcto en el ejemplo anterior es el segundo y el valor del límite es \( \frac{14}{5}\).
+        </p>
+        <p>Cuando calculamos el límite de una función, primero debemos evaluar y, si tenemos una forma indeterminada,
+          aplicamos
+          un procedimiento algebraico que elimine la indeterminación para poder obtener una solución.</p>
+        <p>Otro procedimiento que se puede aplicar cuando se tiene un cociente indeterminado es la <b>racionalización </b>.</p>
+        <p>El procedimiento de racionalización se aplica cuando multiplicamos la función por el conjugado del
+          denominador o del
+          numerador, ejemplo:</p>
+        <p>Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow 0} ⁡ \frac{x^2}{\sqrt{x^2+16}-4}\), si existe.</p>
+        <p>Evaluemos</p>
+        $$ \displaystyle \lim_{x \rightarrow 0} \frac{x^2}{(\sqrt{x^2+16}-4)}= \frac{(0)^2}{(\sqrt{(0)^2+16}-4}
+          =\frac{0}{\sqrt{16}-4}= \frac{0}{0} $$
+        <p>Obtenemos una forma indeterminada.</p>
+        <p>Racionalicemos la función multiplicando por el conjugado del denominador</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \frac {x^2}{\sqrt{x^2+16}-4}=  \displaystyle \lim_{x \rightarrow 0}⁡ \frac{x^2}{\sqrt{x^2+16}-4}  \left(  \frac{ \sqrt{ x^2+16}+4 }{ \sqrt{x^2+16}+4} \right) = \displaystyle \lim_{x \rightarrow 0} \frac{ x^2 ( \sqrt{x^2+16}+4)}{ (\sqrt{x^2+16})^2-4^2 } $$
+        $$ = \displaystyle \lim_{x \rightarrow 0}⁡ \frac{x^2 (\sqrt{x^2+16}+4)}{(x^2+16)-16}=  \displaystyle \lim_{x \rightarrow 0} \frac{x^2
+          (\sqrt{x^2+16}+4)}{x^2} =lim_{x \rightarrow 0} \sqrt{x^2+16}+4 $$
+          $$ =\sqrt{(0)^2+16}+4=\sqrt{16}+4=4+4=8 $$
+        <p>Así, el límite existe y su valor es \(8\).</p>
+        <p>Veamos otro ejemplo. Calcular el valor del límite \( \displaystyle \lim_{x \rightarrow -1} \frac{\sqrt{x^2+8}-3}{x+1}\), si existe.
+        </p>
+        <p>Evaluemos</p>
+       $$ \displaystyle \lim_{x \rightarrow -1}⁡
+          \frac{ \sqrt{x^2+8}-3}{x+1}= \frac{\sqrt{(-1)^2+8}-3}{-1+1}= \frac{\sqrt{1+8}-3}{-1+1}=\frac {\sqrt{9}-3}{-1+1}=\frac{3-3}{-1+1}=
+          \frac{0}{0} $$
+        <p>Obtenemos la forma de cociente indeterminado.</p>
+        <p>Racionalicemos, multiplicando por el conjugado del numerador</p>
+        $$ \displaystyle \lim_{x \rightarrow -1}⁡ \frac{\sqrt{x^2+8}-3}{x+1}= \displaystyle \lim_{x \rightarrow -1}⁡ \frac{ \sqrt{x^2+8}-3}{x+1} \left(\frac {\sqrt{x^2+8}+3}{ \sqrt{x^2+8}+3} \right) = \displaystyle \lim_{x \rightarrow -1}⁡ \frac {(\sqrt{x^2+8}-3)(\sqrt{x^2+8}+3)}{(x+1) (\sqrt{x^2+8}+3)} $$
+        $$   \displaystyle \lim_{x \rightarrow -1}⁡  \frac{ (\sqrt{x^2+8})^2-9}{(x+1)(\sqrt{x^2+8}+3} = \displaystyle \lim_{x \rightarrow -1} \frac{x^2+8-9}{(x+1)(\sqrt{x^2+8}+3} = \displaystyle \lim_{x \rightarrow -1}⁡ \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3)}$$
+        <p>No se puede simplificar, evaluemos</p>
+        $$ \displaystyle \lim_{x \rightarrow -1}⁡ \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3} $$ 
+        $$ = \frac{(-1)^2-1}{(-1+1)(\sqrt{(-1)^2+8}+3)} $$
+         $$ = \frac{(1-1)}{(-1+1)(\sqrt{1+8}+3)} $$
+        $$ = \frac{1-1}{(-1+1)(\sqrt{9}+3)} = \frac{1-1}{(-1+1)(3+3)} = \frac{0}{(0)(6)} = \frac{0}{0} $$
+        <p>Nuevamente es una forma indeterminada.</p>
+        <p>Apliquemos ahora la factorización</p>
+        $$ \displaystyle \lim_{x \rightarrow -1} \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3)} = \displaystyle \lim_{x \rightarrow -1}⁡
+           \frac{(x+1)(x-1)}{(x+1)(\sqrt{x^2+8}+3)} $$
+        <p>Simplificando</p>
+        $$ \displaystyle \lim_{x \rightarrow -1}⁡ \frac{(x+1)(x-1)}{(x+1)(\sqrt{x^2+8}+3} = \displaystyle \lim_{x \rightarrow -1}⁡ \frac{x-1}{\sqrt{x^2+8}+3)} $$
+        
+        <p>Evaluando</p>
+        $$ \displaystyle \lim_{x \rightarrow -1}⁡
+         \frac{x-1}{\sqrt{x^2+8}+3}= \frac{-1-1}{\sqrt{(-1)^2+8}+3}= \frac{-1-1}{\sqrt{1+8}+3}= \frac{ -1-1}{\sqrt{9}+3}=\frac{-1-1}{3+3}=\frac{-2}{6}=-\frac{1}{3} $$
+        <p>En este ejemplo se aplican las dos técnicas para determinar el límite, cuando tenemos una forma de cociente
+          indeterminado.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">15. Límites de formas indeterminadas</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        <!-- <p>Ejercicio 15. Límites de formas indeterminadas</p>
+         -->
+        <p id="2.2">Ya que sabes cómo se realizan los límites de formas indeterminadas, revisemos los límites unilaterales, que
+          son
+          prácticamente los mismos que los límites normales, sólo que se restringen cuando \(x\) se aproxima desde un
+          solo lado.
+        </p>
+        <h2> 2.2 Límites unilaterales</h2>
+        <p class="mt-4">Podemos definir los límites unilaterales como el límite de una función a medida que se acerca a \(x\), ya sea
+          desde el
+          lado derecho o desde el lado izquierdo. Estos se utilizan cuando hay una discontinuidad de salto y los dos
+          lados no
+          coinciden, ejemplo:</p>
+        <p>Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow 2^- } \frac{x-3}{x^2-4} \), si existe.</p>
+        <p>La gráfica de la función es la siguiente:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm2/u2_tm2_01_limites.svg"  width="50%">
+      </div>
+      <p class="mt-4">Observamos que, conforme nos acercamos a \(2\) con valores más pequeños, los valores de la \(y\) crecen.</p>
+        <p>Evaluamos </p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- }⁡ \frac{x-3}{x^2-4}= \frac{2^--3}{(2^- )^2-4} $$
+        <p>Al evaluar sustituimos a \(x\) por el valor de \(2\) por la izquierda.</p>
+        <p>Con \(2\) por la izquierda, pensamos un valor próximo a \(2\); pero con valores más pequeños que el \(2\).</p>
+        <p>Así \(2^--3=-1 \), ya que, aunque nos aproximemos con valores más pequeños que \(2\), nos aproximamos a \(2\) y si
+          restamos \(3\) es \(-1\).</p>
+        <p>Y \((2^- )^2-4=4-4=0 \), ya que, al aproximarnos a \(2\) con valores más pequeños, nos aproximamos a \(2\) y con el
+          cuadrado a \(4\).
+        </p>
+        <p>Luego </p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- }⁡ \frac{x-3}{x^2-4}= \frac{2^--3}{(2^- )^2-4}= \frac{-1}{-0}= \infty $$
+        <p>Con lo cual el límite por la izquierda de la función \( \displaystyle \lim_{x \rightarrow 2^- } \frac{x-3}{x^2-4} \) no existe.</p>
+        <p>Otro ejemplo sería al determinar el valor del límitel \( \displaystyle \lim_{x \rightarrow 2^+ } \frac{x-3}{x^2-4}\), si existe. </p>
+        <p>Evaluamos </p>
+        $$ \displaystyle \lim_{x \rightarrow 2^+ }⁡ \frac{x-3}{x^2-4}= \frac{2^+-3}{(2^+ )^2-4} $$
+        <p>Al evaluar sustituimos a \(x\) por el valor de \(2\) por la derecha.</p>
+        <p>Con \(2\) por la derecha, pensamos un valor próximo a \(2\); pero con valores más grandes que el \(2\).</p>
+        <p>Así \(2^+-3=-1\), ya que, aunque nos aproximemos con valores más grandes que \(2\), nos aproximamos a \(2\) y si restamos
+          \(3\) es
+          \(-1\).</p>
+        <p>Y \( (2^+ )^2-4=4-4=0\), ya que, al aproximarnos a \( 2 \) con valores más grandes, nos aproximamos a \(2\) y con el
+          cuadrado a \(4\).
+        </p>
+        <p>Luego </p>
+        $$ \displaystyle \lim_{x \rightarrow 2^+ }⁡ \frac{x-3}{x^2-4}=\frac{2^+-3}{(2^+ )^2-4}=\frac{-1}{0}=- \infty $$
+        <p>Con lo cual el límite por la derecha de la función  \(\displaystyle \lim_{x \rightarrow 2^- } \frac{x-3}{x^2-4} \) no existe.</p>
+        <ul>
+          <li><b> Límites de funciones por partes</b></li>
+        </ul>
+        <p>El cálculo del límite de una función por partes depende del punto donde se pide calcularlo, recordemos que
+          una
+          función por partes, por secciones o a trozos, es aquélla que se define por diferentes funciones en cada
+          intervalo.
+        </p>
+        <p>Si se pide determinar el límite de una función por partes dentro de uno de los intervalos, se calcula este
+          límite
+          evaluando o como una forma indeterminada; pero si se pide que se calcule en uno de los puntos donde cambia la
+          función, se deben de calcular límites unilaterales. Ejemplo:</p>
+        <p>Sea \(\left\{\begin{array}{rl}  3 &  x < 2\\   \frac{x}{2} &  x > 2 \end{array} \right. \) ,  hallar los límites siguientes:</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- } f(x), \displaystyle \lim_{x \rightarrow 2^+ } f(x), \displaystyle  \lim_{x \rightarrow 2} f(x), \displaystyle \lim_{x
+          \rightarrow 4^- } f(x), \displaystyle \lim_{x \rightarrow 4^+ }  f(x) \text{  y }   \displaystyle \lim_{x \rightarrow 4} f(x) $$
+        <p>Calculemos \( \displaystyle \lim_{x \rightarrow 2^- } f(x) \), para valores menores que \(2\). La función se define como \(3-x\), que es
+          la primera parte de
+          la función \(f(x)\).</p>
+        <p>Evaluemos  \( \displaystyle \lim_{x \rightarrow 2^- } f(x)= \displaystyle \lim_{x \rightarrow 2^- } 3-x=3-2^-=1. \) </p>
+        <p>Obtenemos que el límite en \(2 \) por la izquierda es igual a \(1\).</p>
+        <p>Calculemos \( \displaystyle \lim_{x \rightarrow 2^+ } f(x) \), para valores mayores que \(2\). La función se define como \( \frac{x}{2}+1 \), que es
+          la segunda parte de la función \(f(x) \).</p>
+        <p>Evaluemos \( \displaystyle \lim_{x \rightarrow 2^+ } f(x)= \displaystyle \lim_{x \rightarrow 2^+ }  \frac{x}{2}+1=\frac{2^+}{2}+1=1+1=2 \).</p>
+        <p>Obtenemos que el límite en \( 2 \) por la derecha es igual a \(2\).</p>
+        <p>Calculemos  \( \displaystyle \lim_{x \rightarrow 2} f(x) \).</p>
+        <p>Para \( x=2 \) no se define la función; pero para calcular el límite de la función en un punto no necesita estar
+          definida
+          en él, sino alrededor de ese punto, y para la función, si está definida para valores más pequeños y más
+          grandes que
+          \(2\), usaremos el teorema que se definió con anterioridad:</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">
+                   \( \displaystyle \lim_{x \rightarrow a} f(x)=L\) si y sólo si \( \displaystyle \lim_{x \rightarrow a^- } f(x)=L= \displaystyle \lim_{x \rightarrow a^+ } f(x) \)</p>
+        <p style="text-align: right;">(Stewart, 2013)
+                </p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        <p class="mt-4">Así se deben de calcular los límites unilaterales.</p>
+        <p>Ya calculamos \( \displaystyle \lim_{x \rightarrow 2^- } f(x)=1\) y \( \displaystyle \lim_{x \rightarrow 2^+ } f(x)=2\). Como los límites por la
+          derecha y por la izquierda de\( 2 \) son
+          diferentes, el límite  \( \displaystyle \lim_{x \rightarrow 2}  f(x)\) no existe, ya que los valores se aproximan a dos valores
+          diferentes.</p>
+        <p>Calculemos \( \displaystyle \lim_{x \rightarrow 4^-} f(x) \). \(4\) es mayor que \(2\), por lo cual, se usa para la función la expresión
+          \( \frac{x}{2}+1 \).</p>
+        $$ \displaystyle \lim_{x \rightarrow 4^- } f(x)= \displaystyle \lim_{x \rightarrow 4^- } \frac{x}{2}+1= \frac{4^-}{2}+1=2+1=3 $$
+        <p>Calculemos \( \displaystyle \lim_{x \rightarrow 4^ \pm } f(x) \). \(4 \) es mayor que \(2\), por lo cual, se usa para la función la expresión
+          \( \frac{x}{2}+1\).</p>
+        $$ \displaystyle \lim_{x \rightarrow 4^+ } f(x)=lim_{x \rightarrow 4^+ } \frac{x}{2}+1= \frac{4^+}{2}+1=2+1=3 $$
+        <p>Calculemos \( \displaystyle \lim_{x \rightarrow 4} f(x) \). \( 4 \) es mayor que \(2\), por lo cual, se usa para la función la expresión
+          \( \frac{x}{2}+1\).</p>
+        $$ \displaystyle \lim_{x \rightarrow 4} f(x)= \displaystyle \lim_{x \rightarrow 4} \frac{x}{2}+1= \frac{4}{2}+1=2+1=3 $$
+        <p>Como la función está definida en \(4\) por medio de un polinomio, es posible determinar el límite sólo evaluando.
+        </p>
+        <p>También podemos calcular el límite usando los límites unilaterales, ya que los calculamos con anterioridad,
+          como
+          \( \displaystyle \lim_{x \rightarrow 4^- } f(x)=3\) y \( \displaystyle \lim_{x \rightarrow 4^+ } f(x)=3 \), el \( \displaystyle \lim_{x \rightarrow 4} f(x)=3\).</p>
+        <p>Es momento de revisar otro tipo de funciones con valor absoluto, en éstas se mide la distancia desde 0 en la
+          recta
+          numérica.</p>
+          <ul>
+            <li>Límite de funciones con valor absoluto</li>
+          </ul>
+        <p>El valor absoluto es la distancia desde un punto \(x\) hasta el origen, al ser una distancia es siempre
+          positivo y
+          algebraicamente se define como</p>
+        $$ |x|= \left\{\begin{array}{rl}  x & \text{si } x \geq 0\\   - x & \text{si }  x < 0 \end{array} \right. $$
+        <p>Se puede aplicar a cualquier expresión algebraica o función.</p>
+        <p>Son funciones con valor absoluto</p>
+        $$ f(x)=|x-3| $$
+        $$ f(x)=|x^2+2x-3| $$
+        $$ f(x)=|x|+3 $$
+        $$ f(x)=\frac{1}{|x|}  $$
+        <p>Observa el siguiente ejemplo:</p>
+        <p>Determinar el límite \( \displaystyle  \lim_{x \rightarrow 2} \frac{|x-2|}{x-2} \).</p>
+        <p>Como la función valor absoluto se define como una función por partes, tenemos</p>
+        $$  |x-2|= \left\{\begin{array}{rl}x-2 &  \text{ si } x \geq 0 \\   - (x-2) & x < 0 \end{array} \right. \text{ esto es }  |x-2|= \left\{\begin{array}{rl} x-2 &  \text{ si } x \geq 2\\   - (x-2) & \text{ si } x < 2 \end{array} \right. $$
+        
+        <p>Así</p>
+         $$ f(x)= \frac{|x-2|}{x-2} = \left\{\begin{array}{rl} \frac{x-2}{x-2}  &  \text{ Si } x \geq 2\\   \frac{-(x-2)}{x-2}  & \text{ Si }x < 2 \end{array} \right.  = \left\{\begin{array}{rl} 1  &  \text{ Si } x \geq 2\\   -1  & \text{ Si }x < 2 \end{array} \right.$$
+       
+        <p>Así la función queda expresada como una función por partes, ésta es la que emplearemos para calcular el
+          límite
+         $$  \displaystyle \lim_{x \rightarrow 2} \frac{|x-2|}{x-2}. $$
+        <p>Al ser una función por partes que cambia de expresión en torno a \(x=2\), calculamos límites unilaterales</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- } \frac{|x-2|}{x-2}= \displaystyle \lim_{x \rightarrow 2^- }-1=-1 $$
+        <p class="text-center">y</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^+ } \frac{|x-2|}{(x-2)}= \displaystyle \lim_{x \rightarrow 2^+ } 1=1 $$
+        <p>Como los límites unilaterales son diferentes, el \( \displaystyle  \lim_{x \rightarrow 2} \frac{|x-2|}{x-2} \) no existe.</p>
+        <p>Realiza el siguiente ejercicio referente a los límites unilaterales.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">16. Límites unilaterales</p>
+            </div>
+          </div>
+        </div>
+        <p></p>      
+        <p id="2.3">Cuando el límite unilateral es a la derecha o izquierda de \( 0 \), o cuando al aplicarlo nos queda a la izquierda
+          o
+          derecha de \( 0 \), hay que dar el signo exacto, ya que se determina el comportamiento de la función si el valor es
+          muy
+          grande \( \infty \) o muy pequeño \(- \infty \).</p>
+        <h2> 2.3  Límite de funciones trigonométricas</h2> 
+        <p class="mt-4">En el cálculo del límite de funciones trigonométricas se usan las identidades trigonométricas, que es el
+          álgebra de
+          estas funciones y se calculan en su mayoría cuando la variable tiende a \(0\). Tenemos como base cuatro límites
+          que se
+          presentan en los teoremas siguientes.</p>
+          <div class="col-4 centrado">
+          <table class="table " >
+          <tbody>
+            <tr class="table-primary" >
+              <td><b>Teorema:</b> \( \displaystyle \lim_{t \rightarrow 0} sen t=0 \)</td>
+              </tr>
+              <tr class="table-secondary" >
+              <td><b>Corolario:</b> \( \displaystyle \lim_{t \rightarrow 0} cos⁡t=1 \)</td>
+              </tr>
+              <tr class="table-warning" >
+              <td><b>Teorema:</b> \( \displaystyle \lim_{t \rightarrow 0} \frac{sent}{t}=1 \)</td>
+              </tr>
+              <tr class="table-danger" >
+              <td><b>Teorema:</b> \( \displaystyle \lim_{t \rightarrow 0} \frac{(1-cos⁡t)}{t}=0 \)</td>      
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Veamos cómo aplicaremos estos problemas en los siguientes ejemplos:</p>
+        <ul>
+          <li> Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow 0} \frac{x}{senx} \) , si existe.</li>
+        </ul>
+        <p>Buscamos usar \( \displaystyle \lim_{t \rightarrow 0} \frac{sent}{t}=1 \) </p>
+        $$ \displaystyle \lim_{x \rightarrow 0} \frac{x}{senx}= \displaystyle \lim_{x \rightarrow 0} \frac{ \frac{x}{x}}{ \frac{senx}{x}}= \displaystyle \lim_{x \rightarrow 0}
+         \frac{1}{ \frac{senx}{x}}=\frac{ \displaystyle \lim_{x \rightarrow 0}⁡ 1}{ \displaystyle \lim_{x \rightarrow 0} \frac{senx}{x}}=\frac{1}{1}=1 $$
+        <ul>
+          <li> Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow 0} \frac{sen^2 x+sen2x}{3x} \) , si existe.</li>
+        </ul>
+        <p>Usamos identidades</p>
+        $$ \displaystyle \lim_{x \rightarrow 0} \frac{sen^2 x+sen2x}{3x}= \displaystyle \lim_{x \rightarrow 0} \frac{sen^2 x+2senxcosx}{3x}= \displaystyle \lim_{x \rightarrow 0 } \frac{senx(senx+2cosx)}{3x} $$
+        $$ \displaystyle \lim_{x \rightarrow 0} \left( \frac{senx}{x} \right) \left(\frac{senx+2cosx}{3} \right)= \left( \displaystyle \lim_{x \rightarrow 0} \frac{senx}{x} \right) \left( \displaystyle \lim_{x \rightarrow 0}
+          \frac{senx+2cosx}{3} \right)=(1) \left( \frac{sen0+2coso}{3} \right)=\frac{2}{3} $$
+        <p>En este caso, usamos tanto las identidades como los límites básicos definidos en los teoremas.</p>
+        <ul>
+          <li> Determinar el valor del límite \(\displaystyle \lim_{x \rightarrow 0}⁡ \frac{1- cos^2⁡x}{x} \) , si existe. </li>
+        </ul>
+        <p>Evaluando</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1- cos^2⁡x}{x}=\frac{1-(cos0)^2}{0}= \frac{0}{0} $$
+        <p>No se obtiene un resultado, aplicamos álgebra, en este caso, las identidades trigonométricas</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1- cos^2⁡x}{x}=\displaystyle \lim_{x \rightarrow 0}⁡ \frac{(1-cosx)(1+cosx)}{x}=\displaystyle \lim_{x \rightarrow 0}⁡
+          \frac{1-cosx}{x} (1+cosx) $$
+        $$ =\left( \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1-cosx}{x} \right) \left( \displaystyle \lim_{x \rightarrow 0} 1+ cosx \right)=0 \left( 1+cos0 \right)=0(1+1)=0 $$
+        <p>Realiza el siguiente ejercicio correspondiente al límite de funciones trigonométricas.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">17. Límite de funciones trigonométricas</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+
+        <p>Hemos definido el límite de una función, calculado los límites de la función en el punto o al ser
+          unilaterales, y
+          definido cuando existe un límite. El cálculo de límites lo hemos hecho alrededor de un número real; pero
+          también es
+          posible determinar el límite de una función cuando la \(x\) crece arbitrariamente, esto es, cuando tiende a
+          infinito.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+
+</html>

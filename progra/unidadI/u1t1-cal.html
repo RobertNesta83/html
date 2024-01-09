@@ -1,0 +1,1354 @@
+<!DOCTYPE html > 
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2">Unidad I. Funciones algebraicas y trascendentes</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://148.204.56.92/moodle/course/view.php?id=10"><img class="img-fluid" src="img/inicio.png" width="30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="introduccion.html"  role="button" aria-expanded="false">
+              Introducción
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="u1t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 1
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t1-cal.html">Tema 1</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.1">1.1 Representaciones</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.2">1.2 Propiedades</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="u1t2-cal.html" role="button"
+               aria-expanded="false">
+              Tema 2
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u1t3-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t3-cal.html">Tema 3</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.1">3.1 Exponenciales naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.2">3.2 Logarítmicas naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.3">3.3 Trigonométricas y trigonométricas inversas</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.4">3.4 Hiperbólicas e hiperbólicas inversas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="u1t4-cal.html"  role="button" aria-expanded="false">
+              Tema 4
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://148.204.56.92/moodle/course/view.php?id=10&section=2"  role="button" aria-expanded="false">
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>1. Funciones algebraicas</h1>
+        <p class="mt-4">El <a href="#" title="Defición" data-bs-toggle="popover" data-bs-trigger="focus" 
+            data-bs-content="Es considerado como el procedimiento a seguir para poder llegar al resultado de una operación. También estima los cambios de las variables y determina longitudes, áreas y volúmenes.">Cálculo<sup><img src="img/icono.svg" width="15" ></sup></a>
+          constituye uno de los pilares principales de las Matemáticas. Sus aplicaciones son numerosas y aparecen en
+          muy variadas áreas de trabajo e investigación. Sin embargo, en sus comienzos el Cálculo fue desarrollado para
+          estudiar algunos problemas científicos y matemáticos como encontrar la tangente de un punto en una curva, la
+          longitud de la curva o el valor mínimo y máximo de una cantidad.</p>
+        <p>La Matemática moderna ha tenido una gran influencia, ya que su mayor aplicación se relaciona con las Ciencias
+          Naturales, Biología, Química y el uso de la tecnología moderna.</p>
+        <p>Un ejemplo básico en el que está inmerso el Cálculo en un aspecto de la vida cotidiana es en un juego de
+          basquetbol.
+          En el momento en el que el jugador lanza la pelota a la canasta, podemos determinar la fuerza con la que es
+          lanzada,
+          el punto máximo de elevación, la trayectoria, el tiempo de recorrido, la velocidad y un sinfín de factores
+          determinantes que podríamos encontrar en un simple lanzamiento.</p>
+        <p>La relación, que podemos encontrar entre estos factores, se realiza a través de <b>funciones.</b></p>
+        <div class="centrado col-5  mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+            <div class="card-body">
+              <p>"Una <b>función</b> \(f\) es una regla de correspondencia que asigna cada elemento \(x\) de un conjunto
+                \(A\) a un solo elemento, llamado
+                \(f(x)\) 
+                de un conjunto <em>"B (Stewart, 2008)".</em>. </p>
+
+            </div>
+          </div>
+        </div>
+        <p>Por ejemplo, siguiendo con el juego de basquetbol, a cada jugador se le asigna un número que lo representa,
+          así que
+          podemos decir que el conjunto \(A\) corresponde a los jugadores y el conjunto \(B\) corresponde a los números. Ningún
+          jugador puede tener \(2\) números y ningún número puede ser asignado a dos jugadores.</p>
+
+        <div class="img-flex text-center">
+          <img src="img/u1_tm1/u1_tm1_01_funciones.svg" width="60%" scroll="no">
+        </div>
+        <p class="mt-4">Otros conceptos relacionados con el término de \(función\) son los siguientes:</p>
+        <!-- Button trigger modal -->
+        <div class="text-center mb-4 pe-auto">
+          <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic sobre la imagen para ver la animación.</div>
+          <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img class="img-fluid" src="img/btn_lanzador.svg">
+          </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Función</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <embed src="animacion/u1_tm1_02_anim_funciones.html"  width="100%" height="550">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <p id="1.1">Ahora que conoces cuáles son los elementos que componen una función, es momento de
+          revisar su representación gráfica.
+        </p>
+        <p>&nbsp;</p>
+        <h2>1.1 Representaciones: algebraica, geométrica, numérica y verbal</h2>
+        <p class="mt-4">Una función no sólo se identifica por medio de una expresión algebraica, se tienen otras formas para su
+          representación, las cuales son:</p>
+        <ol class="vinetas">
+          <li> Verbal, con una descripción en palabras.</li>
+          <li> Numérica, por medio de una tabla de valores.</li>
+          <li> Visual, geométrica o gráfica, por medio de una gráfica.</li>
+          <li> Algebraica, por medio de una expresión algebraica o ecuación.</li>
+          <div class="citas" style="text-align: right;">(Vera, 2005)</div>
+        </ol>
+        <p>Una función puede representarse mediante las cuatro maneras descritas anteriormente, incluso, es relevante
+          utilizar
+          más de una representación para verificar su comportamiento y conocerla más a fondo. Hay algunas funciones que
+          se
+          comportan de manera más natural con algún tipo de representación, así que es importante estar atento sobre qué
+          método es más compatible.</p>
+        <p>A continuación, presentaremos una función con diferentes representaciones.</p>
+        <ol class="vinetas">
+          <li><em>Verbal</em></li>
+        </ol>
+        <p>El área de un cuadrado depende del valor de su lado.</p>
+        <ol class="vinetas" start="2">
+          <li><em>Numérica</em></li>
+        </ol>
+        <div class="centrado col-2">
+          <table class="table table-bordered table-striped  table-hover text-center">
+            <thead class="table-primary">
+              <tr>
+                <th>\( x \)</th>
+                <th>\( y \)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>\(1\)</th>
+                <th>\(1\)</th>
+              </tr>
+              <tr>
+                <th>\(2\)</th>
+                <th>\(4\)</th>
+              </tr>
+              <tr>
+                <th>\(3\)</th>
+                <th>\(9\)</th>
+              </tr>
+              <tr>
+                <th>\(4\)</th>
+                <th>\(16\)</th>
+              </tr>
+              <tr>
+                <th>\(5\)</th>
+                <th>\(25\)</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Con respecto a la función área del cuadrado, \(x\) representa al lado del cuadrado y \(y\) el área del mismo.
+          Esto es:</p>
+        <div class="centrado col-3">
+          <table class="table table-bordered table-striped  table-hover text-center">
+            <thead class="table-info">
+              <tr>
+                <th colspan="2">Cuadrado</th>
+              </tr>
+              <tr class="table-primary">
+                <th>Lado</th>
+                <th>Área</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>\(1\)</th>
+                <th>\(1\)</th>
+              </tr>
+              <tr>
+                <th>\(2\)</th>
+                <th>\(4\)</th>
+              </tr>
+              <tr>
+                <th>\(3\)</th>
+                <th>\(9\)</th>
+              </tr>
+              <tr>
+                <th>\(4\)</th>
+                <th>\(1\)6</th>
+              </tr>
+              <tr>
+                <th>\(5\)</th>
+                <th>\(25\)</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ol class="vinetas" start="3">
+          <li><em>Visual</em></li>
+        </ol>
+        <p>Por medio de una gráfica:</p>
+        <div class="img-flex text-center img_margen">
+          <img class="img-fluid" src="img/u1_tm1/u1_tm1_03_representaciones.svg" width="50%">
+        </div>
+        <p class="mt-4">Ésta es la gráfica de una parábola, para valores positivos.</p>
+
+        <ol class="vinetas" start="4">
+          <li>
+            <em>Algebraica</em>
+          </li>
+        </ol>
+        <p>Por medio de una fórmula:</p>
+        $$A(l)=l^2 $$
+        <p>Como pudiste observar en el ejemplo anterior, se dan las cuatro representaciones de la misma función. </p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_reflexiona.png" width="50%">
+            <div class="card-body">
+              <p>¿En qué tipo de representación te fue más fácil identificar la función?<br>
+                ¿Crees que sea importante presentar la función con más de una representación? ¿Por qué? </p>
+            </div>
+          </div>
+        </div>
+        <p>La <b>representación gráfica</b> de la función nos permite visualizarla y se define de la siguiente manera:
+        </p>
+        <div class="centrado col-5">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+            <div class="card-body">
+              <p>Si \(f\) es una función con dominio \(A\), su gráfica se define como el conjunto de pares ordenados
+                \((x,f(x))\), esto es:</p>
+              $$ graf(f)= \{(x,f(x))|x \in A)\} $$
+              <div class="citas" style="text-align: right;">(Stewart, 2013)</div>
+            </div>
+          </div>
+        </div>
+
+
+        <p class="mt-4">La gráfica de una función nos da una imagen de ésta, es posible determinar el valor de la función en un
+          punto, el
+          dominio, la imagen y otras características que se irán señalando más adelante.</p>
+
+        <p>Gráficamente, ¿cómo puedo identificar que una curva en el plano \( xy \) es una función?</p>
+
+        <p>Observa las siguientes curvas y trata de identificar cuáles son funciones.</p>
+        <p></p>
+        <div class="citas text-center"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic en las flechas laterales para ver las imágenes.</div>
+        <section class="vertical-slider slider" style="width: 30;">
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_01.svg">
+          </div>
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_02.svg">
+          </div>
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_03.svg">
+          </div>
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_04.svg">
+          </div>
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_05.svg">
+          </div>
+          <div>
+            <img src="img/u1_tm1/u1_tm1_04_tabla01_06.svg">
+          </div>
+        </section>
+        <p class="mt-3">¿Pudiste identificarlas? ¿Notaste algún dato que te ayudara a saber cuáles son funciones? </p>
+
+        <p>Para dar respuesta a estas interrogantes, usamos la <b>prueba de la recta vertical.</b></p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+
+            <div class="card-body">
+              <p>Una curva en el plano \(xy\) representa a una función de \(x\), si y sólo si ninguna recta vertical se
+                intersecta con la
+                curva más de una vez <span class="citas"> (Demana et al., 2007)</span>. </p>
+            </div>
+          </div>
+        </div>
+        <p>Retomemos las curvas anteriores y traza mentalmente una recta en cada gráfica. Estarás de acuerdo que sólo
+          las dos
+          primeras cumplen con la condición de que al trazar cualquier recta vertical se intersecta sólo una vez. Así
+          que
+          únicamente las dos primeras son funciones y la circunferencia, la parábola horizontal, la hipérbola y la
+          elipse no
+          son funciones.</p>
+        <p>Ahora, hay que centrarnos en las funciones algebraicas, las cuales &ldquo;se forman por un conjunto de
+          números y
+          variables ligados entre sí por operaciones algebraicas (suma, resta, multiplicación, división, potenciación y
+          radicación)&rdquo; (Pérez, 2022). Veamos a continuación la clasificación de estas funciones.</p>
+
+        <ul class="vinetas">
+          <li><b>Tipos de funciones algebraicas <i class="fa-light fa-hand-back-point-right"></i></b></li>
+        </ul>
+        <p> </p>
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+          <p><b>1. Funciones polinomiales</b></p>
+          <p>Están definidas por un polinomio de la forma:</p>
+          $$p(x)=a_0 x^{n}+a_1 x^{n-1}+a_2 x^{n-2}+⋯+a_{n-1} x^1+a_n$$
+          <p>Son funciones polinomiales</p>
+          $$f(x)=x$$
+          $$f(x)=x^2+3x-5$$
+          $$f(x)=7 $$
+          $$y=5x^7+3x^5+2x^3-8x+12$$
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary  btn-lg" data-bs-toggle="modal"
+              data-bs-target="#FPolinomiales"><img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="FPolinomiales" tabindex="-1" aria-labelledby="FPolinomialesLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FPolinomialesLabel">Funciones polinomiales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_01.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+          <p><b> 2. Funciones radicales</b></p>
+
+          <p>La operación principal de estas funciones es una raíz de orden \(n\) y el radicando es una expresión
+            algebraica que puede
+            ser un polinomio. Son de la forma:</p>
+          $$ R(x)= \sqrt[n]{e(x)} $$
+          $$R(x)= \sqrt[n]{p(x)} $$
+          $$R(x)= \sqrt[n]{r(x)} $$
+          <p>Son funciones radicales</p>
+
+          $$ f(x)= \sqrt[7]{x-2}$$
+          $$f(x)= \sqrt{x(x-1) }$$
+          $$f(x)= \sqrt[4]{x^2-6x}$$
+          $$f(x)= \sqrt[3]{x-1}$$
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+              data-bs-target="#FRadicales"> <img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="FRadicales" tabindex="-1" aria-labelledby="FRadicalesLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FRadicalesLabel">Funciones radicales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_02.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+
+          <p><b>3. Funciones de potencias</b></p>
+
+          <p>La operación principal es la potencia. Son de la forma:</p>
+            $$p(x)=(e(x))^n$$
+            <p>donde \(e(x)\) representa una expresión algebraica.</p>
+
+            <p>Una función potencia es</p>
+            $$ f(x)=(x-5)^9 $$
+
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+              data-bs-target="#FPoli"><img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="FPoli" tabindex="-1" aria-labelledby="FPoliLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FPoliLabel">Funciones de potencias</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_03.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+
+          <p><b>4. Función valor absoluto</b></p>
+
+          <p>En este tipo de función la operación principal es el valor absoluto. Son de la forma:</p>
+          $$v(x)=|e(x)|$$
+          <p>donde \(e(x)\) representa una expresión algebraica.</p>
+          <p>Son funciones valor absoluto</p>
+          $$f(x)=|x|+x$$
+          $$f(x)=\frac{x}{|x|} $$
+          $$f(x)=|x^2+2x-3|$$
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+              data-bs-target="#FValor"><img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="FValor" tabindex="-1" aria-labelledby="FValorLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FValorLabel">Función valor absoluto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_04.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+
+          <p><b>5. Funciones por partes o seccionadas</b></p>
+
+          <p>La función está definida por intervalos, por lo que está formada por varias funciones:</p>
+          \[S(x) = \left\{ \begin{array}{lr} e_1(x) \\ e_2(x) \\ \vdots \\ e_n(x) \end{array} \right. \]
+          <p>Son funciones por partes</p>
+          \[f(x) = \left\{ \begin{array}{lr} 1-x \quad \text{si} \quad x \leq 1 \\ x^2 \quad \quad \text{ si} \quad x>1 1 \end{array} \right.
+          \]
+          \[f(x) = \left\{ \begin{array}{lr} 0 \quad \quad \quad \quad \text{si} \quad x<-2x \\ x+2 \quad  \quad \text{ si} \quad -2 \leq x < -1 \\ 1
+          \quad \quad \quad \quad \text{si} \quad -1 \leq x \leq 1 \\ -x+2 \quad \text{ si} \quad 1 < x \leq 2 \\ 0 \quad \quad \quad \quad \text{si}
+            \quad x>2 \quad \end{array} \right. \]
+            <div class="text-center">
+              <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+                data-bs-target="#FPartes"><img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="FPartes" tabindex="-1" aria-labelledby="FPartesLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FPartesLabel">Funciones por partes o seccionadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_05.svg"><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <div class="alert alert-primary shadow-lg p-3 mb-12 bg-body rounded col-12 col-md-8 centrado">
+          <p><b>6. Función mayor entero</b></p>
+          <p>La función mayor entero denotada por \( ‖x‖ \) se define como el entero más grande que es menor o igual a
+            \(x \) (Stewart, 2008).</p>
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal"
+              data-bs-target="#FMayor"><img src="img/btn_clic.svg" width="25"> Da clic para ver la gráfica. </button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="FMayor" tabindex="-1" aria-labelledby="FMayorLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="FMayorLabel">Función mayor entero</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="img/u1_tm1/u1_tm1_05_flip01_06.svg"><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <p>En el recurso anterior pudiste ver algunos de los tipos de las funciones algebraicas, ahora abordaremos la
+          determinación del dominio de una función algebraica.</p>
+        <ul class="vinetas">
+          <li><b>Determinación del dominio de una función algebraica</b></li>
+        </ul>
+        <p>Como ya se definió, el dominio de una función es el conjunto de todos los valores que puede tomar la función.
+          Veamos
+          cómo se determina para cada una de las funciones algebraicas que definimos.</p>
+
+        <p>Al analizar los valores que puede tomar una función, empezamos considerando todos los números reales y vamos
+          descartando los que no puede tomar, éstos serán aquéllos donde no esté definida la función o se genere una
+          indeterminación.</p>
+        <p>Con las <b>funciones polinomiales</b>, notamos que cualquier número real está en el dominio de esta función,
+          ya que no se
+          tienen valores donde la función no esté definida o se indetermine, por lo que el dominio son los números
+          reales.</p>
+        <p>Con las <b>funciones racionales</b>, se tiene que no están en el dominio aquellos valores en los que el
+          denominador es cero,
+          por lo cual éstos se deben de quitar de los reales.</p>
+        <p>Con las <b>funciones radicales</b>, se tienen dos casos, el primero de ellos cuando se determina la raíz
+          impar de la
+          expresión, esta función está definida para todo real, por lo que el dominio son los números reales, y el otro
+          caso
+          cuando se tiene que la raíz es par, aquí no se toman en cuenta en el dominio los valores que producen un
+          número
+          negativo, por lo que éstos se deben de quitar de los reales, o sólo considerar los valores que determinen un
+          valor
+          positivo en el radicando.</p>
+        <p>Las <b>funciones potencia</b> son una forma de representar, por ejemplo, a un polinomio por lo cual su
+          dominio son los
+          reales.</p>
+        <p>La <b>función valor absoluto</b> está definida para todos los reales.</p>
+
+        <p>En las <b>funciones por partes o seccionadas</b>, el dominio se determina por los intervalos en donde se
+          definen las partes
+          o secciones de la función, sólo hay que tener cuidado con que cada sección esté bien definida.</p>
+
+        <p>El dominio de la <b>función mayor entero</b> son los reales, ya que está definida para todo real.</p>
+
+        <p>Para calcular el dominio de una función, debemos obtener los valores de \( x \) para los que exista esa
+          función, o bien,
+          determinar para qué valores de \( x \) la función existe o no.</p>
+
+        <p>El dominio de una función depende mucho del tipo de función. Veamos algunos ejemplos a continuación.</p>
+
+        <p>Determinar el dominio de las funciones siguientes.</p>
+
+        \( \color{#0069a4} { \quad a) \quad y=5x^7+3x^5+2x^3-8x+12} \)
+
+        <p class="mt-3">Esta función es un polinomio y está definida para cualquier número real, luego su dominio son
+          los números reales.</p>
+        $$D=R=(- \infty , \infty )$$
+
+        \( \color{#0069a4} { \quad b) \quad f(x)= \frac{1}{x} }\)
+
+        <p class="mt-3">Ésta es una función racional y no están en su dominio aquellos valores donde el denominador es
+          cero, esto es, \( x=0 \), con
+          lo cual el dominio son todos los reales menos el cero.</p>
+        $$D=R-\{0\}=(- \infty ,0) \cup (0, \infty )$$
+
+        \( \color{#0069a4} { \quad c) \quad f(x)=\frac{x \; - \; 1}{x^2 \; - \; 3x \; + \; 2}} \)
+
+        <p class="mt-3">Ésta es también una función racional y no están en su dominio aquellos valores donde el
+          denominador es cero, esto es
+        </p>
+
+        $$ x^2-3x+2=0 $$
+
+        <p>Resolviendo la ecuación determinamos los puntos que no están en el dominio de la función</p>
+
+        $$ x^2-3x+2=(x-2)(x-1)=0 $$
+
+        <p>en donde \( x-2=0 \) y \( x-1=0 \), con lo cual \( x=2 \) y \( x=1 \), el dominio son todos los reales menos
+          el uno y el cero.</p>
+
+        $$ D=(- \infty ,1) \cup (1,2) \cup (2, \infty ) $$
+
+
+        \( \color{#0069a4} { \quad d) \quad f(x)=\sqrt[7]{x-2}} \)
+
+        <p class="mt-3">La función es radical y el orden de su raíz es un número impar por lo cual su dominio son los
+          reales.</p>
+        $$ D=R=(- \infty , \infty ) $$
+
+        \( \color{#0069a4} { \quad e) \quad f(x)=\sqrt{x(x-1)}} \)
+
+        <p class="mt-3">La función es radical con el orden de su raíz de un número par, por lo cual los valores que
+          están en el dominio son
+          aquéllos en los cuales la función, que es el radicando, es positiva.</p>
+
+        <p>Así, \(x(x-1) \geq 0\)</p>
+
+        <p>Resolvemos la desigualdad por casos:</p>
+        \(I. \quad x \geq 0 \) y \(x-1 \geq 0 \)
+        <blockquote>
+          <p class="mt-3">de donde \(x \geq 0\) y \(x \geq 1\)</p>
+          <p>ambas condiciones se cumplen si \(x \geq 1\).</p>
+        </blockquote>
+
+        \(II. \quad x \leq 0 \) y \(x-1 \leq 0 \)
+        <blockquote>
+          <p class="mt-3">de donde \( x \leq 0 \) y \( x \leq 1 \)</p>
+          <p>ambas condiciones se cumplen si \( x \leq 0 \).</p>
+        </blockquote>
+
+        <p>La solución de la desigualdad es \( x \leq 0 \) y \( x \geq 1 \), esto es, \( (- \infty ,0] \cup [1, \infty )
+          \).</p>
+
+        <p>Con lo cual</p>
+
+        <p>$$D=(- \infty ,0] \cup [1, \infty )$$</p>
+
+        \( \color{#0069a4} { \quad f) \quad f(x)=(x-5)^9 }\)
+
+        <p class="mt-3">La función es potencia, no hay ningún número real para el cual no esté definida la función
+          potencia. Si desarrollamos
+          la potencia se tendrá un polinomio de grado nueve y está definida para todo número real.</p>
+
+        <p>$$D=R=(- \infty , \infty )$$</p>
+
+        <p>Ahora que conoces cómo determinar el dominio de una función algebraica, dirígete al menú <em>Ejercicios</em> en la parte superior de la página y
+          resuelve el ejercicio para reafirmar tu conocimiento.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">1. Dominio de una función algebraica</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Ya que establecimos la manera como se determina el dominio de una función algebraica, abordaremos las
+          operaciones de
+          funciones, lo cual permite construir nuevas funciones.</p>
+        <ul class="vinetas">
+          <li><b>Operaciones de funciones</b></li>
+        </ul>
+        <p>Conocer cómo se realizan las operaciones de funciones es fundamental, ya que permiten combinar y crear nuevas
+          funciones de manera diferente. Con estas nuevas operaciones podemos comprender y resolver problemas de
+          diferentes
+          disciplinas. Por eso, es importante identificar la relación entre dos variables mediante estas operaciones de
+          funciones.</p>
+
+        <p>En esta combinación, dadas dos funciones \(f\) y \(g\) con dominios \(A\) y \(B\), se pueden generar más
+          funciones a partir de
+          operaciones como la suma, diferencia, producto y cociente.</p>
+        <div class="centrado">
+          <table class="table table-bordered table-striped  table-hover text-center">
+            <tbody>
+              <tr>
+                <th>
+                  <p>Suma</p>
+                  \((f+g)(x)=f(x)+g(x)\)
+                </th>
+                <th>
+                  <p> Resta o diferencia</p>
+                  \((f-g)(x)=f(x)-g(x)\)
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <p>Producto</p>
+                  \((f-g)(x)=f(x)-g(x) \)
+                </th>
+                <th>
+                  <p>Cociente</p>
+                  <p>\( \left( \frac{f}{g} \right) (x )=\frac{f(x)}{g(x)} \; \text{ si}\;  g(x) \neq 0 \)</p>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>El dominio de la suma, diferencia y producto de las funciones \(f\) y \(g\), es igual a \(A \cap B\) y el
+          dominio del cociente de \(f\) y
+          \(g\) es \(\{x \in A \cap B|g(x) \neq 0 \} \). </p>
+
+        <p>Sean \(f\) y \(g\) funciones, la función compuesta de \(f\) y \(g\), denotada por \(f \circ g\), está
+          definida por </p>
+
+        $$(f \circ g)(x)=f(g(x))$$
+
+        <p>"El dominio de \(f \circ g \) es el conjunto de todas las \(x\) del dominio de \(g\) tales que \(g(x)\) esté
+          en el dominio de \(f\)". </p>
+
+        <p>El dominio de una función, que es resultado de más de un tipo de funciones algebraicas, depende del dominio
+          de las
+          funciones que la integran. Se puede decir que la función es combinación de otras funciones y, para determinar
+          para
+          qué valores es válida, hay que emplear las diferentes razones de las funciones que la componen.</p>
+
+        <p>Revisa los siguientes ejemplos para determinar el dominio de la función.</p>
+        <div class="citas text-center mb-2"><img src="img/btn_clic.svg" width="30">&nbsp;&nbsp; Da clic en las flechas laterales para ver la información.</div>
+
+        <div id="ccontenedor">
+        <section class="text-slider">
+          <div>
+            \( \color{#0069a4} { \quad a) \quad f(x)=| x^2+x-1|+x }\)
+
+            <p class="mt-3">La función es una suma de las funciones \( f_1 (x)=|x^2+x-1| \) y \( f_2 (x)=x \), así el
+              dominio es la intersección del dominio
+              de ambas funciones.</p>
+
+            <p>Dominio de \( f_1 (x)=|x^2+x-1| \) son los reales, \(D_1=R\).</p>
+
+            <p>Dominio de \(f_2 (x)=x \) son los reales, \( D_2=R \).</p>
+
+            <p>Luego el dominio de la función es \( D_1 \cap D_2=R \cap R=R \)</p>
+
+            $$ D=R=(- \infty , \infty ) $$
+          </div>
+          <div>
+            \( \color{#0069a4} { \quad b) \quad f(x)=|x^2+2x-3|} \)
+
+            <p class="mt-3">Esta función está compuesta por las funciones valor absoluto y por un polinomio, ambas
+              funciones tienen por dominio e
+              imagen los reales, con lo cual el dominio de la función son los números reales.</p>
+            <p>$$D=R=(- \infty , \infty )$$</p>
+          </div>
+          <div>
+            \( \color{#0069a4} { \quad c) \quad f(x) = \left\{ \begin{array}{lr} 1-x \quad \text{si} \quad x \leq 1 \\ x^2 \quad \text{si}
+            \quad x>1  \end{array} \right.} \)
+            <p class="mt-3">La función está definida por partes o secciones. El dominio de la función depende de las
+              funciones que la integran.
+              Como cada función es un polinomio, entonces el dominio de cada una de ellas son los reales, luego el
+              dominio de la
+              función es </p>
+            <p>$$D=(- \infty ,1] \cup (1, \infty )=(- \infty , \infty )=R$$</p>
+            <p>En general, si la función en cada una de las partes está bien definida, el dominio es la unión de los
+              intervalos.</p>
+
+          </div>
+          <div>
+            \( \color{#0069a4} { \quad d) \quad f(x)=\frac{\sqrt{x}}{\sqrt{x^2-1}} }\)
+
+            <p>La función es un cociente de funciones.</p>
+
+            <p>Primero determinemos el dominio de \(f_1 (x)=\sqrt{x}\) y de \(f_2 (x)=\sqrt{x^2-1}\).</p>
+
+            <p>Dominio de la función \(f_1 (x)=\sqrt{x}\), el dominio de la función es \(D_1=[0 , \infty ) \).</p>
+
+            <p>Dominio de la función \(f_2 (x)=\sqrt{x^2-1} \)</p>
+            \( x^2-1 \geq 0 \Rightarrow (x-1)(x+1) \geq 0 \)
+
+            <p class="mt-3">Resolviendo por casos.</p>
+            <p>\( i. \quad x-1 \geq 0\) y \( x+1 \geq 0 \)</p>
+            \( \hspace{1.7em} x \geq 1 \) y \( x \geq -1 \)
+
+          </div>
+          <div>
+            <p>Ambas condiciones se cumplen si \( x \geq 1 \), luego está definida para \( x \) en el intervalo \([1,
+              \infty ) \).</p>
+
+            <p> \(ii. \quad x-1 \leq 0 \) y \( x+1 \leq 0 \) </p>
+            <p> \( \hspace{1.9em} x \leq 1 \) y \(x \leq -1 \)</p>
+
+            <p>Ambas condiciones se cumplen si \( x \leq -1 \), luego está definida para \( x \) en el intervalo \( (-
+              \infty , -1] \).</p>
+
+            <p>El dominio de la función \( f_2 (x)=\sqrt{x^2-1} \) es \( D_2= (- \infty , -1] \cup [1 , \infty ) \).</p>
+
+            <p>El dominio de la función \( f(x)= \frac{\sqrt{x}} { \sqrt{x^2-1}} \) es </p>
+
+            $$ D=D_1 \cap D_2= $$
+            $$[0, \infty ) \cap \{ (- \infty , -1] \cup [1, \infty )\}= [1, \infty )$$
+
+          </div>
+          <div>
+            <p>\( \color{#0069a4} { \quad e) \quad f(x)=\sqrt{ \frac{x}{x^2-1}}} \)</p>
+
+            <p>La función \(f\) es la raíz de un cociente, luego el dominio está determinado por los valores de \(x\)
+              para los cuales el
+              cociente es positivo y el denominador no es cero.</p>
+
+            $$ \frac{x}{x^2-1} \geq 0 $$
+
+            <p>Resolvemos la desigualdad por casos.</p>
+
+            <p> \( i. \quad x \geq 0 \) y \( x^2-1 > 0 \)</p>
+
+            <p>\( \hspace{1.7em} x \geq 0 \), solución \( [0 , \infty ) \) </p>
+
+            <p>Resolviendo \( x^2-1=(x-1)(x+1) > 0\) por casos.</p>
+
+            $$ x-1 > 0  \text{y}  x +1 > 0 $$
+            $$  x > 1 \text{y} x > -1 $$
+            <p>
+          </div>
+          <div>
+            <p>Ambas condiciones se cumplen si \(x > 1\), luego está definida para \(x\) en el intervalo \((1, \infty
+              )\).</p>
+
+            $$x-1 < 0 \; \text{y} \; x+1 < 0 $$
+
+                $$x < 1 \; \text{y} \; x < -1 $$
+
+                    <p>Ambas condiciones se cumplen si \(x < -1\), luego está definida para \(x\) en el intervalo \((-
+                        \infty ,-1)\).</p>
+
+                        <p>La solución de la desigualdad es \((- \infty ,-1) \cup (1, \infty )\).</p>
+
+                        <p>La solución para este caso es la intersección entre \([0, \infty) \) y \((- \infty ,-1) \cup
+                          (1, \infty )\), esto es, para los valores en el
+                          intervalo \([0, \infty ) \cap \{(- \infty ,-1) \cup (1, \infty )\}=(1, \infty )\).</p>
+
+          </div>
+          <div>
+            <p> \(ii. x \leq 0 \) y \(x^2-1 < 0\)</p>
+                <p> \( \hspace{1.5em} x \leq 0\), solución \(( - \infty ,0]\) </p>
+
+                <p>Resolviendo \(x^2-1=(x-1)(x+1) < 0\) por casos.</p>
+
+                    $$ x-1 < 0 \; \text{y} \; x+1> 0 $$
+
+                    $$ x < 1 \; \text{y} \;  x> -1  $$
+
+                    <p>Ambas condiciones se cumplen si \(x\) está en el intervalo \((-1,1)\).</p>
+
+                    $$ x-1 > 0 \; \text{y} \; x + 1 < 0 $$
+
+                    $$ x > 1 \; \text{y} \; x < -1  $$
+          </div>
+          <div>
+            <p>No hay un intervalo en el cual se cumplan ambas condiciones. La solución será el conjunto vacío.</p>
+
+            <p>La solución de la desigualdad es \((-1,1)\).</p>
+
+            <p>La solución para este caso es la intersección entre \((- \infty , 0]\) y \((-1,1)\), esto es, para los
+              valores en el intervalo \(
+              (- \infty , 0] \cap (-1,1)= (-1, 0]\).</p>
+
+            <p>El dominio de la función \(f(x)=\sqrt{\frac{x}{x^2-1} }\) es \( (-1, 0] \cup (1, \infty )\)</p>
+            <p>Observemos que, aunque algebraicamente las funciones son iguales \( \sqrt{\frac{x}{x^2-1}} =
+              \frac{\sqrt{x}}{\sqrt{x^2-1}}\), el dominio no es el mismo,
+              notemos que el cociente de las raíces, el radicando de cada una de ellas debe de ser positivo y en la raíz
+              del
+              cociente el numerador y el denominador pueden ser ambos positivos o ambos negativos, lo que da una opción
+              más a la
+              que se tiene con el cociente de las raíces.</p>
+          </div>
+        </section>
+        </div>
+      <p class="mt-4">Ahora que conoces cómo determinar el dominio de una función algebraica, ve a la página principal
+        de este curso y
+        resuelve el ejercicio para reafirmar tu conocimiento.</p>
+
+      <div class="centrado col-5 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+
+          <div class="card-body">
+            <p class="text-center">2. Determinación de dominio</p>
+          </div>
+        </div>
+      </div>
+      <p>Ahora sigamos observando ejemplos de funciones más complejas y sus dominios.</p>
+
+      <p>Para las funciones \(f(x)=\sqrt{x }\) y \(g(x)=\sqrt{4-x^2 }\), determinar las funciones siguientes y sus
+        dominios.</p>
+
+      <p> \( \quad a) \quad (f+g)(x)\)</p>
+      <p> \( \quad b) \quad (f-g)(x)\)</p>
+      <p> \( \quad c) \quad (f⋅g)(x)\)</p>
+      <p> \( \quad d) \quad (f/g)(x)\)</p>
+      <p> \( \quad e) \quad (f \circ g)(x)\)</p>
+      <p> \( \quad f) \quad (g \circ f)(x)\)</p>
+      <p> \( \quad g) \quad (f \circ f)(x)\)</p>
+      <p> \( \quad h) \quad (g \circ g)(x)\)</p>
+
+      <p>Tenemos las siguientes soluciones:</p>
+
+      <p> \( \quad a) \quad f(x)+g(x)=\sqrt{x}+\sqrt{4-x^2 } \) </p>
+      <p> \( \quad b) \quad f(x)-g(x)=\sqrt{x}-\sqrt{4-x^2 }\) </p>
+      <p> \( \quad c) \quad f(x)⋅g(x)=\sqrt{x} \left(\sqrt{4-x^2 }\right)\), si reducimos el dominio cambia</p>
+      <p> \( \quad d) \quad \frac{f(x)}{g(x)}=\frac{\sqrt{x}}{\sqrt{4-x^2 }}\), si \( \sqrt{4-x^2} \neq 0 \), si
+        reducimos el dominio cambia</p>
+      <p> \( \quad e) \quad (f \circ g)(x)=f(g(x))=f \left(\sqrt{4-x^2} \right) =\sqrt{\sqrt{4-x^2}} =\sqrt[4]{4-x^2}\)
+      </p>
+      <p> \( \quad f) \quad (g \circ f)(x)=g(f(x))=g(\sqrt{x})=\sqrt{4- \left(\sqrt{x} \right)^2 }\), si reducimos el
+        dominio cambia</p>
+      <p> \( \quad g) \quad (f \circ f)(x)=f(f(x))=f(\sqrt{x})=\sqrt{\sqrt{x}} =\sqrt[4]{x}\) </p>
+      <p> \( \quad h) \quad (g \circ g)(x)=g (g(x))=g \left(\sqrt{4-x^2} \right)=\sqrt{4- \left(\sqrt{4-x^2} \right)^2}
+        \), si reducimos el dominio cambia</p>
+
+      <p>Determinemos los dominios de las funciones, primero de las funciones \(f\) y \(g\).</p>
+
+      <p>\( f(x)=\sqrt{x}\) y \(g(x)=\sqrt{4-x^2}\)</p>
+
+      <p>Dominio de la función \(f(x)=\sqrt{x}\), el dominio de la función es \(D_f=[0, \infty )\).</p>
+
+      <p>Dominio de la función \(g(x)=\sqrt{4-x^2 }\).</p>
+
+      <p>\(4-x^2 \geq 0 \Rightarrow (2-x)(2+x) \geq 0\)</p>
+
+      <p>Resolviendo por casos.</p>
+      <p>\( \quad a) \quad 2-x \geq 0 \) y \(2+x \geq 0\)</p>
+     <blockquote>
+       <p>\( \hspace{1.5em} -x \geq -2 \Rightarrow x \leq 2\) y \(x \geq -2\)</p>
+     </blockquote>
+
+      <p>Ambas condiciones se cumplen si \(x\) pertenece al intervalo \([-2,2]\).</p>
+      <p> \( \quad b) \quad 2-x \leq 0\) y \(2+x \leq 0\)</p>
+      <blockquote>
+        <p>\( \hspace{1.5em} 2 \leq x \Rightarrow x \geq 2\) y \(x \leq -2\)</p>
+      </blockquote>
+
+      <p>No se cumplen simultáneamente ambas condiciones, en este caso la solución es el conjunto vacío \( \emptyset\).
+      </p>
+
+      <p>El dominio de la función \(g(x) \) es \(D_g=[-2,2]\).</p>
+
+      <p>El dominio de las funciones \(f(x)+g(x), f(x)-g(x)\) y \(f(x)⋅g(x)\) es \(D_f \cap D_g\), </p>
+      <p>\(D_{f+g}=D_{f-g}=D_{f⋅g}=D_f \cap D_g=[0, \infty ) \cap [-2,2]=[0,2] \).</p>
+
+      <p>El dominio del cociente es \(D_f \cap D_g \) y se quitan los puntos donde \(g(x)=0\). </p>
+
+      <p>Los ceros del denominador son \(\sqrt{4-x^2}=0 \Rightarrow 4-x^2=0 \Rightarrow x^2=4 \Rightarrow x= \pm 2\).
+      </p>
+
+      <p>Luego, el dominio del cociente es \(D_{\frac{f}{g}}=[0,2]-\{-2,2\}=[0,2)\).</p>
+
+      <p>Para determinar el dominio de la composición, necesitamos las imágenes de las funciones, ya que para que una
+        composición \((f \circ g)(x)=f(g(x))\) esté bien definida se debe de cumplir que la imagen de \(g\) esté dentro
+        del dominio de \(f\).</p>
+
+      <p>Imagen de \(f(x)=\sqrt{x}\), al ser una raíz y función su imagen es \(I_f=[0, \infty )\)</p>
+
+      <p>Imagen de \(g(x)=\sqrt{4-x^2}\), la función es \(y=\sqrt{4-x^2 } \Rightarrow y^2=4-x^2 \Rightarrow x^2+y^2=4\),
+        ésta es la ecuación de la circunferencia
+        con centro en el origen y radio \(2\), con lo cual la imagen es \(I_g=[0,2]\).</p>
+
+      <p>Así, \(f:[0, \infty ) \rightarrow [0, \infty ) \) y \( g:[-2,2] \rightarrow [0,2]\).</p>
+
+      <p>El dominio de la composición \((f \circ g)(x)= \sqrt[4]{4-x^2}\) es igual al dominio de la función \(g\),
+        siempre y cuando la imagen de \(g\)
+        esté en el dominio de \(f\).</p>
+
+      <p>La imagen de \(g\) es \(I_g=[0,2]\) y sí está contenida en el dominio de \(f, D_f=[0, \infty )\), por lo cual el
+        dominio es el mismo
+        que el dominio de \(g\).</p>
+      $$D_{f \circ g}=[-2,2]$$
+
+      <p>El dominio de la composición \((g \circ f)(x)=\sqrt{(4-(\sqrt{x})^2 }\) es igual al dominio de \(f\), siempre y
+        cuando la imagen de \(f\) esté en
+        el dominio de \(g\).</p>
+
+      <p>La imagen de \(f\) es \(I_f=[0, \infty )\) y no está contenida en el dominio de \(f\), \(D_f=[-2,2]\), por lo
+        cual el dominio de esta
+        composición no es igual a \(D_f=[0, \infty )\). Calculemos el dominio de esta función.</p>
+
+      <p>La función tiene dos condiciones, una de ellas es \(x \geq 0\) y la otra \(4-(\sqrt{x})^2 \geq 0 \), de donde
+      </p>
+      $$ 4-x \geq 0, \text{y} $$
+      $$ -x \geq -4, \text{y} $$
+      $$ x \leq 4 $$
+
+      <p>Ambas condiciones se cumplen si \(x\) pertenece al intervalo \([0,4]\).</p>
+
+      <p>Así, el dominio de la composición \(g \circ f\), es \(D_{g \circ f}=[0,4]\).</p>
+
+      <p>El dominio de la composición \((f \circ f)(x)=\sqrt[4]{x}\) es igual al dominio de \(f\), si la imagen de \(f\)
+        está contenida en el dominio de
+        \(f\). El dominio y la imagen de \(f\) son iguales \(f:[0, \infty ) \rightarrow [0, \infty) \), por lo cual el
+        dominio de la composición es \(D_{f \circ f}=
+        [0, \infty )\).</p>
+
+      <p>El dominio de la composición \((g \circ g)(x)=\sqrt{4-\left(\sqrt{4-x^2 }\right)^2 }\) es igual al dominio de
+        \(g\), siempre y cuando la imagen de \(g\)
+        esté en el dominio de \(g\).</p>
+
+      $$g:[-2,2] \rightarrow [0,2]$$
+
+      <p>La imagen de \(g\) es \(I_g=[0,2]\) y está contenida en el dominio de \(g, D_g=[-2,2]\), por lo cual el dominio
+        de la composición
+        es \(D_{g \circ g}=[-2,2]\).</p>
+
+      <p>Realiza el siguiente ejercicio para practicar lo aprendido anteriormente.</p>
+
+      <div class="centrado col-5 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+          <div class="card-body">
+            <p class="text-center">3. Pares de funciones</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Como hemos visto, podemos encontrar las funciones en varios aspectos habituales de nuestra vida cotidiana, sólo
+        que
+        pasan desapercibidos; pero si ponemos atención, encontraremos varios momentos que podemos resolver mediante
+        ellas.
+        Veamos a continuación algunas de sus aplicaciones prácticas.</p>
+
+      <ul class="vinetas">
+        <li><b>Aplicación de funciones</b></li>
+      </ul>
+
+      <p>Vamos a partir de un enunciado en forma verbal, para poder determinar la función que representa de manera
+        algebraica.
+        Revisemos el siguiente ejemplo.</p>
+
+      <p>Un depósito cerrado de hojalata tiene forma de un cilindro circular recto y una capacidad de \(27\) pulgadas
+        cúbicas. Los
+        círculos para las tapas son cortadas de piezas cuadradas de hojalata. Si el radio del cilindro es de \(x\)
+        pulgadas, da
+        una expresión para el área de la superficie total como una función del radio \(x\) del cilindro, que incluya la
+        hojalata
+        que se desecha cuando se cortan las tapas. </p>
+
+      <p>Un esquema del depósito se muestra a continuación.</p>
+      <div class="card mb-3 centrado" style="max-width: 70%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/u1_tm1/u1_tm1_06_01cilindro.svg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">La capacidad del cilindro representa el volumen de éste, así el volumen del cilindro
+                que es \(V=\pi x^2 h\) vale \(27\), con lo
+                cual \( \pi x^2 h=27\), donde:</p>
+              $$h= \frac{27}{\pi x^2 }$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>&nbsp;</p>
+
+      <div class="card  mb-3 centrado" style="max-width: 70%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/u1_tm1/u1_tm1_06_03superficie.svg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">Las tapas se extraen de cuadrados de lados \(2x\), correspondiente al valor del
+                diámetro.</p>
+
+              <p class="card-text">Se solicita que se incluya en el área de superficie el material que se desecha al
+                cortar las tapas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+      <div class="card mb-3 centrado" style="max-width: 70%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/u1_tm1/u1_tm1_06_02tapas.svg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">Para determinar el área de la superficie, tenemos que desenrollar el cilindro,
+                obteniendo un rectángulo que
+                corresponde al cuerpo del cilindro de base, el perímetro de su tapa y de altura \(h\), con lo cual
+                tenemos</p>
+
+              <p class="text-center">\(b=2\pi x\) y \(A=2\pi xh\)</p>
+
+              <p class="card-text">Y los dos cuadrados de donde se recortan las tapas, para calcular el área</p>
+
+              <p class="text-center">\(A=(2x)^2=4x^2\)</p>
+
+              <p class="card-text">Así, el área de superficie del cilindro es</p>
+
+              <p class="text-center">\(S=2(4x^2 )+2\pi xh\)</p>
+              <p class="text-center">\(S=8x^2+2\pi x \left( \frac{27}{\pi x^2} \right) \)</p>
+              <p class="text-center">\(S=8x^2+ \frac{54}{x}\)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4">Con lo cual la función que representa al área de superficie total es \(S(x)=8x^2+ \frac{54}{x}\).</p>
+
+      <p>Como pudiste observar en el ejemplo anterior, utilizar una función es de suma importancia en el área de corte
+        de
+        metales y en la producción a gran escala, para poder identificar la cantidad de material que se debe usar para
+        la
+        producción de cada tapa y el desperdicio o merma que se genera, y así contemplarlos en el costo de éste.</p>
+
+      <p>Es momento de que apliques el conocimiento adquirido hasta este momento y ver cómo impactan las funciones en un
+        problema cotidiano.</p>
+
+
+      <div class="centrado col-5 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+          <div class="card-body">
+            <p class="text-center">4. Aplicación de funciones</p>
+          </div>
+        </div>
+      </div>
+
+      <p id="1.2">Ya que abordamos las aplicaciones de las funciones, es necesario revisar las propiedades, ya que éstas
+        también nos
+        ayudan a visualizar las relaciones entre variables en la vida real.</p>
+        <p>&nbsp;</p>
+      <h2>1.2 Propiedades: monotonía, simetría y periodicidad</h2>
+
+      <p class="mt-4">Para una función, la gráfica es su representación más significativa, con la cual podemos determinar sus
+        propiedades.
+        Las más relevantes son monotonía, simetría y periodicidad.</p>
+      <ul class="vinetas">
+        <li><b>Monotonía</b></li>
+      </ul>
+
+
+      <p>Sea \(f\) una función con dominio \(A\) e imagen \(B\).</p>
+
+      <ol class="vinetas">
+        <li> Decimos que la función \(f\) es creciente sobre un intervalo \(I\), si para \(x_1\) y \(x_2\) puntos de
+          \(I\). </li>
+        \(f(x_1) < f(x_2)  \quad \text{si} \quad  x_1 < x_2\) <li> Decimos que la función f es decreciente sobre un intervalo
+          \(I\), si para \(x_1\) y \(x_2\) puntos de \(I\)</li>
+          \(f(x_1) > f(x_2) \quad \text{si} \quad  x_1 < x_2\) <li> Decimos que la función f es constante sobre un intervalo
+            \(I\), si para \(x_1\) y \(x_2\) puntos de \(I\)</li>
+            \(f(x_1)=f(x_2)   \quad \text{si} \quad  x_1 < x_2\) </ol>
+              <p>Ejemplo. Determina si las funciones dadas son crecientes, decrecientes o constantes.</p>
+              <div class="citas" style="text-align: right;">(Sullivan, 2006)</div>
+              <div class="container mt-3" >
+                <!-- Nav pills -->
+                <ul class="nav nav-pills nav nav-pills flex-md-row " role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#CDC">\(  a) \quad f(x)=x^3\)</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#CDC1">\(  b) \quad f(x)=x^2\)</a>
+                  </li>
+                
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content" >
+                  <div id="CDC" class="container tab-pane active"><br>
+                    <p>Consideremos dos números reales cualesquiera \(x_1\) y \(x_2\), tal que \(x_1 < x_2\).</p>
+
+                  <p>Elevando al cubo a \(x_1\) y \(x_2\), tenemos que la desigualdad se mantiene, esto es:</p>
+
+                  <p>Si \(x_1 < x_2\) entonces \(x_1^{\;3} < x_2^{\;3} \), pero \(f(x_1)=(x_1)^3 \) y \(f(x_2)=(x_2 )^3\)</p>
+
+                      <p>así \(f(x_1) < f(x_2)\).</p>
+
+                          <p>Por lo que la función \(f(x)=x^3 \) es creciente.</p>
+
+                          <p>La gráfica de la función es la siguiente y nos muestra una función que es monótona y en
+                            particular creciente.</p>
+
+                          <div class="img-flex text-center">
+                            <img class="img-fluid" src="img/u1_tm1/u1_tm1_07_monotonia01.svg" width="50%">
+                          </div>
+                  </div>
+                  <div id="CDC1" class="container tab-pane fade"><br>
+                    <p>Consideremos dos números reales cualesquiera \(x_1\) y \(x_2\), tal que \(x_1 < x_2\).</p>
+
+                    <p>Si elevamos al cuadrado a \(x_1\) y \(x_2\), obtenemos que no se puede determinar un
+                      solo signo para la desigualdad. Así:</p>
+
+                    <p>i). Si \(x_1\) es negativo y \(x_2\) es positivo.</p>
+                   <blockquote>
+                    <p>Se tiene un caso en el que \(x_1=-2\) y \(x_2=1\), entonces \(x_1^{\;2}=4 > 1=x_2^{\;2} \),
+                      luego \(f(x_1) > f(x_2)\).
+                    <p>
+
+                    <p>Otro caso para \(x_1=-2\) y \(x_2=3\), entonces \(x_1^{\;2}=4 < 9=x_2^{\;2}\), luego \(f(x_1) <
+                        f(x_2)\).</p>
+
+                        <p>No se mantiene el signo de la desigualdad.</p>
+                      </blockquote>
+                        <p>ii). Si \(x_1\) y \(x_2\) son negativos, entonces \( x_1^{\;2} > x_2^{\;2}\),luego \(f(x_1)
+                          > f(x_2)\) y es decreciente.</p>
+
+                        <p>iii). Si \(x_1\) y \(x_2\) son positivos, entonces \(x_1^{\;2} < x_2^{\;2}\), luego \(f(x_1)
+                            < f(x_2)\) y es creciente.</p>
+                           <blockquote>
+                            <p>Desde el resultado visto en (i), se tiene que la función no es monótona en los
+                              reales. Sin embargo, sí es monótona en
+                              subintervalos, esto es, para los negativos decreciente y para los positivos
+                              creciente.</p>
+
+                            <p>La gráfica de esta función es la siguiente, en donde se observa que en los
+                              negativos es decreciente y en los
+                              positivos creciente.</p>
+                            </blockquote>
+                            <div class="img-flex text-center">
+                              <img class="img-fluid" src="img/u1_tm1/u1_tm1_08_monotonia02.svg" width="50%">
+                            </div>
+                            <p class="mt-4">Habrá ocasiones en que una función es monótona en un intervalo
+                              dado; pero no en su dominio o en todos los números
+                              reales.</p>
+
+                            <p>La gráfica nos permite visualizar el comportamiento de monotonía, como función
+                              creciente o decreciente; sin embargo,
+                              no lo demuestra.</p>
+                  </div>
+                </div>
+              </div>
+              <p>&nbsp;</p>
+            
+                                      <ul class="vinetas">
+                                        <li><b>Simetría</b></li>
+                                      </ul>
+                                      <ul class="vinetas">
+                                        <ul class="vinetas">
+                                          <li>Una función \(f\) con dominio \(A\) e imagen \(B\) es par si se cumple que
+                                            \(f(-x)=f(x)\) para todo \(x \in A\). Gráficamente una función
+                                            par es aquélla cuya gráfica es simétrica con respecto al eje \(y\) (Stewart, 2013).</li>
+                                          <li>Una función \(f\) con dominio \(A\) e imagen \(B\) es impar si se cumple
+                                            que \(f(-x)=-f(x)\) para todo \(x \in A\). Gráficamente una función
+                                            impar es aquélla cuya gráfica es simétrica con respecto al origen.</li>
+                                        </ul>
+                                      </ul>
+                                      <p>Ejemplo. Determina si la función dada es par, impar o ninguna de las dos. </p>
+
+                                      <div class="container mt-3" >
+                                        <!-- Nav pills -->
+                                        <ul class="nav nav-pills nav nav-pills  flex-md-row" role="tablist">
+                                          <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="pill" href="#home">\( a) \quad f(x)=\frac{1}{x^2} \)</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="pill" href="#menu1">\( b) \quad f(x)= \sqrt[3]{x} \)</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="pill" href="#menu2">\( c) \quad f(x)=1-(x+1)^2\)</a>
+                                          </li>
+                                        </ul>
+                                      
+                                        <!-- Tab panes -->
+                                        <div class="tab-content" >
+                                          <div id="home" class="container tab-pane active"><br>
+                                            <p>Evaluamos la función \(f(-x)= \frac{1}{(-x)^2} =\frac{1}{x^2} =f(x)\).</p>
+
+                                            <p>Con lo cual la función es par.</p>
+      
+                                            <p>Gráficamente:</p>
+                                            <div class="img-flex text-center">
+                                              <img class="img-fluid" src="img/u1_tm1/u1_tm1_09_simetria01.svg" width="50%">
+                                            </div>
+      
+                                            <p class="mt-4">La función es simétrica con respecto al eje \(y\).</p>
+      
+                                          </div>
+                                          <div id="menu1" class="container tab-pane fade"><br>
+                                            <p>Evaluamos la función \( f(-x)= \sqrt[3]{-x}= \sqrt[3]{(-1)x}= \sqrt[3]{-1}
+                                              \sqrt[3]{x}=- \sqrt[3]{x}=-f(x) \).</p>
+      
+                                            <p>Así, la función es impar.</p>
+      
+                                            <p>Gráficamente:</p>
+                                            <div class="img-flex text-center">
+                                              <img class="img-fluid" src="img/u1_tm1/u1_tm1_10_simetria02.svg" width="50%">
+                                            </div>
+      
+                                            <p>La función es simétrica con respecto al origen.</p>
+      
+                                          </div>
+                                          <div id="menu2" class="container tab-pane fade"><br>
+                                            <p>Evaluamos la función \(f(-x)=1-(-x+1)^2\).</p>
+
+                                            <p>El desarrollo de la suma de un binomio y de la diferencia de un binomio son
+                                              diferentes, con lo cual \(f(-x) \neq -f(x)\) y la
+                                              función no es par.</p>
+      
+                                            <p>Determinemos la función \(-f(x)\) para determinar si es impar.</p>
+      
+                                            <p>\(-f(x)=-(1-(x+1)^2 )=-1+(x+1)^2 \neq -f(x)\) y la función no es impar.</p>
+      
+                                            <p>La función no es par ni es impar.</p>
+      
+                                            <p>Gráficamente:</p>
+                                            <div class="img-flex text-center">
+                                              <img class="img-fluid" src="img/u1_tm1/u1_tm1_11_simetria03.svg" width="50%">
+                                            </div>
+                                            <p class="mt-4">La función es una parábola; pero está fuera del origen por eso no
+                                              es simétrica con respecto al eje \(y\) y en
+                                              consecuencia no es par. Y como no es simétrica con respecto al origen no es
+                                              impar.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <p>&nbsp;</p>
+                                      <ul class="vinetas">
+                                        <li><b>Periodicidad</b></li>
+                                      </ul>
+
+                                      <p>Sea \(f\) una función con dominio \(A\) e imagen \(B\). Decimos que la función
+                                        \(f\) es periódica, de periodo \(p\) si existe un número
+                                        real positivo \(p\) tal que \(f(x+p)=f(x)\) (Çengel y Palm, 2014) para todo \(x \in A\).</p>
+
+                                      <p>La periodicidad es una propiedad de las funciones; pero es más común en
+                                        funciones trascendentes como las
+                                        trigonométricas. Cuando se definan estas funciones, regresaremos a esta
+                                        propiedad.</p>
+                                      <div class="centrado col-5 mb-3">
+                                        <div class="card">
+                                          <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+
+                                          <div class="card-body">
+                                            <p class="text-center">5. Propiedades de las funciones </p>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <p>Las funciones algebraicas y las funciones inversas están relacionadas en el
+                                        sentido de que una función inversa es
+                                        aquélla que deshace el efecto de otra función. En el contexto de las funciones
+                                        algebraicas, una función inversa
+                                        puede ser encontrada para una función algebraica si cumple ciertas condiciones.
+                                        En el siguiente tema, abordaremos
+                                        esto con mayor detenimiento.</p>
+                                      <p>&nbsp;</p>
+    </div>
+  </div>
+  </div>
+  <div> 
+    <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+</html>

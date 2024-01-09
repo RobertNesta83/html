@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.7 214.87">
+  <defs>
+    <style>
+      .uuid-4e8693a6-2462-428c-8b0e-ab3cbbcf11ab {
+        stroke: #3aaa35;
+      }
+
+      .uuid-4e8693a6-2462-428c-8b0e-ab3cbbcf11ab, .uuid-435ef9e7-1569-4e07-8feb-35eaad2b96f9 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .uuid-123abb9c-dffa-4295-9cb9-e4c2bbf903d2 {
+        fill: #f6f6f6;
+      }
+
+      .uuid-435ef9e7-1569-4e07-8feb-35eaad2b96f9 {
+        stroke: #1d71b8;
+      }
+    </style>
+  </defs>
+  <g id="uuid-0601f9fb-117b-4100-ace7-e2b7e7c7f5cc" data-name="Fondo">
+    <rect class="uuid-123abb9c-dffa-4295-9cb9-e4c2bbf903d2" x="1.71" y="1.71" width="190.28" height="211.45" rx="5" ry="5"/>
+  </g>
+  <g id="uuid-28df673b-47b9-4072-880e-7beaa92375d2" data-name="elementos">
+    <g>
+      <g>
+        <rect class="uuid-4e8693a6-2462-428c-8b0e-ab3cbbcf11ab" x="5.53" y="6.27" width="58.35" height="58.35"/>
+        <circle class="uuid-435ef9e7-1569-4e07-8feb-35eaad2b96f9" cx="34.71" cy="35.45" r="29.18"/>
+      </g>
+      <g>
+        <rect class="uuid-4e8693a6-2462-428c-8b0e-ab3cbbcf11ab" x="129.81" y="150.25" width="58.35" height="58.35"/>
+        <circle class="uuid-435ef9e7-1569-4e07-8feb-35eaad2b96f9" cx="158.99" cy="179.42" r="29.18"/>
+      </g>
+      <rect class="uuid-435ef9e7-1569-4e07-8feb-35eaad2b96f9" x="5.53" y="64.62" width="182.64" height="85.62"/>
+    </g>
+  </g>
+</svg>

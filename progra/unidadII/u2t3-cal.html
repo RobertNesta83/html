@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2 mx-3"> Unidad II. Límites de funciones y continuidad</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="u2t1-cal.html" >
+              Tema 1
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 2
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t2-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.1">2.1 Límites de formas indeterminadas</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.2">2.2 Límites unilaterales</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.3">2.3 Límite de funciones trigonométricas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t3-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t3-cal.html#3.1">3.1 Asíntotas horizontales, verticales y oblicuas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 4
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t4-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.1">4.1 En un punto</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.2">4.2 En un intervalo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="http://148.204.56.92/moodle/course/view.php?id=10&section=3" >
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>3. Límites infinitos y en el infinito</h1>
+        <p class="mt-4">Cuando calculamos el límite de una función en un punto y encontramos como resultado un valor muy
+          grande, decimos que se tiene un límite infinito. Gráficamente lo que sucede es que la función crece
+          indefinidamente conforme nos acercamos al punto \(x\), el caso más simple se tiene con la función  \( f(x)= \frac{1}{x} \) cuando
+          \(x\) se aproxima a cero, o cuando calculamos el límite \( \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1}{x} \).</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm3/u2_tm3_01_liminf.svg"  width="50%">
+        </div>
+        <p class="mt-4">Observamos que, si nos aproximamos a cero con valores menores que él, los valores de la función decrecen
+          hasta valores cada vez más pequeños, por lo que podemos decir que el valor del límite es menos infinito, y si
+          nos acercamos a cero con valores mayores que él, los valores de la función crecen hasta un valor cada vez más
+          grande, decimos que el límite es infinito. </p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+  
+              <div class="card-body">
+                <p >
+                Sea \( y=f(x) \) una función definida en un intervalo que contiene al punto a, excepto tal vez en a. Entonces \(
+                \displaystyle \lim_{x \rightarrow \alpha } ⁡f(x)= \infty \), significa que los valores de \(f(x)\) pueden hacerse tan grandes como
+                se quiera, siempre que se tome a \(x\) lo suficientemente cerca de a, pero distinta de a (Stewart, 2008).</p>
+            </div>
+          </div>
+          </div>
+          <p></p>
+        <p class="mt-4"><b>Nota:</b> el símbolo no es un número real; sin embargo, si calculamos \( \displaystyle \lim_{x \rightarrow a} f(x) \) y
+          obtenemos como resultado \( \infty \), decimos que el límite de  \(f(x)\), cuando \(x\) tiende a a, es infinito.</p>
+        <p>Se tiene una definición semejante cuando el resultado del límite es un <b>número negativo</b>, esto es, la fusión
+          decrece tanto como se quiera.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>Sea \( y=f(x) \) una función definida en un intervalo que contiene al punto \( a \), excepto tal vez en a (Stewart,
+                  2008). Entonces \( \displaystyle \lim_{x \rightarrow \alpha } ⁡f(x)=- \infty \), significa que los valores de  \(f(x)\) pueden
+                  hacerse tan pequeños como se quiera, siempre que se tome a \(x\) lo suficientemente cerca de \( a \) , pero distinta de
+                  a.</p>
+            </div>
+          </div>
+          </div>
+          <p></p>
+       
+        <p>Se tienen también definiciones semejantes para los límites unilaterales cuando son infinitos.</p>
+       <div class="col-4 centrado">
+        <table class="table text-center">
+          <tbody>
+            <tr class="table-primary">
+              <td>\( \displaystyle \lim_{x \rightarrow a^- } f(x)= \infty \)</td>
+            </tr>
+            <tr class="table-secondary">
+              <td>\( \displaystyle \lim_{x \rightarrow a^+ } f(x)= \infty \)</td>
+            </tr>
+            <tr class="table-warning">
+              <td>\( \displaystyle \lim_{x \rightarrow a^- } f(x)=- \infty \)</td>
+            </tr>
+            <tr class="table-success">
+              <td>\( \displaystyle \lim_{x \rightarrow a^+ } f(x)=- \infty \)</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Existen 3 formas para determinar los límites al infinito:</p>
+        <ol>
+          <li> Por su representación gráfica</li>
+          <li> Por sustitución </li>
+          <li> Por deducción</li>
+        </ol>
+        <p>Retomemos la función \( f(x)= \frac{1}{x} \) revisada anteriormente.</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_01_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Considerando la <b>representación gráfica</b> de la función, a simple vista se observa que, mientras \(x\) sea mayor, y
+          se hace más pequeña, acercándose a cero.</p>
+        <p>Por el método de <b>sustitución</b>, en la siguiente tabla, al sustituir \(x\), veremos que su valor cada vez es más
+          grande:</p>
+
+          <div class="centrado" style="width: 30%;">
+            <table class="table table-bordered table-striped text-center table-hover ">
+              <thead class="table-primary">
+                <tr>
+                  <th>\(x \)</th>
+                  <th>\( f(x) \)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\(1\)</td>
+                  <td>\(1\)</td>
+                </tr>
+                <tr>
+                  <td>\(2 \)</td>
+                  <td>\(0.5\)</td>
+                </tr>
+                <tr>
+                  <td>\(3\)</td>
+                  <td>\(0.333\)</td>
+                </tr>
+                <tr>
+                  <td>\(4\)</td>
+                  <td>\(0.25\)</td>
+                </tr>
+                <tr>
+                  <td>\(5\)</td>
+                  <td>\(0.2\)</td>
+                </tr>
+                <tr>
+                  <td>\(6\)</td>
+                  <td>\(0.1666\)</td>
+                </tr>
+                <tr>
+                  <td>\(7\)</td>
+                  <td>\(0.428\)</td>
+                </tr>
+                <tr>
+                  <td>\(8\)</td>
+                  <td>\(0.125\)</td>
+                </tr>
+                <tr>
+                  <td>\(9\)</td>
+                  <td>\(0.111\)</td>
+                </tr>
+                <tr>
+                  <td>\(10\)</td>
+                  <td>\(0.1\)</td>
+                </tr>
+                <tr class="table-success">
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>\(100\)</td>
+                  <td>\(0.01\)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <p></p>
+        <p>Por último, por <b>deducción</b>, es observable en la representación gráfica que, mientras que \(x\) aumenta, el
+          resultado es menor en  \(f(x)\), como resultado de dividir \(1\) entre los valores de \(x\).</p>
+        <p>Revisemos los siguientes ejemplos:</p>
+        <p>a) Determinar el límite de la función \( \displaystyle \lim_{x \rightarrow 0}  \frac{1}{x^2} \)</p>
+        <p>Evaluando \( \displaystyle \lim_{x \rightarrow 0}  \frac{1}{x^2} =\frac{1}{(0)^2} =\frac{1}{0}= \infty \).</p>
+        <p>Así el límite es infinito y no existe.</p>
+        <p>Gráficamente</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_02_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">b) \( \displaystyle \lim_{x \rightarrow 3^- } \frac{2}{x-3}\)</p>
+        <p>Evaluando \( \displaystyle \lim_{x \rightarrow 3^- } \frac{2}{x-3}=\frac{2}{3^--3}=\frac{2}{-0}=- \infty \), como nos aproximamos a \(3\) por
+          la izquierda, al restarle 3 nos aproximamos a cero con valores negativos.</p>
+        <p>El límite es infinito.</p>
+        <p>c) \( \displaystyle \lim_{x \rightarrow 3^+ } \frac{2}{x-3} \)</p>
+        <p>Evaluando \( \displaystyle \lim_{x \rightarrow 3^+ } \frac{2}{x-3}=\frac{2}{3^+-3}=\frac{2}{+0}= \infty \), como nos aproximamos a \(3\) por la
+          derecha, al restarle \(3\) nos aproximamos a cero con valores positivos.</p>
+        <p>El límite es infinito.</p>
+        <p>Gráficamente</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_03_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Conforme nos acercamos a \(3\) con valores menores, los valores de la función decrecen y decimos que tienden a -
+         \( \infty \), y si nos acercamos con valores mayores que \(3\), los valores de la función crecen y decimos que
+          tienden a \(\infty\).</p>
+        <p>d) Calcular el límite \( \displaystyle \lim_{x \rightarrow \frac{ \pi }{2}^- }⁡sec⁡x \) </p>
+        $$ \displaystyle \lim_{x \rightarrow \frac{ \pi }{2}^- }⁡sec⁡x =sec⁡\frac{ \pi }{2}^- $$
+        <p>Para determinar el valor de la secante con valores cercanos menores a \(\frac{ \pi }{2}\), usamos la identidad trigonométrica
+          \( sec⁡x= \frac{1}{cos⁡x} \) .</p>
+        <p>Así \( \displaystyle \lim_{x \rightarrow \frac{ \pi }{2}^- }⁡sec⁡x =sec ⁡\frac{ \pi }{2}^-= \frac{1}{cos ⁡\frac{ \pi }{2}^- } =\frac{1}{0}= \infty \).</p>
+        <p>Ésta sería la gráfica de la función</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_04_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Al calcular el límite en un punto podemos tener diferentes resultados, puede ser que el límite sea un número
+          real o que sea infinito, y al obtener ambos resultados se aplican propiedades como las siguientes.</p>
+        <p><b>Propiedades:</b> si \( \displaystyle \lim_{x \rightarrow a} f(x)= \infty \) y \( \displaystyle \lim_{x \rightarrow a} g(x)=c \) para algún
+          número real \(c \), entonces: </p>
+        <p> i) \( \displaystyle \lim_{x \rightarrow a} \left[ f(x)+g(x) \right]= \infty \)</p>
+        <p> ii) Si \( c>0\), entonces \( \displaystyle \lim_{x \rightarrow a} [f(x)g(x)]= \infty \) y \( \displaystyle \lim_{x \rightarrow a}
+         \frac{ f(x)}{g(x)}= \infty \)</p>
+        <p> iii) Si \(c<0 \) , entonces \( \displaystyle \lim_{x \rightarrow a} [f(x)g(x)]=- \infty \) y \( \displaystyle \lim_{x \rightarrow a}
+          \frac{f(x)}{g(x)}=- \infty \) </p>
+        <p>iv) \( \displaystyle \lim_{x \rightarrow a}  \frac{g(x)}{f(x)}=0 \)</p>
+        <p>Revisa los siguientes ejemplos:</p>
+        <p>Calcular el valor del límite, si existe.</p>
+        <p>a)  \( \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2} \right)+cos⁡x+1  \)</p>
+        <p>La función de la que se pide calcular el límite está formada por las funciones  \( f(x)= \frac{1}{x+x^2 }\) y
+          \(g(x)=cos⁡x+1\).</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2 } \right) +cos⁡x+1= \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2} \right)+(cos⁡x+1)= \infty
+          +2= \infty $$
+        <p>Debido a que \( \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2 } \right)= \frac{1}{0+0^2}=\frac{1}{0}= \infty \) y \( \displaystyle
+          \lim_{x \rightarrow 0}⁡(cos⁡x+1)=cos⁡0+1=1+1=2 \).</p>
+        <p>b)  \( \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2 }\right) (cos⁡x+1)  \)</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \left( \frac{1}{x+x^2 } \right) (cos⁡x+1)= \infty (2)= \infty $$
+        <p>Debido a que \( \displaystyle \lim_{x \rightarrow 0} \left( ⁡\frac{1}{x+x^2 } \right)= \frac{1}{0+0^2 }=\frac{1}{0}= \infty \) y \( \displaystyle
+          \lim_{x \rightarrow 0}⁡(cos⁡x+1)=cos⁡0+1=1+1=2\).</p>
+        <p>Otro concepto derivado de límite corresponde a \( \displaystyle \lim_{x \rightarrow a}⁡ f(x)=L \), que es cuando el valor de
+          \(a\) es infinito ( \(x\) tiende a infinito), ya sea positivo o negativo. Veámoslo a continuación con más detalle.</p>
+       <ul>
+         <li><b> Límites en el infinito</b></li>
+       </ul>
+        <p>Cuando calculamos el valor del límite de una función en un punto que crece o decrece de manera indefinida,
+          decimos que calculamos un límite en el infinito o al infinito.</p>
+        <p>La gráfica siguiente nos presenta una función </p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_05_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Si tomamos que los valores de \(x\) crecen, esto es, si \( x \rightarrow  \infty \), los valores de la función se acercan a un
+          mismo valor, en este caso, a \( y=1 \), y si los valores de \(x\) decrecen, esto es, si \( x \rightarrow - \infty \), los valores de la
+          función se acercan a un mismo valor, en este caso, a \( y=-1 \).</p>
+        <p>La determinación del comportamiento de la función conforme crece o decrece la podemos observar en la gráfica.
+          Para determinar el valor del límite de manera algebraica, definamos éste y algunas propiedades.</p>
+          <blockquote>
+        <ol type="a" >
+          <li>Sea \( y=f(x) \) una función definida en un intervalo \( (a, \infty )\) . El \( \displaystyle \lim_{x \rightarrow  \infty}  f(x)=L \)
+          significa que los valores de la función \(f(x)\) se pueden acercar tanto como se quiera a \(L\), si el valor de \(x\) se
+          incrementa lo suficientemente (Stewart, 2008).</li>
+        <li>Sea \( y=f(x) \) una función definida en un intervalo \( (- \infty ,a) \). El \( \displaystyle \lim_{x \rightarrow - \infty }
+           f(x)=L \) significa que los valores de la función \(f(x)\) se pueden acercar tanto como se quiera a \(L\), si el valor de
+          \(x\) se decrementa lo suficiente (Stewart, 2008).</li>
+        </blockquote>
+        <p>Para poder calcular los límites, definamos la propiedad siguiente que nos será de utilidad en la
+          determinación algebraica. </p>
+          
+        <p><b>Teorema:</b> si \(r > 0 \) es un número racional tal que \(x^r\) está definida para toda \(x\), entonces \( \displaystyle
+          \lim_{x \rightarrow  \infty}  \frac{1}{x}^r =0 \) y \( \displaystyle \lim_{x \rightarrow - \infty} \frac{1}{x^r} =0\).</p>
+        <p>En este teorema se tiene un caso especial del inciso iv definido en las propiedades anteriores.</p>
+        <p>Si \( \displaystyle \lim_{x \rightarrow a} f(x)= \infty \) y \( \displaystyle \lim_{x \rightarrow a} g(x)=c \) para algún número real \(c\),
+          entonces: \( \displaystyle \lim_{x \rightarrow a} \frac{g(x)}{f(x)}=0 \).</p>
+        <p>Calculemos límites en el infinito, la estrategia para determinar el valor del límite es aplicar el teorema,
+          esto es, tener la forma  \( \frac{1}{x}^r \) . Ejemplos:</p>
+        <p>a) Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow  \infty} \frac{2x^2+x-3}{3x^2-4x+1} \).</p>
+        <p>Para obtener la forma  \(\frac{1}{x^r}\) , dividamos el numerador y denominador de la función entre \( x^r\), donde r es el
+          exponente mayor de los polinomios que se tienen en el numerador y denominador, esto es equivalente a
+          multiplicar la función por \(1\).</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{2x^2+x-3}{3x^2-4x+1}= \displaystyle \lim_{x \rightarrow  \infty} \frac {\frac{2x^2+x-3}{x^2}}
+          { \frac{3x^2-4x+1}{x^2} } $$
+         $$ = \displaystyle \lim_{x \rightarrow  \infty} \frac{ \frac{2x^2}{x^2} +\frac {x}{x^2} -\frac{3}{x^2} }{ \frac{3x^2}{x^2} -\frac{4x}{x^2} + \frac{1}{x^2}} $$
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{2+ \frac{1}{x}-\frac{3}{x^2}}{ 3-\frac{ 4}{x}+ \frac{1}{x^2} }= \frac{2+0-0}{3-0+0}=\frac{2}{3}$$
+        <p>El límite existe y vale \( \frac{2}{3} \) </p>
+        <p>b) Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow - \infty } \frac{x+1}{5x^2-2x+1}\).</p>
+        <p>Dividimos numerador y denominador por \(x^2\)</p>
+        $$ \displaystyle \lim_{x \rightarrow - \infty } \frac{x+1}{5x^2-2x+1}=  \displaystyle \lim_{x \rightarrow - \infty }  \frac{\frac{x+1}{x^2}}{
+          \frac{5x^2-2x+1}{x^2}}=  \displaystyle \lim_{x \rightarrow - \infty } \frac{ \frac{x}{x^2} + \frac{1}{x^2} }{ \frac{5x^2}{x^2} - \frac{2x}{x^2} + \frac{1}{x^2}} $$
+        <p>$$= \displaystyle \lim_{x \rightarrow - \infty } \frac{ \frac{1}{x}+ \frac{1}{x^2} }{5- \frac{2}{x}+ \frac{1}{x}^2 }= \frac{0-0}{5-0+0}= \frac{0}{5}=0$$
+        <p>El límite existe y vale \( 0 \).</p>
+        <p>Ahora veamos los límites infinitos en el infinito que se refieren a la forma en que una función se comporta
+          cuando \(x\) tiende hacia el infinito o menos infinito.</p>
+          <ul>
+            <li><b>Límites infinitos en el infinito</b></li>
+          </ul>
+        <p>Decimos que se tiene este límite cuando al calcular el límite la \(x\) crece o decrece de manera arbitraria y el
+          resultado es infinito. Ejemplo:</p>
+        <p>Determinar el valor del límite \( \displaystyle \lim_{x \rightarrow  \infty} \frac{x^3+x^2-x}{2-x}\), si existe.</p>
+        <p>Dividiendo por \(x^3\)</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{x^3+x^2-x}{2-x}= \displaystyle \lim_{x \rightarrow  \infty} \frac{\frac{x^3+x^2-x}{x^3}}{ 
+          \frac{2-x}{x^3}} $$
+           $$ = \displaystyle \lim_{x \rightarrow  \infty} \frac{ \frac{x^3}{x^3} +\frac{x^2}{x^3} - \frac{x}{x^3} }{ \frac{2}{x^3} -\frac{x}{x^3} }$$
+          $$ = \displaystyle \lim_{x \rightarrow  \infty}\frac{1+ \frac{1}{x}- \frac{1}{x^2} }{ \frac{2}{x^3} - \frac{x}{x^2}}$$
+         $$ \frac{1+0- 0}{0-0} = \frac{1}{0}= \infty $$
+        <p>Así el límite es infinito y no existe.</p>
+        <p>Hay otros límites de funciones que son infinitos y no son de funciones racionales, como los siguientes.</p>
+        <p>Límite de la función exponencial \( \displaystyle \lim_{x \rightarrow  \infty} e^x \)   y \( \displaystyle \lim_{x \rightarrow - \infty}
+          e^x \).</p>
+        <p>La gráfica de la función es la siguiente</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_06_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">\( \displaystyle \lim_{x \rightarrow - \infty }⁡e^x =0, porque al hacer que x \rightarrow - \infty \) los valores de la función
+          se aproximan a 0.</p>
+        <p>\( \displaystyle \lim_{x \rightarrow  \infty}⁡e^x = \infty \), porque al hacer que \(x \rightarrow  \infty\) los valores de la función
+          tienden a \( \infty \).</p>
+        <p>Se puede emplear la gráfica de la función para la determinación del límite en infinito de funciones
+          transcendentes.</p>
+        <p>Si calculamos \( \displaystyle \lim_{x \rightarrow  \infty}⁡cos⁡x \) y evaluamos, tenemos \( \displaystyle \lim_{x \rightarrow 
+          \infty}⁡cos⁡x =cos⁡ \infty \).</p>
+        <p>El valor del coseno se ha calculado sólo en números reales y el infinito no es un número real por lo que no
+          se puede evaluar la función.</p>
+        <p>Si graficamos la función</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_07_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Observamos que, cuando \(x\) crece tanto como se quiera, los valores de la función son los números reales dentro
+          de [-1,1]. Conforme \(x\) crece, el número oscila y no se aproxima a ningún valor, luego el límite no existe. Pero
+          no puede decirse que el límite es infinito, ya que no crece o decrece indefinidamente.</p>
+        <p>Es importante destacar que los límites infinitos en el infinito no son límites comunes en el sentido
+          tradicional donde la función puede converger en un valor específico. En cambio, se refieren al comportamiento
+          asintótico de la función cuando la variable independiente crece sin límite.</p>
+        <p>Es momento de practicar lo aprendido en el ejercicio siguiente.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">
+              <p class="text-center">18. Límites infinitos</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+
+        <p id="3.1">Ya que sabemos cómo se comportan las funciones con límites infinitos y hacia el infinito, es momento de
+          revisar las asíntotas. </p>
+        <h2>3.1 Asíntotas horizontales, verticales y oblicuas</h2>
+        <p class="mt-4">La gráfica de algunas funciones presenta una propiedad por la que no puede cruzar una línea recta, se acerca
+          a la recta, pero no la cruzará. Cuando sucede esto se dice que la recta es una <b>asíntota </b> de la gráfica de la
+          función. Se tienen asíntotas horizontales, verticales y oblicuas, empecemos por definir una asíntota.</p>
+
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p><b>Asíntota:</b> si la distancia entre la gráfica de una función y una recta fija tiende a cero, cuando la gráfica
+                  se aleja del origen, se dice que la gráfica tiende a la recta asintóticamente y que la recta es una asíntota
+                  de la gráfica (Thomas, 2010).</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+
+        <p class="mt-4">La definición no indica que una función, que tiene una asíntota, es porque la gráfica no cruza a la recta
+          conforme \(x\) crece o decrece; pero puede cruzar la recta alrededor de cero, ejemplo:</p>
+        <p>La función \( f(x)= \frac{1}{x} \) tiene asíntotas, la gráfica de la función es la siguiente:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_08_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Esta función tiene dos asíntotas una horizontal \(y=0\) y otra vertical \(x=0\).</p>
+        <p>Existen 3 tipos de asíntotas: horizontal, vertical y oblicua. </p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_09_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">Como puedes ver, cada una recibe su nombre por cómo se desarrolla en la gráfica. Ahora definamos cada una de
+          ellas. Comencemos por las primeras dos.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>La gráfica de una función \( y=f(x) \):</p>
+                  <p>a) Tiene como <b>asíntota horizontal</b> a la recta \(y=b\), si \( \displaystyle \lim_{x \rightarrow  \infty} f(x)=b\) o 
+                    \( \displaystyle \lim_{x \rightarrow - \infty } f(x)=b\) </p>
+                  <p>b) Tiene como <b>asíntota vertical</b> a la recta \(x=a\), si \( \displaystyle \lim_{x \rightarrow a} f(x)= \pm \infty\) o \( \displaystyle
+                   \lim_{x \rightarrow a^- } f(x)= \pm \infty\) o \( \displaystyle \lim_{x \rightarrow a^+ } f(x)= \pm \infty \)</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        
+        <p><b>Nota:</b> si \(x=a\) es una asíntota vertical de la función \( y=f(x) \), entonces \(x=a\) es un cero del denominador de la
+          función.</p>
+        <p>Las posibles asíntotas horizontales de la función \( y=f(x) \) son los ceros de denominador, ejemplo:</p>
+        <p>Determinar las asíntotas horizontales y verticales de la función dada, y esbozar la gráfica de la función.
+        </p>
+        <p>a)  \( f(x)=\frac{1}{x(x-2)^2}  \)</p>
+        <p><em>Asíntota horizontal</em></p>
+        <p>Calculemos el límite en infinito de la función</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{1}{x(x-2)^2 }= \frac{1}{ \infty( \infty-2)^2 }= \frac{1}{ \infty}=0 $$
+        <p>Con lo cual \(y=0\) es una asíntota horizontal de la función.</p>
+        <p>Si calculamos el límite en \(- \infty \)</p>
+        $$ \displaystyle \lim_{x \rightarrow - \infty }⁡ \frac{1}{x(x-2)^2 } =\frac {1}{- \infty (- \infty -2)^2 }=\frac{1}{- \infty }=0 $$
+        <p>Como el resultado es el mismo, sólo hay una asíntota horizontal.</p>
+        <p><em>Asíntotas verticales</em></p>
+        <p>Las posibles asíntotas verticales son los ceros de denominador, esto es,</p>
+        <p class="text-center"> \( x(x-2)^2=0 \Rightarrow x=0 \) y \( (x-2)^2=0 \Rightarrow x=0\)  y \( x-2=0 \Rightarrow x=0\)  y \(x=2\). </p>
+        <p>Calculemos el límite cuando \(x\) tiende a 0 y a 2 para determinar si ambas son asíntotas o no</p>
+        $$ \displaystyle \lim_{x \rightarrow 0}⁡ \frac{1}{x(x-2)^2 }= \frac{1}{0(0-2)^2 }=\frac{1}{0 (4)} =\frac{1}{0}= \infty $$
+        <p>Así es una asíntota vertical de la gráfica</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} \frac{⁡1}{x(x-2)^2 }=\frac{1}{2(2-2)^2 }=\frac{1}{2(0)} =\frac{1}{0}= \infty  $$
+        <p>Así \(x=2\) es una asíntota vertical de la gráfica.</p>
+        <p>Para esbozar la gráfica de la función, necesitamos saber cuál es el comportamiento de la función en torno de
+          los puntos \(x=0\) y \(x=2\). Se debe definir si al acercarnos con valores más pequeños y grandes a las asíntotas la
+          función tiende a infinito o a menos infinito, para lo que hay que calcular los límites unilaterales.</p>
+        $$ \displaystyle \lim_{x \rightarrow 0^- } \frac{⁡1}{x(x-2)^2 }=\frac{1}{0^- (0^--2)^2 }=\frac{1}{(0^- (4) }=\frac{1}{0^-} =- \infty $$
+        $$ \displaystyle \lim_{x \rightarrow 0^+ } \frac{⁡1}{x(x-2)^2 }=\frac{1}{0^+ (0^+-2)^2 }=\frac{1}{(0^+ (4) }=\frac{1}{0^+} =+ \infty $$
+        $$ \displaystyle \lim_{x \rightarrow 2^- } \frac{⁡1}{x(x-2)^2 }=\frac{1}{2^- (2^--2)^2 }=\frac{1}{2(-0)^2 }=\frac{1}{0} =+ \infty $$
+        $$ \displaystyle \lim_{x \rightarrow 2^+ } \frac{⁡1}{x(x-2)^2 }=\frac{1}{2^+ (2^+-2)^2 }=\frac{1}{2(+0)^2 }=\frac{1}{0} =+ \infty $$
+        <p>La gráfica queda de la siguiente manera:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_10_liminf.svg"  width="50%">
+      </div>
+        <p class="mt-4">b)  \(f(x)=\frac{x-3}{ \sqrt {4x^2+x+2} }\)</p>
+        <p><em>Asíntota horizontal</em></p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{x-3}{ \sqrt{4x^2+x+2}}= \frac{ \infty-3}{ \sqrt{4( \infty)^2+ \infty+2}}= \frac{\infty} 
+        {\sqrt{\infty }} = \frac{\infty }{ \infty}$$
+        <p>Obtenemos una forma indeterminada, que no determina una solución del límite. Reduzcamos la función</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{x-3}{ \sqrt{4x^2+x+2}}=  \displaystyle \lim_{x \rightarrow 
+          \infty} \frac{\frac{⁡x-3}{x}}{\frac{ \sqrt{4x^2+x+2}}{x}}=  \displaystyle \lim_{x \rightarrow  \infty} \frac{\frac{x-3}{x}}{  \sqrt {\frac{4x^2+x+2}{x^2}}}= 
+          \displaystyle \lim_{x \rightarrow  \infty} \frac{\frac{x}{x}-\frac{3}{x}}{ \sqrt {\frac{4x^2}{x^2} +\frac{x}{x^2} -\frac{3}{x^2}} } $$
+          $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{1- \frac{3}{x}}{ \sqrt {4+ \frac{1}{x}-\frac{3}{x^2}}} =  \frac{1 -0 }{\sqrt{4+0-0}} = \frac{1}{\sqrt4}=\frac{1}{2} $$
+        <p>Así \(y=\frac{1}{2}\) es una asíntota horizontal.</p>
+        <p>Calculemos el límite cuando \(x\) tiende \( a - \infty \)</p>
+        $$ \displaystyle \lim_{x \rightarrow - \infty }  \frac{x-3}{ \sqrt{4x^2+x+2}}=  \displaystyle \lim_{x \rightarrow - \infty} ⁡\frac{\frac{x-3}{x}}{ \frac{- \sqrt{4x^2+x+2}}{x}}= \displaystyle \lim_{x \rightarrow - \infty }⁡ \frac{\frac{x-3}{x}}{{- \sqrt{ \frac{4x^2+x+2}{x^2} }}} $$
+        
+         $$ \displaystyle \lim_{x \rightarrow - \infty }⁡\frac{\frac{x}{x}-\frac{3}{x}}{- \sqrt{\frac{4x^2}{x^2} +\frac{x}{x^2} -\frac{3}{x^2}}} $$
+         $$ =  \displaystyle \lim_{x \rightarrow - \infty} \frac{⁡1-\frac{3}{x}}{- \sqrt{4+ \frac{1}{x}-\frac{3}{x^2}}} $$
+         $$= \frac{1-0}{- \sqrt{4+0-0}}= \frac{1}{- \sqrt{4}}=-\frac{1}{2}$$
+        <p>Así \(y=-\frac{1}{2}\) es una asíntota horizontal.</p>
+        <p><em>Asíntota vertical</em></p>
+        <p>Posibles asíntotas verticales</p>
+        $$ \sqrt{4x^2+x+2}=0 \Rightarrow 4x^2+x+2=0 $$
+        <p>Calculemos con la fórmula general, \(x= \frac{-1 \pm \sqrt{1-4(4)(2)}}{2(4)} = \frac{-1 \pm \sqrt{-31}}{8} \) no pertenece a los reales.</p>
+        <p>No tiene solución por lo cual no hay ceros del denominador.</p>
+        <p>No hay asíntotas verticales.</p>
+        <p>Para la gráfica de la función conocemos cuáles son las dos asíntotas horizontales; pero no son suficientes
+          para poder esbozar la gráfica de la función.</p>
+        <p>La gráfica de la función es:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_11_liminf.svg"  width="50%">
+      </div> 
+        <p>c) \( f(x)=\frac{x^2-4}{x+2} \)</p>
+        <p><em>Asíntota horizontal</em></p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡\frac{x^2-4}{x+2}= \frac{\infty}{\infty} $$
+        <p>Reduzcamos la función</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^2-4}{x+2}= \displaystyle \lim_{x \rightarrow  \infty}⁡\frac{(x-2)(x+2)}{x+2}=
+          \displaystyle \lim_{x \rightarrow  \infty}⁡x-2= \infty $$
+        <p>El límite es infinito, así no existe.</p>
+        <p>No hay asíntota horizontal.</p>
+        <p><em>Asíntota vertical</em></p>
+        <p>Ceros de denominador</p>
+        $$ x+2=0 \Rightarrow x=-2 $$
+        <p>Calculemos el límite</p>
+        $$ \displaystyle \lim_{x \rightarrow -2} \frac{x^2-4}{x+2}=\frac{(-2)^2-4}{-2+2}=\frac{4-4}{-2+2}=\frac{0}{0} $$
+        <p>Usemos una estrategia para el cálculo del límite</p>
+        $$ \displaystyle \lim_{x \rightarrow -2} \frac{x^2-4}{x+2}= \displaystyle \lim_{x \rightarrow -2} \frac{ (x-2)(x+2)}{x+2}= \displaystyle
+          \lim_{x \rightarrow -2} x-2=-4 $$
+        <p>El límite existe, por lo tanto, no hay asíntota vertical.</p>
+        <p>La función no tienes asíntotas, no toda función racional tiene asíntotas.</p>
+        <p>No hay elementos para graficar la función con respecto a las asíntotas; sin embargo, como la función se
+          reduce a una recta \( \frac{x^2-4}{x+2}=x-2 \), es posible esbozar la gráfica de la función.</p>
+        <p>La gráfica de la función es una recta que no está definida en \(x=-2\).</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_12_liminf.svg"  width="50%">
+      </div> 
+        <p class="mt-4">d)  Encontrar una fórmula para una función que tenga las asíntotas verticales \(x=1\) y \(x=3\), y la asíntota
+          horizontal \(y = 1\) (Sewart, 2013).</p>
+        <p>Supongamos que la función es racional, las asíntotas verticales son los ceros de denominador, así empezamos
+          por considerar que </p>
+        $$ f(x)=\frac{p(x)}{(x-1)(x-3)} $$
+        <p>La asíntota horizontal se tiene cuando calculamos \( \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{p(x)}{(x-1)(x-3)} \) .
+          Para que sea igual a \(1\) este límite, el polinomio \( p(x) \) debe de ser del mismo grado de denominador, esto es, de
+          grado \(2\). Por lo que proponemos que:</p>
+        $$f(x)=\frac{x^2}{(x-1)(x-3)}$$
+        <p>Verifiquemos que cumple con las condiciones</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^2}{(x-1)(x-3)} = \frac{( \infty)^2 }{ (\infty-1)( \infty-3)} = \frac{\infty }{ \infty} $$
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^2}{(x-1)(x-3)} = \displaystyle \lim_{x \rightarrow  \infty} ⁡ \frac{\frac{x^2}{x^2}}{(\frac{x-1}{x})(\frac{x-3}{x})} $$
+        $$ = \displaystyle \lim_{x \rightarrow  \infty} ⁡ \frac{1}{( 1 - \frac{1}{x})( 1 -\frac{3}{x})}  =  \frac{1}{(1-0)(1-0)} =1 $$
+        <p>Asíntota horizontal  \(y=1\) </p>
+        $$ \displaystyle \lim_{x \rightarrow 1} \frac{x^2}{(x-1)(x-3)} =\frac{(1)^2}{(1-1)(1-3)} ⁡=\frac{1}{(0)(-2)} =- \infty $$
+        <p>Con lo cual \(x=1\) es una asíntota vertical</p>
+        $$ \displaystyle \lim_{x \rightarrow 3} ⁡\frac{x^2}{(x-1)(x-3)} =\frac{(3)^2}{(3-1)(3-3)} ⁡=\frac{9}{(2)(0)} = \infty $$
+        <p>Con lo cual \(x=3\) es una asíntota vertical.</p>
+        <p>Y la función \(f(x)=\frac{x^2}{(x-1)(x-3)}\) satisface las condiciones.</p>
+        <p>Hasta el momento hemos determinado las asíntotas horizontales y verticales de una función, si es que la
+          función racional dada tiene estas asíntotas. Sin embargo, se tienes otras asíntotas que son las asíntotas
+          oblicuas, llamadas así porque son rectas inclinadas.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+              <div class="card-body">
+                <p>La gráfica de una función \( y=f(x) \) tiene como asíntota oblicua a la recta</p>
+                <p class="text-center">\(y=mx+b\), si \( \displaystyle \lim_{x \rightarrow  \infty} [f(x)-(mx+b)]=0\) o \( \displaystyle \lim_{x \rightarrow - \infty }
+                  [f(x)-(mx+b)]=0\) </p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        <p class="mt-4">Una función puede tener una asíntota oblicua si su expresión es una fracción impropia, esto es, si es un
+          cociente donde el grado del polinomio del numerador es mayor que el grado de polinomio del denominador, en
+          particular el grado del denominador es uno más que el grado del denominador. </p>
+        <p>Generalmente, una asíntota oblicua se determina llevando a cabo la división de la fracción. Ejemplo:</p>
+        <p>Determinar las asíntota oblicuas, horizontales y verticales de la función \(f(x)= \frac{x^3}{x^2-4}\) y esbozar la
+          gráfica de la función.</p>
+        <p><em>Asíntota oblicua</em></p>
+        <p>Dividimos \(x^3\) entre \(x^2-4\) y obtenemos</p>
+        $$f(x)= \frac{x^3}{x^2-4}=x+\frac{4x}{x^2-4}$$
+        <p>Descomponemos la función en la suma de una recta y una fracción propia.</p>
+        <p>Esto sugiere que la recta, que es asíntota oblicua, es \(y=x\). Calculemos el límite usando la definición para
+          verificar si es asíntota oblicua de la función</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^3}{x^2-4}-x= \displaystyle \lim_{x \rightarrow  \infty} x+\frac{4x}{x^2-4}-x $$
+        <p>Debido a que en la división expresamos que \( \frac{x^3}{x^2-4}=x+\frac{4x}{x^2-4}\)</p>
+        <p>Reduciendo</p>
+        $$  \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^3}{x^2-4}-x= \displaystyle \lim_{x \rightarrow  \infty} x+\frac{4x}{x^2-4}-x=
+          \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^3}{x^2-4}-x= \displaystyle \lim_{x \rightarrow  \infty} \frac{4x}{x^2-4} $$
+          <p>Calculando el límite, dividimos entre la potencia mayor</p>
+        $$ \displaystyle \lim_{x \rightarrow  \infty} \frac{4x}{x^2-4}= \displaystyle \lim_{x \rightarrow  \infty} \frac{\frac{4x}{x^2}}{\frac{x^2-4}{x^2}}=
+          \displaystyle \lim_{x \rightarrow  \infty} \frac{\frac{4}{x}}{1-\frac{4}{x^2}}= \frac{0}{(1-0)}=0 $$
+        <p>Por lo que la recta \(y=x\) es una asíntota oblicua.</p>
+        <p><em>Asíntota horizontal</em></p>
+        <p>Calculamos el límite cuando \(x\) tiende a infinito de la función</p>
+       
+        $$ \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{x^3}{(x^2-4)}= \displaystyle \lim_{x \rightarrow  \infty}⁡\frac{\frac{x^3}{x^3}}{\frac{x^2-4}{x^3}}
+  =  \displaystyle \lim_{x \rightarrow  \infty}⁡ \frac{1}{ \frac{1}{x}-\frac{4}{x^3} }= \frac{1}{(0-0)}=\frac{1}{0}= \infty $$
+        <p>Por lo que el límite no existe y la función no tiene una asíntota horizontal.</p>
+        <p><em>Asíntota vertical</em></p>
+        <p>Posibles asíntotas verticales con los ceros del denominador</p>
+        <p class="text-center">\( x^2-4=0 \Rightarrow (x-2)(x+2)=0 \Rightarrow x-2=0 \) y \( x+2=0 \Rightarrow x=2 \) y \(x=-2\)</p>
+        <p>Las posibles asíntotas verticales son \(x=2\) y \(x=-2\).</p>
+        <p>Calculemos el límite para demostrarlo</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} ⁡ \frac{x^3}{x^2-4}=\frac{(2)^3}{(2)^2-4}=\frac{8}{4-4}=\frac{8}{0}= \infty $$
+        <p>Y la recta \(x=2\) es una asíntota vertical de la gráfica</p>
+        $$ \displaystyle \lim_{x \rightarrow -2}  \frac{x^3}{x^2-4}= \frac{(-2)^3}{(-2)^2-4}=\frac{-8}{4-4}=-\frac{8}{0}=- \infty $$
+        <p>Y la recta \(x=-2\) es una asíntota vertical de la gráfica.</p>
+        <p>Así la función \(f(x)= \frac{x^3}{x^2-4}\), tiene una asíntota oblicua \(y=x\) y dos asíntotas verticales \(x=2\) y \(x=-2\).</p>
+        <p>Para esbozar la gráfica de la función necesitamos los límites unilaterales, calculémoslos</p>
+        $$ \displaystyle \lim_{x \rightarrow 2^- } \frac{x^3}{x^2-4}=\frac{(2^- )^3}{(2^- )^2-4}=\frac{8}{4^--4}=\frac{8}{-0}=- \infty $$
+        $$ \displaystyle \lim_{x \rightarrow 2^+}⁡ \frac{x^3}{x^2-4}=\frac{(2^+ )^3}{(2^+ )^2-4}=\frac{8}{4^+-4}=\frac{8}{+0}=+ \infty$$
+        $$ \displaystyle \lim_{x \rightarrow -2^- } \frac{x^3}{x^2-4}=\frac{(-2^- )^3}{(-2^- )^2-4}=\frac{-8}{4^+-4}=\frac{-8}{+0}=- \infty $$
+        $$ \displaystyle \lim_{x \rightarrow -2^+}⁡ \frac{x^3}{x^2-4}=\frac{(-2^+ )^3}{(-2^+ )^2-4}=\frac{-8}{4^--4}=\frac{-8}{-0}=+ \infty$$
+        <p>La gráfica de la función es:</p>
+        <div class="img-flex text-center">
+          <img class="img-fluid" src="img/tm3/u2_tm3_13_liminf.svg"  width="50%">
+      </div> 
+        <p class="mt-4">En la gráfica notamos que la asíntota oblicua en torno al cero sí cruza a la gráfica de la función; pero,
+          cuando \(x\) crece y decrece a, se comporta de manera asintótica.</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">19. Asíntotas</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+  
+        <p>En este tema hemos revisado los límites infinitos y hacia el infinito, los cuales describen el comportamiento
+          de una función, conforme sus valores van cambiando, creando así una tendencia. En el siguiente tema veremos lo
+          relacionado con la continuidad, un concepto que nos da la referencia de que la función transcurre sin
+          interrupciones.</p>
+      </div>
+    </div>
+    </div>
+    <div>
+      <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>IPN - ESCOM - Cálculo I</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%">
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2 mx-3"> Unidad II. Límites de funciones y continuidad</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="u2t1-cal.html" >
+              Tema 1
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 2
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t2-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.1">2.1 Límites de formas indeterminadas</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.2">2.2 Límites unilaterales</a></li>
+              <li><a class="dropdown-item" href="u2t2-cal.html#2.3">2.3 Límite de funciones trigonométricas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t3-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t3-cal.html#3.1">3.1 Asíntotas horizontales, verticales y oblicuas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u2t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 4
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u2t4-cal.html">Introducción</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.1">4.1 En un punto</a></li>
+              <li><a class="dropdown-item" href="u2t4-cal.html#4.2">4.2 En un intervalo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link"  href="http://148.204.56.92/moodle/course/view.php?id=10&section=3" >
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        
+        <h1>1. Límites de manera gráfica y numérica</h1>
+        <p class="mt-4">En esta segunda unidad, daremos seguimiento al tema de límites y su representación. Comúnmente tenemos la
+          noción de
+          lo que es un límite, ya que ocupamos este concepto muy a menudo, por ejemplo, cuando vemos la capacidad máxima
+          de
+          una pipa de agua, el número de litros de gasolina que le caben al tanque de un automóvil, la longitud máxima
+          de una
+          varilla, etc., así que, intuitivamente, sabemos lo que es un límite, ya que es natural que las cantidades o
+          medidas
+          lo tengan.</p>
+        <p>Pero ¿qué significa el límite de una función? Matemáticamente, el límite de una función en un punto es el
+          valor al
+          cual se aproxima la función cuando \(x\) se acerca a ese punto y se representa de la siguiente manera:</p>
+        $$ \displaystyle \lim_{x \rightarrow \alpha}⁡ f(x)=b $$
+        <p>Hay diferentes maneras de representar los límites, ya sea de manera gráfica o numérica. Veamos a continuación
+          cada
+          una de ellas.</p>
+          <ul>
+            <li><b>Gráficamente</b></li>
+          </ul>
+        <p>Consideremos una función \( f(x)\) y determinemos el límite de la función cuando \(x\) tiende a \( \alpha \),
+          esto es \( \displaystyle \lim_{x \rightarrow a} f(x)\),
+          para ello tomemos puntos cercanos a \( \alpha \), tanto mayores como menores, y examinemos lo que ocurre con
+          los valores de la
+          función.</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm1/u2_tm1_01_limites.svg"  width="50%">
+        </div>
+        <p class="mt-4">Al tomar valores cada vez más cercanos al punto \( \alpha \), tanto menores como mayores, notamos que el
+          valor de la función en
+          estos puntos se aproxima a un mismo punto, siendo este \( f(a) \), por lo cual éste es su límite.</p>
+        <p>Si tenemos en cuenta funciones con una representación gráfica diferente de la función que consideramos en un
+          principio, vemos que la situación al determinar el límite de la función en un punto \( \alpha \) es semejante,
+          conforme nos
+          aproximamos al valor de \( \alpha \) con valores menores y mayores, los valores de la función se aproximan a
+          un mismo valor,
+          siendo este el valor de la función en \( \alpha \), \(f(a)\).</p>
+          <div class="row text-center">
+            <div class="col">
+              <img class="img-fluid" src="img/tm1/u2_tm1_02_limites.svg" >
+            </div>
+            <div class="col">
+              <img class="img-fluid" src="img/tm1/u2_tm1_03_limites.svg" >
+            </div>
+          </div>
+          <div class="img-flex text-center">
+        </div>
+        <p class="mt-4">Notamos que independientemente de si la función es creciente, decreciente, si es un valor máximo o si es un
+          valor
+          mínimo, al determinar el valor del límite de la función en un punto \(a\), éste es igual al valor de la función en
+          este
+          punto.</p>
+          <ul>
+            <li><b>Numéricamente</b></li>
+          </ul>
+        <p>Otra opción, para aproximarnos al valor de una función conforme nos aproximamos a un valor fijo, es de manera
+          numérica. </p>
+        <p>Tomemos la función \( f(x)=x^3-3x^2+2\) y determinamos el límite de la función en el punto \( 2 \) , tomando valores
+          cercanos a
+          \( x=2 \) y calculando el valor de la función en esos puntos.</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm1/u2_tm1_03_limites_tabla.svg"  width="50%">
+        </div>
+      
+        <p class="mt-4">Al aproximarnos al punto \( a = 2 \), con valores más pequeños o grandes, obtenemos que nos acercamos al mismo
+          punto \(f(x)=-2\). Éste es el límite de la función, es decir:</p>
+        $$ \displaystyle \lim_{x \rightarrow 2} x^3-3x^2+2=-2 $$
+        <p>¿Qué pasa con el límite de la función, si la función no está definida en un punto, o está definida por
+          partes?
+          Examinemos la situación.</p>
+        <p>Empecemos considerando una función que no está definida en un punto, en particular en el punto \( x=1 \).
+          Gráficamente
+          observamos un hueco en este punto.</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm1/u2_tm1_04_limites.svg"  width="50%">
+        </div>
+        <p class="mt-4">Al querer determinar el límite de la función, notamos que, si tomamos valores más pequeños que \(1\) y más
+          grandes que \(1\),
+          los valores de la función \(y=f(x)\) se aproximan al mismo punto, en este caso a \(3\). </p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm1/u2_tm1_05_limites.svg"  width="50%">
+        </div>
+        <p class="mt-4">Por lo que, a pesar de que la función no está definida en \(1\), el límite existe y vale \(3\). Esto es:</p>
+        <p class="text-center">\(f(1)\) no existe y \( \displaystyle \lim_{x \rightarrow 1} f(x)=3 \)</p>
+        <p>De manera numérica podemos encontrar también el valor del límite, de manera algebraica la representación de
+          la
+          función es \(f(x)=\frac{x^5-3x^4+2x^3+5x^2-6x+1}{x-1}\)</p>
+          <div class="centrado" style="width: 40%;">
+            <table class="table table-bordered table-striped text-center table-hover ">
+              <thead class="table-primary">
+                <tr>
+                  <th>\(x \)</th>
+                  <th>\( f(x) \)</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\(0.5\)</td>
+                  <td>\(1.3121\)</td>
+                </tr>
+                <tr>
+                  <td>\(0.7 \)</td>
+                  <td>\(2.0541\)</td>
+                </tr>
+                <tr>
+                  <td>\(0.9\)</td>
+                  <td>\(2.6981\)</td>
+                </tr>
+                <tr>
+                  <td>\(0.99\)</td>
+                  <td>\(2.969998010\)</td>
+                </tr>
+                <tr>
+                  <td>\(0.999\)</td>
+                  <td>\(2.996999997\)</td>
+                </tr>
+                <tr class="table-success">
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>\(1.001\)</td>
+                  <td>\(3.003000002\)</td>
+                </tr>
+                <tr>
+                  <td>\(1.01\)</td>
+                  <td>\(3.030002009\)</td>
+                </tr>
+                <tr>
+                  <td>\(1.1\)</td>
+                  <td>\(3.3021\)</td>
+                </tr>
+                <tr>
+                  <td>\(1.3\)</td>
+                  <td>\(3.9621\)</td>
+                </tr>
+                <tr>
+                  <td>\(1.5\)</td>
+                  <td>\(4.8125\)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <p></p>
+        
+        <p>De donde se determina que el valor del límite es de \(3\).</p>
+        <p>Por lo cual, para que el límite de la función exista en un punto, no es necesario que la función esté
+          definida en el
+          mismo.</p>
+        <p>Otro caso particular es con una función por partes. Sea \( f(x)\) una función que está formada por dos
+          partes, una curva
+          de \( (- \infty ,1) \) y por otra curva de \( (1, \infty) \), y se desea determinar el límite en el punto en el cual
+          se cambia de función
+          (curva), en este caso es en \(x=1\).</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/tm1/u2_tm1_06_limites.svg"  width="50%">
+        </div> 
+        <p class="mt-4">Si nos aproximamos al punto \(1\) con valores más pequeños, observamos que los valores de y se aproximan a un
+          mismo
+          valor, éste es \(4\). Y, si nos aproximamos a \(1\) con valores más grandes, notamos que los valores de \(y\) se
+          aproximan al
+          punto \(0\).</p>
+        <p>Luego, si tomamos ambos valores a los que se aproxima la función, menores y mayores, éstos no son el mismo
+          punto, por
+          lo cual el límite de la función \(f(x)\) en el punto \(1\) no existe; esto es \( \displaystyle \lim_{x \rightarrow 1} f(x)\) no
+          existe.</p>
+        <p>Definamos el límite de la función en un punto.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+
+            <div class="card-body">
+              <p class="text-center"><p>Decimos que el límite de una función \(f(x)\), cuando \(x\) tiende  \( \alpha \), es igual a \(L\) y, por lo tanto, \(
+                \displaystyle \lim_{x \rightarrow a} f(x)=L\)
+                (Stewart, 2013), si los valores de \(f(x)\) se aproximan tanto como es posible a \(L\), tomando a \(x\) lo más
+                cerca de \( \alpha \), pero
+                sin ser igual a \( \alpha \).</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        
+        <p>Y los límites unilaterales.</p>
+        <div class="centrado col-5 mb-3">
+          <div class="card">
+            <img class="img-fluid" src="cajas/cajas_importante.png" width="50%">
+
+            <div class="card-body">
+              <p class="text-center">
+                <p>Decimos que el límite por la izquierda de \(f(x)\), cuando \(x\) tiende a, es igual a \(L\) y, por lo tanto,
+                  \( \displaystyle \lim_{x \rightarrow a } f(x)=L \)
+                  (Tamayo, s.f.), si los valores de \( f(x)\) se aproximan tanto como es posible a \( L\), tomando a \(x\) lo más
+                  cerca de \(a\), pero
+                  \( x < a \).</p>
+                  <p>Decimos que el límite por la derecha de \(f(x)\) cuando \(x\) tiende a \(a\), es igual a \(L\) y, por lo tanto, \(  \displaystyle \lim_{x \rightarrow a^+} f(x)=L\) (Tamayo, s.f.), si los valores de \(f(x)\) se aproximan tanto como es posible a \(L\), tomando a \(x\) lo más próximo a \(a\), pero \(x>a\).</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        <p>La relación entre el límite de la función en un punto y los límites unilaterales se presenta en el teorema
+          siguiente.
+        </p>
+        <p class="text-center"><b>Teorema:</b> \( \displaystyle \displaystyle \lim_{x \rightarrow a} f(x)=L \) si y sólo si \( \displaystyle \lim_{x \rightarrow a^- } f(x)=L= \displaystyle \lim_{x
+          \rightarrow a^+}  f(x) \)</p>
+        <p style="text-align: right;">(Stewart, 2013)</p>
+        <p>Observación: Si la función a la que determinamos el límite \( \displaystyle \lim_{x \rightarrow a} f(x)\)  es un
+          polinomio o una función racional, y \(a\)
+          está en el dominio de la función, entonces \( \displaystyle \lim_{x \rightarrow a} f(x)=f(a)\) (Stewart, 2013).</p>
+          <div class="centrado col-5 mb-3">
+            <div class="card">
+              <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+              <div class="card-body">
+                <p class="text-center">13. Límites de funciones</p>
+              </div>
+            </div>
+          </div>
+          <p></p>
+      
+        <p>Hasta ahora tenemos los elementos necesarios para calcular un límite, ya sea de forma numérica, mediante una
+          tabla,
+          en la que se asignan valores a \(x\) para acercarnos a \(L\) de una función, ya sea por la derecha o la izquierda.
+        </p>
+        <p>También exploramos el método gráfico, en el cual vemos el comportamiento de la función al aplicar el límite,
+          igualmente por la derecha o la izquierda, en el punto que se analiza.</p>
+        <p>Ahora es momento de abordar el método analítico utilizando los teoremas, para conocer el límite de una
+          función en un
+          valor de \( (x) \), dependiendo del tipo de límite y sus características. Continúa con el siguiente tema.</p>
+      
+      </div>
+    </div>
+  </div>
+  <div>
+    <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+
+</html>

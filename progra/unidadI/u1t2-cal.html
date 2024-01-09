@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>IPN - ESCOM - Cálculo I</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+  <div class="text-white">
+    <img class="img-fluid" src="img/id_header_menu.svg" width="40%"> 
+  </div>
+  <div class="text-white header-img">
+    <h2 class="text-white my-2">Unidad I. Funciones algebraicas y trascendentes</h2>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://148.204.56.92/moodle/course/view.php?id=10"><img class="img-fluid" src="img/inicio.png" width="30"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="introduccion.html"  role="button" aria-expanded="false">
+              Introducción
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u1t1-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 1
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t1-cal.html">Tema 1</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.1">1.1 Representaciones</a></li>
+              <li><a class="dropdown-item" href="u1t1-cal.html#1.2">1.2 Propiedades</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="u1t2-cal.html" role="button"
+               aria-expanded="false">
+              Tema 2
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="u1t3-cal.html" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tema 3
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="u1t3-cal.html">Tema 3</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.1">3.1 Exponenciales naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.2">3.2 Logarítmicas naturales y generales</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.3">3.3 Trigonométricas y trigonométricas inversas</a></li>
+              <li><a class="dropdown-item" href="u1t3-cal.html#3.4">3.4 Hiperbólicas e hiperbólicas inversas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="u1t4-cal.html"  role="button" aria-expanded="false">
+              Tema 4
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://148.204.56.92/moodle/course/view.php?id=10&section=2"  role="button" aria-expanded="false">
+              Ejercicios
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>2. Funciones inversas</h1>
+      <p class="mt-4">Las funciones inversas son aquéllas donde la función es completamente opuesta, lo que hace que el elemento del
+          contradominio regrese al del dominio.</p>
+      <p>Se puede decir que si tenemos una función \(f(x)\), su función inversa se denota como \(f^{-1}(x)\) y tiene la propiedad de
+          que, cuando aplicas \(f^{-1} \) a un valor obtenido a través de \(f(x)\), vuelves al valor original de \(x\).</p>
+      <p>Para encontrar la función inversa de una función dada, puedes seguir estos pasos:</p>
+      <ol class="vinetas">
+      <li> Expresar la función original \(f(x)\) en términos de \(y\).</li>
+      <li> Intercambiar \(x\) y \(y\) en la ecuación, es decir, reemplazar todas las \(x\) por \(y\) y todas las \(y\) por \(x\).</li>
+      <li> Resolver la nueva ecuación para obtener \(y\) en términos de \(x\). Este resultado se denota como \(f^{-1}(x)\).</li>
+      </ol>
+      <p>Es importante considerar que no todas las funciones tienen una función inversa, debido a la inyectividad o
+          sobreyectividad, esto es, si una función es inyectiva, quiere decir que cada valor de \(x\) tiene un único valor en \(y\), o
+          sea, que no hay dos valores diferentes de \(x\) que se asignen al mismo valor de \(y\). Por otra parte, si la función es
+          sobreyectiva, quiere decir que cada valor de \(y\) tiene al menos un valor correspondiente en \(x\), en otras palabras, el
+          rango de la función cubre todo el contradominio. Si la función no es inyectiva o sobreyectiva, entonces no puede
+          definir una función inversa.</p>
+      <p>Enseguida analizaremos esto con mayor detenimiento con la función biunívoca.</p>
+      <ul class="vinetas">
+        <li><b> Función biunívoca, uno a uno o inyectiva</b></li>
+      </ul>
+      <p>La relación entre una función inversa y una función biunívoca es estrecha, ya que una función debe ser biunívoca para
+          tener una función inversa bien definida.</p>
+      <p>Una función biunívoca es aquélla que cumple dos propiedades importantes: es inyectiva y sobreyectiva al mismo tiempo,
+          como ya lo habíamos explicado anteriormente.</p>
+      <p>La función inversa, descrita como \(f^{-1}(x)\), toma los valores de \(y\) de la función original \(f(x)\) y devuelve los valores
+          de \(x\) originales. La función inversa es también una función biunívoca, ya que invierte los roles de \(x\) y \(y\), y mantiene
+          la propiedad de inyectividad y sobreyectividad.</p>
+      <p>Entonces se define que una función \(f\), con dominio \(A\) e imagen \(B\), es biunívoca, uno a uno o inyectiva si nunca toma el
+          mismo valor dos veces, es decir:</p>
+          
+      <p> &nbsp;&nbsp; a) Si \(x_1 \neq  x_2\) entonces \(f(x_1) \neq  f(x_2)\), o</p>
+      <p> &nbsp;&nbsp; b) Si \(f(x_1)=f(x_2)\) entonces \(x_1=x_2\)</p>
+        <div class="citas" style="text-align: right;">(Stewart, 2013)</div>
+      <p>Observa el siguiente ejemplo al respecto:</p>
+      <p>&nbsp;&nbsp; a) Determinar que la función \(f(x)=7x-3\) es biunívoca.</p>
+      <p>Supongamos que el valor de la función en dos puntos es el mismo</p>
+      $$f(x_1)=f(x_2)$$
+      <p>usando la definición de la función \(7x_1-3=7x_2-3\)</p>
+      <p>simplificando \(7x_1=7x_2\)</p>
+      <p>simplificando \(x_1=x_2\).</p>
+      <p>Los valores deben de ser iguales, luego \(f(x)\) es biunívoca o uno a uno.</p>
+      <p>&nbsp;&nbsp; b) Determinar si la función \(f(x)=3x^2+5\) es biunívoca.</p>
+      <p>Suponiendo que el valor de la función es el mismo para dos puntos</p>
+      $$f(x_1)=f(x_2)$$
+      <p>Evaluando \(x_1^{\;2}-3=x_2^{\;2}-3\)</p>
+      <p>¿Se cumple esta igualdad? ¿ \(x_1^{\;2}-3=x_2^{\;2}-3\) ?</p>
+      <p>Veámoslo. Si es válida se debe de cumplir para cualquier par de números reales. Si tomamos \(x_1=-1\) y \(x_2=1\), siendo que
+          \(x_1 \neq  x_2\), encontramos que \(f(x_1)=f(x_2)\), y por definición si partimos de dos números diferentes al evaluar las
+          funciones también deben de ser diferentes, por lo cual no se cumple la igualdad y la función no es biunívoca. </p>
+      <p>Sea \(f\) una función con dominio \(A\) e imagen \(B\), si \(g\) es la función con dominio \(B\) e imagen \(A\), entonces \(g\) es la función
+          inversa de \(f\), si y sólo si se cumple:</p>
+      <p> &nbsp;&nbsp; 1) \(f(g(x))=x \; \forall \; x \in B\)</p>
+      <p> &nbsp;&nbsp; 2) \(g(f(x))=x \; \forall \; x \in A\)</p>
+      <p>De acuerdo con la definición para determinar la función inversa, debemos despejar la variable \(x\) y la función que se
+          obtenga será la función inversa, para garantizar que es la inversa debemos de ver que se cumplan las condiciones del
+          teorema.</p>
+      <p>Entre una función y su inversa se cumple:</p>
+      <p>&nbsp;&nbsp; a)  \((a,b) \in f\) si y sólo si \((b,a) \in f^{-1}\).</p>
+      <p>&nbsp;&nbsp; b) La gráfica de una función y su inversa se reflejan con respecto a la recta \(y=x\).</p>
+      <p>Para calcular la inversa de una función \(y=f(x)\):</p>
+      <ol class="vinetas">
+      <li> Verificamos que la función sea biunívoca o uno a uno.</li>
+      <li> Despejamos \(y\) de la igualdad \(y=f(x)\).</li>
+      <li> Obtenemos la función \(x=g(y)\) y cambiamos la variable para obtener \(y=g(x)\).</li>
+      <li> Verificamos que se cumplen las condiciones del teorema \(f(g(x))=x \quad \forall \; x \in B\) y \(g(f(x))=x \quad \forall \; x \in A\), lo que permitirá
+          determinar que \(g\) es la función inversa.</li>
+      <li> Damos la función inversa \(y=f^{-1} (x)\).</li>
+    </ol>
+      <p>Revisemos el siguiente ejemplo.</p>
+      <p>Determinar la inversa de la función \(f(x)=2x^3+1\) y graficar la función y su inversa en el mismo plano.</p>
+      <p> &nbsp;&nbsp; 1. ¿\(f\) es biunívoca?</p>
+      <blockquote>
+      <p>Algebraicamente:</p>
+      <p>Supongamos que el valor de la función en dos puntos es el mismo</p>
+      $$f(x_1)=f(x_2)$$
+      <p>usando la definición de la función \(2(x_1 )^3+1=2(x_2 )^3+1\)</p>
+      <p>simplificando \(2(x_1 )^3=2(x_2 )^3\).</p>
+      <p>simplificando \((x_1 )^3=(x_2 )^3\).</p>
+      <p>Sacando raíz cubica \(x_1=x_2\)</p>
+      <p>La función es biunívoca.</p>
+    </blockquote>
+      <p>&nbsp;&nbsp; 2. Despejamos \(x\).</p>
+      <blockquote>
+        <p>\( y=2x^3+1 \)</p>
+        <p>\( y-1=2x^3 \)</p>
+        <p>\( 2x^3=y-1 \)</p>
+        <p>\( x^3= \frac{y\; - \; 1}{2} \)</p>
+        <p>\( x= \sqrt[3]{\frac{y\; - \; 1}{2}} \)</p>
+      </blockquote>
+      <p>&nbsp;&nbsp;3.  Así, \(x=g(y)= \sqrt[3]{\frac{y\; - \; 1}{2}}\), </p>
+      <blockquote>
+        <p>cambiando variable \(g(x)=\sqrt[3]{\frac{x\;-\;1}{2}}\).</p>
+      </blockquote>
+      <p>&nbsp;&nbsp;4. Verificamos las composiciones</p>
+      <blockquote>
+        <p>\(f(g(x))=f \left( \sqrt[3]{ \frac{x\;-\;1}{2}} \right)=2 \left( \sqrt[3] {\frac{x\;-\;1}{2}} \right)^3+1=2 \left( \frac{x\;-\;1}{2} \right)+1=(x-1)+1=x \)</p>
+        <p>\( g(f(x))=g(2x^3+1)= \sqrt[3]{\frac{(2x^3\;+\;1)\;-\;1}{2}}= \sqrt[3]{\frac{2x^3}{2}}= \sqrt[3]{x^3}=x \)</p>
+        <p>Se cumplen ambas condiciones, con lo cual la función \(g(x)\) es la función inversa.</p>
+      </blockquote>
+      <p>&nbsp;&nbsp;5.  \(f^{-1} (x)= \sqrt[3]{ \frac{x\;-\;1}{2}}\)</p>
+      <blockquote>
+        <p>Graficamos las funciones \(f(x) \)  y \(f^{-1} (x)\).</p>
+      </blockquote>
+      <div class="img-flex text-center">
+        <img class="img-fluid" src="img/u1_tm2/u1_tm2_01_biunivoca.svg"  width="50%">
+    </div>
+      <p class="mt-4">Observamos que se cumple que la función y su inversa se reflejan con respecto a la recta \(y=x\), y en la gráfica de la
+          función \(f(x)=2x^3+1\) se tiene el punto \((0,1)\) y en la función inversa \(f^{-1} (x)= \sqrt[3]{\frac{x\;-\;1}{2} }\) el punto \((1,0)\).</p>
+      <p>Otra forma de determinar que la función es biunívoca o uno a uno es por medio de una representación gráfica, la
+          prueba de la recta horizontal.</p>
+      <ul class="vinetas">
+        <li><b> Prueba de la recta horizontal</b></li>
+      </ul>
+      <p>Una función es biunívoca o uno a uno si y sólo si toda recta horizontal interseca a la gráfica de la función a lo más
+          en un punto. Retomemos las funciones del ejemplo anterior para dar seguimiento.</p>
+      <p>&nbsp;&nbsp; a)  \(f(x)=7x-3\)</p>
+     <blockquote>
+       <p>La gráfica de la función es</p>
+     </blockquote>
+      <div class="img-flex text-center">
+        <img class="img-fluid" src="img/u1_tm2/u1_tm2_02_rectahor.svg"  width="50%">
+    </div>
+      <p class="mt-4">Al trazar cualquier recta horizontal corta a la gráfica de la función en un punto.</p>
+      <div class="img-flex text-center">
+        <img class="img-fluid" src="img/u1_tm2/u1_tm2_03_rectahor.svg"  width="50%">
+    </div>
+      <p class="mt-4">Con lo cual la función es biunívoca o uno a uno.</p>
+      <p>&nbsp;&nbsp; b)  \(f(x)=3x^2+5\)</p>
+      <blockquote>
+        <p>Graficando la función se tiene</p>
+      </blockquote>
+      <div class="img-flex text-center">
+        <img class="img-fluid" src="img/u1_tm2/u1_tm2_04_rectahor.svg"  width="50%">
+    </div>
+      <p class="mt-4">Al trazar cualquier recta horizontal, notamos que hay rectas que no la cortan, hay una recta que la corta en un
+          punto; pero hay rectas que la cortan en dos puntos, por lo que la función no es biunívoca.</p>
+      <p>Si determinamos la monotonía de la función en un intervalo o en su dominio, podremos determinar si es biunívoca o uno
+          a uno.</p>
+          <div class="img-flex text-center">
+            <img class="img-fluid" src="img/u1_tm2/u1_tm2_05_rectahor.svg"  width="50%">
+        </div>
+      <p class="mt-4">Es momento de practicar lo aprendido. Realiza el ejercicio correspondiente.</p>
+      <div class="centrado col-5 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="cajas/cajas_ejercicio.png" width="50%">
+            <div class="card-body">         
+                <p class="text-center">6. Funciones inversas </p>
+            </div>
+          </div>
+    </div>
+      <p>Las funciones inversas desempeñan un papel importante en el estudio de las relaciones entre variables y la resolución
+          de problemas. Proporcionan una forma de invertir la relación de una función original, lo que permite encontrar los
+          valores originales de la variable de entrada a partir de los valores obtenidos a través de la función; sin embargo,
+          no todas las funciones tienen una función inversa bien definida, ya que esto depende de las propiedades de
+          inyectividad y sobreyectividad.</p>
+      <p>En el siguiente tema, abordaremos las funciones trascendentes, las cuales no pueden ser expresadas algebraicamente a
+          través de una combinación finita de operaciones algebraicas (como sumas, restas, multiplicaciones, divisiones y
+          raíces).</p>
+          <p>&nbsp;</p>
+    </div>
+  </div>
+</div>
+<div>
+  <img class="img-fluid" src="img/id_footer_derechos.svg" width="30%">
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/popover.js" type="text/javascript"></script>
+</body>
+<script src="js/carrusel.js"></script>
+</html>
